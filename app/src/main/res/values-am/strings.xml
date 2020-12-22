@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">የኢትዮጲያ ምልክት ቋንቋ </string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="ha">ሀ</string>
+    <string name="play_btn"></string>
+    <string name="communicate">አጫዉት</string>
+    <string name="sign_translation">ምስል መቀየሪያ</string>
+    <string name="video_call">ቪድዮ ደወል</string>
+    <string name="home">ቤት</string>
+    <string name="share">አጋራ</string>
+    <string name="settings">ማስተካከያ</string>
+    <string name="add_new">አዲስ ጨምር</string>
+    <string name="rate_us">ደረጃ ይስጡን</string>
+    <string name="learn_basic">መሰረታዊ </string>
+    <string name="learn_intermediate">መካከለኛ </string>
+    <string name="learn_advance">የላቀ </string>
+    <string name="fekedew_hailemariam">ፈቀደው ኀይለማሪያምማኀይለማሪያም</string>
+    <string name="title_activity_settings">ማስተካከያ"></string>
+
+    <!-- Preference Titles -->
+
+    <!-- Messages Preferences -->
+
+    <!-- Sync Preferences -->
+    <string name="number">ቁጥር</string>
+    <string name="ethiopian_basic_sign_language">መሰረታዊ ምልክት ቋንቋ</string>
+    <string name="alphabets">እንግሊዘኛ ፊደል</string>
+    <string name="body_part">የሰዉነት ክፍል</string>
+    <string name="family">ቤተሰብ</string>
+    <string name="day">ቀን</string>
+    <string name="maths">ሒሳብ</string>
+    <string name="choose_level">ደረጃዎን ይምረጡ</string>
+    <string name="albasat">ልብስ"</string>
+    <string name="food_and_drink">ምግብ</string>
+    <string name="animal">እንሰሳት </string>
+    <string name="nature">ተፈጥሮ </string>
+    <string name="ethiopian_intermediate_sign_language">መካከለኛ ምልክት ቋንቋ</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="vegetable">አትክልት</string>
+    <string name="submit">ጨርሻለሁ ውጤት</string>
+    <string name="color">ቀለም</string>
+    <string name="fruit">ፍራፍሬ</string>
+    <string name="fidel">ሀ ለ መ</string>
+    <string name="fidelat">አማርኛ ፊደላት</string>
+    <string name="change_language">ቋንቋ </string>
+</resources>
