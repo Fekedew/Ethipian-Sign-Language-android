@@ -61,7 +61,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/albasat"
-                        android:textSize="30sp"
                         android:textColor="#fff"
                         android:textAlignment="center"
                         android:textStyle="bold"
@@ -100,7 +99,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/food_and_drink"
-                        android:textSize="30sp"
                         android:textColor="#fff"
                         android:textAlignment="center"
                         android:textStyle="bold"
@@ -139,7 +137,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/animal"
-                        android:textSize="30sp"
                         android:textColor="#fff"
                         android:textAlignment="center"
                         android:textStyle="bold"
@@ -178,7 +175,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/nature"
-                        android:textSize="30sp"
                         android:textColor="#fff"
                         android:textAlignment="center"
                         android:textStyle="bold"
@@ -216,7 +212,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/vegetable"
-                        android:textSize="25sp"
                         android:textColor="#fff"
                         android:textAlignment="center"
                         android:textStyle="bold"
@@ -257,6 +252,7 @@
 
                     <LinearLayout
                         android:layout_width="60dp"
+                        android:layout_marginBottom="5dp"
                         android:layout_height="match_parent"
                         android:orientation="horizontal">
                         <Button
