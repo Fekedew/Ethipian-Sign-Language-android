@@ -11,8 +11,6 @@ import androidx.annotation.RequiresApi;
 
 public class FavDB extends SQLiteOpenHelper {
 
-    //Here is what i make a difference
-    private String name = "Fekedew Hailemariam";
     private static int DB_VERSION = 1;
     private static String DB_NAME = "favoriteDB";
     private static String TABLE_NAME = "favoriteListTable";
