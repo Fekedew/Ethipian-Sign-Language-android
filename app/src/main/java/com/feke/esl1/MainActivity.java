@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Intent intent;
         switch (v.getId()){
             case R.id.toolbarBottomSearch:
-                intent = new Intent(this, BasicList.class);
+                intent = new Intent(this, SearchActivity.class);
                 intent.putExtra("type", "search");
                 startActivity(intent);
                 break;
@@ -121,7 +121,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(intent);
                 break;
             case R.id.toolbarBottomTrash:
-                Toast.makeText(this, "Trah image view", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Trash image view", Toast.LENGTH_LONG).show();
                 break;
             case R.id.toolbarBottomInfo:
                 Toast.makeText(this, "Here is about us", Toast.LENGTH_LONG).show();

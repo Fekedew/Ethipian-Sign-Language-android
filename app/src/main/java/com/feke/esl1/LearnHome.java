@@ -70,10 +70,6 @@ public class LearnHome extends Fragment implements View.OnClickListener {
             case R.id.card_advance:
                 Toast.makeText(getActivity(), "Advance sign language is not implemented!", Toast.LENGTH_SHORT).show();
                 break;
-//            case R.id.basicDownloadBtn:
-//                Download d = new Download();
-//               String s = d.save(getContext(), "basic", basicImageView);
-//               break;
         }
     }
 }
