@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         favorite = findViewById(R.id.toolbarBottomFav);
         favorite.setOnClickListener(this);
 
-        trash = findViewById(R.id.toolbarBottomTrash);
+        trash = findViewById(R.id.toolbarBottomHome);
         trash.setOnClickListener(this);
 
         info = findViewById(R.id.toolbarBottomInfo);
@@ -120,7 +120,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 intent.putExtra("type", "all");
                 startActivity(intent);
                 break;
-            case R.id.toolbarBottomTrash:
+            case R.id.toolbarBottomHome:
                 Toast.makeText(this, "Trash image view", Toast.LENGTH_LONG).show();
                 break;
             case R.id.toolbarBottomInfo:

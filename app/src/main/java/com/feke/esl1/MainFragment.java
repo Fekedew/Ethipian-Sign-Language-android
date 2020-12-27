@@ -83,7 +83,7 @@ public class   MainFragment extends Fragment implements View.OnClickListener {
         favorite = view.findViewById(R.id.toolbarBottomFav);
         favorite.setOnClickListener(this);
 
-        trash = view.findViewById(R.id.toolbarBottomTrash);
+        trash = view.findViewById(R.id.toolbarBottomHome);
         trash.setOnClickListener(this);
 
         info = view.findViewById(R.id.toolbarBottomInfo);
@@ -241,8 +241,10 @@ public class   MainFragment extends Fragment implements View.OnClickListener {
                 intent.putExtra("type", "all");
                 startActivity(intent);
                 break;
-            case R.id.toolbarBottomTrash:
-                Toast.makeText(getContext(), "Trah image view", Toast.LENGTH_LONG).show();
+            case R.id.toolbarBottomHome:
+                intent = new Intent(getContext(), LearnHome.class);
+                intent.putExtra("type", "all");
+                startActivity(intent);
                 break;
             case R.id.toolbarBottomInfo:
                 Toast.makeText(getContext(), "Here is about us", Toast.LENGTH_LONG).show();

@@ -31,6 +31,7 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
 
     private List<LearnItem> learnItems;
     private RecyclerView recyclerView;
+    private SearchAdapter adapter;
 
     private FavDB favDB;
 
@@ -59,7 +60,7 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
         favorite = findViewById(R.id.toolbarBottomFav);
         favorite.setOnClickListener(this);
 
-        trash = findViewById(R.id.toolbarBottomTrash);
+        trash = findViewById(R.id.toolbarBottomHome);
         trash.setOnClickListener(this);
 
         info = findViewById(R.id.toolbarBottomInfo);
@@ -93,7 +94,7 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
         } catch (Exception e) {
             e.printStackTrace();
         }
-        Adapter adapter = new Adapter(learnItems, this);
+        adapter = new SearchAdapter(learnItems, this);
         recyclerView.setAdapter(adapter);
 
     }
@@ -143,7 +144,7 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
         getMenuInflater().inflate(R.menu.search_menu, menu);
         MenuItem item = menu.findItem(R.id.search_action);
 
-        SearchView searchView = (SearchView) item.getActionView();
+        final SearchView searchView = (SearchView) item.getActionView();
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -152,6 +153,8 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
 
             @Override
             public boolean onQueryTextChange(String newText) {
+                adapter.getFilter().filter(newText);
+
                 return false;
             }
         });
@@ -163,15 +166,15 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
 
         Intent intent;
         switch (v.getId()){
-            case R.id.toolbarBottomSearch:
+            case R.id.toolbarBottomHome:
+                intent = new Intent(this, MainActivity.class);
+                intent.putExtra("type", "all");
+                startActivity(intent);
                 break;
             case R.id.toolbarBottomFav:
                 intent = new Intent(this, BasicList.class);
                 intent.putExtra("type", "all");
                 startActivity(intent);
-                break;
-            case R.id.toolbarBottomTrash:
-                Toast.makeText(this, "Trah image view", Toast.LENGTH_LONG).show();
                 break;
             case R.id.toolbarBottomInfo:
                 Toast.makeText(this, "Here is about us", Toast.LENGTH_LONG).show();
