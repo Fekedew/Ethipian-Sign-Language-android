@@ -33,6 +33,7 @@ public class   MainFragment extends Fragment implements View.OnClickListener {
     private String mParam2;
 
 
+    //Create learn item variable form Lear item clas
     private List<LearnItem> learnItems;
     private RecyclerView recyclerView;
     Button submitEx;
@@ -242,7 +243,7 @@ public class   MainFragment extends Fragment implements View.OnClickListener {
                 startActivity(intent);
                 break;
             case R.id.toolbarBottomHome:
-                intent = new Intent(getContext(), LearnHome.class);
+                intent = new Intent(getContext(), MainActivity.class);
                 intent.putExtra("type", "all");
                 startActivity(intent);
                 break;
