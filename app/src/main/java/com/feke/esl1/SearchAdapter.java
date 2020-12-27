@@ -25,8 +25,6 @@ import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.feke.esl1.LearnItem;
-import com.feke.esl1.R;
 import com.feke.esl1.favorite.FavDB;
 
 import java.io.IOException;
@@ -43,7 +41,6 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
     private List<LearnItem> learnItemsAll;
     private Context context;
     private FavDB favDB;
-    String type;
 
 
 
@@ -139,7 +136,8 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
                 filteredList.addAll(learnItemsAll);
             }else{
                 for (LearnItem learnItem : learnItemsAll){
-                    if (learnItem.getTitle().toLowerCase().contains(constraint.toString().toLowerCase())){
+                    if (learnItem.getTitle().toLowerCase().contains(constraint.toString().toLowerCase())
+                            || learnItem.getDescName().toLowerCase().contains(constraint.toString().toLowerCase())){
                         filteredList.add(learnItem);
                     }
                 }
