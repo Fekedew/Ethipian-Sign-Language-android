@@ -25,6 +25,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginBottom="20dp"
         android:layout_marginRight="20dp">
+
         <GridLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -59,6 +60,7 @@
                         android:layout_height="90dp"
                         android:src="@drawable/albasat"
                         android:gravity="center_horizontal" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -97,6 +99,7 @@
                         android:layout_height="90dp"
                         android:src="@drawable/food_drink"
                         android:gravity="center_horizontal" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -135,6 +138,7 @@
                         android:layout_height="90dp"
                         android:src="@drawable/animal"
                         android:gravity="center_horizontal" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -173,6 +177,7 @@
                         android:layout_height="90dp"
                         android:src="@drawable/nature"
                         android:gravity="center_horizontal" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -210,6 +215,7 @@
                         android:layout_width="100dp"
                         android:layout_height="90dp"
                         android:src="@drawable/ic_baseline_group_24" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -257,26 +263,32 @@
                         android:layout_marginBottom="5dp"
                         android:layout_height="match_parent"
                         android:orientation="horizontal">
+
                         <Button
                             android:layout_width="10dp"
                             android:layout_height="20dp"
                             android:background="#f00" />
+
                         <Button
                             android:layout_width="10dp"
                             android:layout_height="20dp"
                             android:background="#0f0" />
+
                         <Button
                             android:layout_width="10dp"
                             android:layout_height="20dp"
                             android:background="#ff0" />
+
                         <Button
                             android:layout_width="10dp"
                             android:layout_height="20dp"
                             android:background="#03A9F4" />
+
                         <Button
                             android:layout_width="10dp"
                             android:layout_height="20dp"
                             android:background="#FFC107" />
+
                         <Button
                             android:layout_width="10dp"
                             android:layout_height="20dp"

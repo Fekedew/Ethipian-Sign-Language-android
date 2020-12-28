@@ -1,7 +1,6 @@
 package com.feke.esl1;
 
 import android.app.Activity;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.AssetManager;
@@ -15,7 +14,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -233,7 +231,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
                         folder + "/" + cursor.getString(cursor.getColumnIndex(FavDB.KEY_ID)),
                         "" + select_en,
                         "" + cursor.getString(cursor.getColumnIndex(FavDB.ITEM_DISK)),
-                        "See More ☝",
+                        "See More 👇",
                         "" + cursor.getString(cursor.getColumnIndex(FavDB.KEY_ID)),
                         "" + cursor.getString(cursor.getColumnIndex(FavDB.FAVORITE_STATUS))
                 ));

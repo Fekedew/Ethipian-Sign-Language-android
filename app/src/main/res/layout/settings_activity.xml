@@ -8,10 +8,10 @@
         android:id="@+id/changeLanguage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/change_language"/>
+        android:text="@string/change_language" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Setting two"/>
+        android:text="Setting two" />
 </LinearLayout>

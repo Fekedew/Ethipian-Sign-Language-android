@@ -1,7 +1,6 @@
 package com.feke.esl1.basic;
 
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
@@ -70,7 +69,9 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
         String path = learnItem.getImageResource();
         if (path.contains(".png") || path.contains(".PNG") || path.contains(".JPG") || path.contains(".jpg")) {
             holder.imageView.setImageBitmap(loadBitmapFromAssets(context, path));
+            holder.playBtn.setVisibility(View.GONE);
         } else if (path.contains(".GIF") || path.contains(".gif")) {
+            holder.playBtn.setVisibility(View.VISIBLE);
             holder.imageView.setImageDrawable(loadGifDrawable(context, path));
         }
 
@@ -162,6 +163,24 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
                 }
             });
             downArrowBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (expandableView.getVisibility() == View.GONE) {
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+                            TransitionManager.beginDelayedTransition(cardView, new AutoTransition());
+                        }
+                        expandableView.setVisibility(View.VISIBLE);
+                        downArrowBtn.setBackgroundResource(R.drawable.ic_keyboard_arrow_up_black_24dp);
+                    } else {
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+                            TransitionManager.beginDelayedTransition(cardView, new AutoTransition());
+                        }
+                        expandableView.setVisibility(View.GONE);
+                        downArrowBtn.setBackgroundResource(R.drawable.ic_keyboard_arrow_down_black_24dp);
+                    }
+                }
+            });
+            descTip.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     if (expandableView.getVisibility() == View.GONE) {

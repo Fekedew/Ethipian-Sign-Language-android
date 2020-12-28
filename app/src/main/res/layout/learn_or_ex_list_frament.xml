@@ -14,13 +14,14 @@
             android:layout_height="match_parent"
             android:layout_margin="15dp"
             android:paddingBottom="?attr/actionBarSize"
-            android:clipToPadding="false"/>
+            android:clipToPadding="false" />
 
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/appBarLayout"
             android:layout_width="match_parent"
             android:layout_gravity="bottom"
             android:layout_height="wrap_content">
+
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbarBottom"
                 android:layout_width="match_parent"

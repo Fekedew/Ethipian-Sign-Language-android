@@ -1,10 +1,5 @@
 package com.feke.esl1;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.SearchView;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -18,7 +13,11 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.feke.esl1.basic.Adapter;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.feke.esl1.basic.BasicList;
 import com.feke.esl1.basic.ExAdapter;
 import com.feke.esl1.favorite.FavDB;
@@ -77,7 +76,7 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
         if (cu == null || cu.getCount() == 0) {
             createTableOnFirstStart();
         }
-        Toast.makeText(this, "Dir not exit h", Toast.LENGTH_LONG).show();
+//        Toast.makeText(this, "Dir not exit h", Toast.LENGTH_LONG).show();
         final AssetManager assetManager = getAssets();
         try {
             // for assets folder add empty string
