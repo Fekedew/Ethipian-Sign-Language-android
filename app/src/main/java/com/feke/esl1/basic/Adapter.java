@@ -42,7 +42,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     String type;
 
 
-
     public Adapter(List<LearnItem> learnItems, Context context) {
         this.learnItems = learnItems;
         this.context = context;
@@ -53,7 +52,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         favDB = new FavDB(context);
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.custome_list_view,
-                    parent, false);
+                parent, false);
         return new ViewHolder(view);
     }
 
@@ -198,7 +197,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
             });
         }
     }
-
 
 
     private void readCursorData(LearnItem learnItem, ViewHolder viewHolder) {

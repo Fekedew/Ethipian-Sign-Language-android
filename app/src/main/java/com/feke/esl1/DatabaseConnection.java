@@ -10,6 +10,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.feke.esl1.basic.Adapter;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -32,7 +33,7 @@ public class DatabaseConnection extends AsyncTask<String, Integer, String> {
 
     @Override
     protected String doInBackground(String... strings) {
-        final String URL_SIGNS = "http://10.194.76.31/esl/get.php";
+        final String URL_SIGNS = "http://10.194.76.42/esl/my_api.php";
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, URL_SIGNS,
                 new Response.Listener<String>() {
@@ -80,6 +81,7 @@ public class DatabaseConnection extends AsyncTask<String, Integer, String> {
         Volley.newRequestQueue(context).add(stringRequest);
         return null;
     }
+
 
     @Override
     protected void onPreExecute() {

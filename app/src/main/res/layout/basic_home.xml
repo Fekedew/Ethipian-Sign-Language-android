@@ -12,16 +12,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_margin="5dp"
+        android:layout_marginTop="5dp"
         android:text="@string/ethiopian_basic_sign_language"
         android:textColor="#fff"
-        android:textSize="30sp"
         android:textStyle="bold" />
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
         android:layout_below="@id/title_view">
 
         <GridLayout

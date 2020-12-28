@@ -30,6 +30,7 @@ public class LearnHome extends Fragment implements View.OnClickListener {
     CardView basicImageView;
 
     Button basicDownloadBtn;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -51,7 +52,7 @@ public class LearnHome extends Fragment implements View.OnClickListener {
         // Get the progress bar value and set to the percent view
         int val = basicProgressBar.getProgress();
         basicPercentTextView = view.findViewById(R.id.basicProgressBarPercent);
-        basicPercentTextView.setText(val+" %");
+        basicPercentTextView.setText(val + " %");
         return view;
     }
 

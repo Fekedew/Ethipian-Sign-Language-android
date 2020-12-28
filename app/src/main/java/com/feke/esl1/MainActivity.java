@@ -91,8 +91,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_video_call:
                 Toast.makeText(this, "Video call is not yet implemented", Toast.LENGTH_SHORT).show();
                 break;
-            case R.id.nav_add_new:
-                Toast.makeText(this, "Add new sign is not yet implemented", Toast.LENGTH_SHORT).show();
+            case R.id.nav_load_more:
+                intent = new Intent(this, LoadMore.class);
+                startActivity(intent);
                 break;
             case R.id.nav_settings:
                 intent = new Intent(this, SettingsActivity.class);
@@ -109,7 +110,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public void onClick(View v) {
         Intent intent;
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.toolbarBottomSearch:
                 intent = new Intent(this, SearchActivity.class);
                 intent.putExtra("type", "search");
@@ -119,9 +120,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 intent = new Intent(this, BasicList.class);
                 intent.putExtra("type", "all");
                 startActivity(intent);
-                break;
-            case R.id.toolbarBottomHome:
-                Toast.makeText(this, "Trash image view", Toast.LENGTH_LONG).show();
                 break;
             case R.id.toolbarBottomInfo:
                 Toast.makeText(this, "Here is about us", Toast.LENGTH_LONG).show();

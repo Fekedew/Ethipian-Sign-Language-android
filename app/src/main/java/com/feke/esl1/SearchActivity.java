@@ -77,7 +77,7 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
         if (cu == null || cu.getCount() == 0) {
             createTableOnFirstStart();
         }
-        Toast.makeText(this, "Dir not exit h" , Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Dir not exit h", Toast.LENGTH_LONG).show();
         final AssetManager assetManager = getAssets();
         try {
             // for assets folder add empty string
@@ -98,15 +98,15 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
         recyclerView.setAdapter(adapter);
 
     }
+
     private void createTableOnFirstStart() {
         favDB.insertAssets();
         favDB.insertFirstStart();
     }
 
 
-
     //Add to learItems list based on specfic folder
-    public void addToLearnItems(String type, String folder){
+    public void addToLearnItems(String type, String folder) {
         SQLiteDatabase db = favDB.getReadableDatabase();
         Cursor cursor = null;
         cursor = favDB.selectAll(folder);
@@ -114,9 +114,9 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
             SharedPreferences pref = getSharedPreferences("LangSettings", Activity.MODE_PRIVATE);
             String lan = pref.getString("selected_language", "");
 
-            int i=0, l = 1;
-            if (lan.equals("am")){
-                l=0;
+            int i = 0, l = 1;
+            if (lan.equals("am")) {
+                l = 0;
             }
             while (cursor.moveToNext()) {
                 String[] whi = cursor.getString(cursor.getColumnIndex(FavDB.ITEM_TITLE)).split("/");
@@ -138,6 +138,7 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
             db.close();
         }
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
@@ -165,7 +166,7 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
     public void onClick(View v) {
 
         Intent intent;
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.toolbarBottomHome:
                 intent = new Intent(this, MainActivity.class);
                 intent.putExtra("type", "all");
@@ -182,7 +183,7 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
             case R.id.submitEx:
                 Toast.makeText(this, "Here is submitting", Toast.LENGTH_LONG).show();
                 int correct = ExAdapter.correctAnswers.size();
-                Toast.makeText(this, "Correct answers: "+correct+" Out of: "+ExAdapter.allQuestions, Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Correct answers: " + correct + " Out of: " + ExAdapter.allQuestions, Toast.LENGTH_LONG).show();
 
                 break;
         }

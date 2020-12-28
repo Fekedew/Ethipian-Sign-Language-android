@@ -12,9 +12,9 @@ import androidx.cardview.widget.CardView;
 import com.feke.esl1.R;
 import com.feke.esl1.basic.BasicList;
 
-public class IntermediateHome extends AppCompatActivity implements View.OnClickListener{
+public class IntermediateHome extends AppCompatActivity implements View.OnClickListener {
 
-    CardView albasat, animal, nature, food,vegetable, fruit, color;
+    CardView albasat, animal, nature, food, vegetable, fruit, color;
     Activity activity;
     Intent in;
 
@@ -48,7 +48,7 @@ public class IntermediateHome extends AppCompatActivity implements View.OnClickL
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.albasat:
                 in = new Intent(activity, BasicList.class);
                 in.putExtra("type", "albasat");
@@ -57,7 +57,8 @@ public class IntermediateHome extends AppCompatActivity implements View.OnClickL
             case R.id.animal:
                 in = new Intent(activity, BasicList.class);
                 in.putExtra("type", "animal");
-                startActivity(in);;
+                startActivity(in);
+                ;
                 break;
             case R.id.food_and_drink:
                 in = new Intent(activity, BasicList.class);

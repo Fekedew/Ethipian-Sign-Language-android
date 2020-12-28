@@ -43,7 +43,6 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
     private FavDB favDB;
 
 
-
     public SearchAdapter(List<LearnItem> learnItems, Context context) {
         this.learnItems = learnItems;
         this.context = context;
@@ -132,12 +131,12 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
         protected FilterResults performFiltering(CharSequence constraint) {
 
             List<LearnItem> filteredList = new ArrayList<>();
-            if (constraint.toString().isEmpty()){
+            if (constraint.toString().isEmpty()) {
                 filteredList.addAll(learnItemsAll);
-            }else{
-                for (LearnItem learnItem : learnItemsAll){
+            } else {
+                for (LearnItem learnItem : learnItemsAll) {
                     if (learnItem.getTitle().toLowerCase().contains(constraint.toString().toLowerCase())
-                            || learnItem.getDescName().toLowerCase().contains(constraint.toString().toLowerCase())){
+                            || learnItem.getDescName().toLowerCase().contains(constraint.toString().toLowerCase())) {
                         filteredList.add(learnItem);
                     }
                 }
@@ -238,7 +237,6 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
             });
         }
     }
-
 
 
     private void readCursorData(LearnItem learnItem, ViewHolder viewHolder) {

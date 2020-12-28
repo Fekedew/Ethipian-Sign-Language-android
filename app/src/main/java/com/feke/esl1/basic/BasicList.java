@@ -1,7 +1,9 @@
 package com.feke.esl1.basic;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -16,7 +18,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BasicList extends AppCompatActivity {
-
 
 
     TabLayout tabLayout;
@@ -39,13 +40,14 @@ public class BasicList extends AppCompatActivity {
         this.tabLayout.setupWithViewPager(this.viewPager);
         setUpViewPager(viewPager, arrayList);
     }
+
     private void setUpViewPager(ViewPager viewPager2, ArrayList<String> arrayList) {
         MainAdapter pageAdapter = new MainAdapter(getSupportFragmentManager());
 
         MainFragment fragment = new MainFragment();
 
 
-        for (int i=0; i<arrayList.size(); i++){
+        for (int i = 0; i < arrayList.size(); i++) {
             Bundle bundle = new Bundle();
             bundle.putString("type", arrayList.get(i));
             bundle.putString("folder", getIntent().getStringExtra("type"));
@@ -56,8 +58,6 @@ public class BasicList extends AppCompatActivity {
         viewPager2.setAdapter(pageAdapter);
 
     }
-
-
 
 
     /* access modifiers changed from: private */

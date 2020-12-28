@@ -1,6 +1,7 @@
 package com.feke.esl1;
 
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.AssetManager;
@@ -14,6 +15,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -26,7 +28,7 @@ import com.feke.esl1.favorite.FavDB;
 import java.util.ArrayList;
 import java.util.List;
 
-public class   MainFragment extends Fragment implements View.OnClickListener {
+public class MainFragment extends Fragment implements View.OnClickListener {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     private String mParam1;
@@ -75,20 +77,20 @@ public class   MainFragment extends Fragment implements View.OnClickListener {
             recyclerView.setHasFixedSize(false);
             recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
+//            Toast.makeText(getContext(), "Hey you are in learn page", Toast.LENGTH_LONG).show();
 
+            //Getting the bottom toolbar image
+            search = view.findViewById(R.id.toolbarBottomSearch);
+            search.setOnClickListener(this);
 
-        //Getting the bottom toolbar image
-        search = view.findViewById(R.id.toolbarBottomSearch);
-        search.setOnClickListener(this);
+            favorite = view.findViewById(R.id.toolbarBottomFav);
+            favorite.setOnClickListener(this);
 
-        favorite = view.findViewById(R.id.toolbarBottomFav);
-        favorite.setOnClickListener(this);
+            trash = view.findViewById(R.id.toolbarBottomHome);
+            trash.setOnClickListener(this);
 
-        trash = view.findViewById(R.id.toolbarBottomHome);
-        trash.setOnClickListener(this);
-
-        info = view.findViewById(R.id.toolbarBottomInfo);
-        info.setOnClickListener(this);
+            info = view.findViewById(R.id.toolbarBottomInfo);
+            info.setOnClickListener(this);
 
 
             learnItems = new ArrayList<>();
@@ -129,8 +131,24 @@ public class   MainFragment extends Fragment implements View.OnClickListener {
             recyclerView.setAdapter(adapter);
 
             return view;
-        }
-        else{
+        } else {
+//            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+//            builder.setMessage(R.string.ex_info)
+//                    .setPositiveButton(R.string.go, new DialogInterface.OnClickListener() {
+//                        @Override
+//                        public void onClick(DialogInterface dialog, int which) {
+//
+//                        }
+//                    })
+//                    .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+//                        @Override
+//                        public void onClick(DialogInterface dialog, int which) {
+//
+//                        }
+//                    });
+//            AlertDialog dialog = builder.create();
+//            dialog.show();
+
             View view = inflater.inflate(R.layout.exercise_home, container, false);
             //remove bottom toolbar
 //            AppBarLayout appBarLayout = view.findViewById(R.id.appBarLayout);
@@ -177,6 +195,7 @@ public class   MainFragment extends Fragment implements View.OnClickListener {
             }
             ExAdapter adapter = new ExAdapter(learnItems, getContext(), folder);
             recyclerView.setAdapter(adapter);
+
             return view;
         }
 
@@ -190,21 +209,21 @@ public class   MainFragment extends Fragment implements View.OnClickListener {
 
 
     //Add to learItems list based on specfic folder
-    public void addToLearnItems(String type, String folder){
+    public void addToLearnItems(String type, String folder) {
         SQLiteDatabase db = favDB.getReadableDatabase();
         Cursor cursor = null;
-        if (type.equals("fav")){
+        if (type.equals("fav")) {
             cursor = favDB.selectAllFavoriteList(folder);
-        }else if (type.equals("single")){
+        } else if (type.equals("single")) {
             cursor = favDB.selectAll(folder);
         }
         try {
             SharedPreferences pref = getContext().getSharedPreferences("LangSettings", Activity.MODE_PRIVATE);
             String lan = pref.getString("selected_language", "");
 
-            int i=0, l = 1;
-            if (lan.equals("am")){
-                l=0;
+            int i = 0, l = 1;
+            if (lan.equals("am")) {
+                l = 0;
             }
             while (cursor.moveToNext()) {
                 String[] whi = cursor.getString(cursor.getColumnIndex(FavDB.ITEM_TITLE)).split("/");
@@ -230,7 +249,7 @@ public class   MainFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         Intent intent;
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.toolbarBottomSearch:
                 intent = new Intent(getContext(), SearchActivity.class);
                 startActivity(intent);
@@ -253,7 +272,7 @@ public class   MainFragment extends Fragment implements View.OnClickListener {
             case R.id.submitEx:
                 Toast.makeText(getContext(), "Here is submitting", Toast.LENGTH_LONG).show();
                 int correct = ExAdapter.correctAnswers.size();
-                Toast.makeText(getContext(), "Correct answers: "+correct+" Out of: "+ExAdapter.allQuestions, Toast.LENGTH_LONG).show();
+                Toast.makeText(getContext(), "Correct answers: " + correct + " Out of: " + ExAdapter.allQuestions, Toast.LENGTH_LONG).show();
 
                 break;
         }

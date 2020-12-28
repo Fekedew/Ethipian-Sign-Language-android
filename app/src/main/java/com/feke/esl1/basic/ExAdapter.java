@@ -35,9 +35,9 @@ import pl.droidsonroids.gif.GifDrawable;
 
 public class ExAdapter extends RecyclerView.Adapter<ExAdapter.ViewHolder> {
 
-    private  String folder;
-    private String[]  select_ah = new String[4];
-    private String[]  select_en = new String[4];
+    private String folder;
+    private String[] select_ah = new String[4];
+    private String[] select_en = new String[4];
     private List<LearnItem> learnItems;
     private Context context;
     private FavDB favDB;
@@ -46,11 +46,10 @@ public class ExAdapter extends RecyclerView.Adapter<ExAdapter.ViewHolder> {
     public static int allQuestions;
 
 
-
     public ExAdapter(List<LearnItem> learnItems, Context context, String folder) {
         this.learnItems = learnItems;
         this.context = context;
-        this.folder =  folder;
+        this.folder = folder;
         allQuestions = learnItems.size();
     }
 
@@ -59,7 +58,7 @@ public class ExAdapter extends RecyclerView.Adapter<ExAdapter.ViewHolder> {
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         favDB = new FavDB(context);
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.custome_ex_list,
-                    parent, false);
+                parent, false);
         correctAnswers = new HashSet<>();
 
         return new ViewHolder(view);
@@ -79,11 +78,11 @@ public class ExAdapter extends RecyclerView.Adapter<ExAdapter.ViewHolder> {
         SharedPreferences pref = context.getSharedPreferences("LangSettings", Activity.MODE_PRIVATE);
         String lan = pref.getString("selected_language", "");
 
-        int i=0, l = 0;
-        if (lan.equals("am")){
-            l=0;
-        }else if (lan.equals("en")){
-            l=1;
+        int i = 0, l = 0;
+        if (lan.equals("am")) {
+            l = 0;
+        } else if (lan.equals("en")) {
+            l = 1;
         }
         while (cursor.moveToNext()) {
             String[] whi = cursor.getString(cursor.getColumnIndex(FavDB.ITEM_TITLE)).split("/");
@@ -91,28 +90,28 @@ public class ExAdapter extends RecyclerView.Adapter<ExAdapter.ViewHolder> {
             i++;
         }
 
-        Random randomGenerator=new Random();
+        Random randomGenerator = new Random();
         int rand = randomGenerator.nextInt(4) + 1;
-        if (rand==1){
-            holder.choose1.setText( learnItem.getTitle());
-            holder.choose2.setText( select_en[1]);
-            holder.choose3.setText( select_en[2]);
-            holder.choose4.setText( select_en[3]);
-        }else if(rand==2){
-            holder.choose1.setText( select_en[0]);
-            holder.choose2.setText( learnItem.getTitle());
-            holder.choose3.setText( select_en[2]);
-            holder.choose4.setText( select_en[3]);
-        }else if (rand==3){
-            holder.choose1.setText( select_en[0]);
-            holder.choose2.setText( select_en[1]);
-            holder.choose3.setText( learnItem.getTitle());
-            holder.choose4.setText( select_en[3]);
-        }else if (rand==4){
-            holder.choose1.setText( select_en[0]);
-            holder.choose2.setText( select_en[1]);
-            holder.choose3.setText( select_en[2]);
-            holder.choose4.setText( learnItem.getTitle());
+        if (rand == 1) {
+            holder.choose1.setText(learnItem.getTitle());
+            holder.choose2.setText(select_en[1]);
+            holder.choose3.setText(select_en[2]);
+            holder.choose4.setText(select_en[3]);
+        } else if (rand == 2) {
+            holder.choose1.setText(select_en[0]);
+            holder.choose2.setText(learnItem.getTitle());
+            holder.choose3.setText(select_en[2]);
+            holder.choose4.setText(select_en[3]);
+        } else if (rand == 3) {
+            holder.choose1.setText(select_en[0]);
+            holder.choose2.setText(select_en[1]);
+            holder.choose3.setText(learnItem.getTitle());
+            holder.choose4.setText(select_en[3]);
+        } else if (rand == 4) {
+            holder.choose1.setText(select_en[0]);
+            holder.choose2.setText(select_en[1]);
+            holder.choose3.setText(select_en[2]);
+            holder.choose4.setText(learnItem.getTitle());
         }
         holder.radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -120,10 +119,10 @@ public class ExAdapter extends RecyclerView.Adapter<ExAdapter.ViewHolder> {
                 int selectedId = holder.radioGroup.getCheckedRadioButtonId();
                 RadioButton selectedRadio = holder.itemView.findViewById(selectedId);
                 String selectedValue = selectedRadio.getText().toString();
-                if (selectedValue.equals(learnItem.getTitle())){
+                if (selectedValue.equals(learnItem.getTitle())) {
                     Toast.makeText(context, "Correct choose", Toast.LENGTH_LONG).show();
                     correctAnswers.add(learnItem.getTitle());
-                }else{
+                } else {
                     Toast.makeText(context, "Wrong choose", Toast.LENGTH_LONG).show();
                 }
             }
@@ -192,7 +191,6 @@ public class ExAdapter extends RecyclerView.Adapter<ExAdapter.ViewHolder> {
             choose2 = itemView.findViewById(R.id.choose2);
             choose3 = itemView.findViewById(R.id.choose3);
             choose4 = itemView.findViewById(R.id.choose4);
-
 
 
         }

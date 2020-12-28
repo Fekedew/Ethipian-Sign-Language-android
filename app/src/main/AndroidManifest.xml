@@ -41,6 +41,10 @@
         <activity
             android:name=".intermediate.IntermediateHome"
             android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".LoadMore"
+            android:label="@string/load_more"
+            android:parentActivityName=".MainActivity" />
     </application>
 
 </manifest>

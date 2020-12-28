@@ -20,6 +20,7 @@ import java.util.Locale;
 public class SettingsActivity extends AppCompatActivity {
 
     Button changeLanguage;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,17 +43,17 @@ public class SettingsActivity extends AppCompatActivity {
     private void showLanguageSelectionDialog() {
 
         //List of language
-        String [] langs = {"English", "አማሪኛ"};
+        String[] langs = {"English", "አማሪኛ"};
 
         AlertDialog.Builder mBuilder = new AlertDialog.Builder(SettingsActivity.this);
         mBuilder.setTitle("Choose language");
         mBuilder.setSingleChoiceItems(langs, -1, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                if (i==0){
+                if (i == 0) {
                     setLocale("en");
                     recreate();
-                }else if (i==1){
+                } else if (i == 1) {
                     setLocale("am");
                     recreate();
                 }
@@ -78,7 +79,7 @@ public class SettingsActivity extends AppCompatActivity {
         editor.apply();
     }
 
-    public void loadLocale(){
+    public void loadLocale() {
         SharedPreferences pref = getSharedPreferences("LangSettings", Activity.MODE_PRIVATE);
         String lan = pref.getString("selected_language", "");
         setLocale(lan);

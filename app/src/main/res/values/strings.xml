@@ -12,7 +12,7 @@
     <string name="home">Home</string>
     <string name="share">Share</string>
     <string name="settings">Settings</string>
-    <string name="add_new">Add new</string>
+    <string name="load_more">Load more</string>
     <string name="rate_us">Rate us</string>
     <string name="learn_basic">Basic </string>
     <string name="learn_intermediate">Intermediate </string>
@@ -46,4 +46,8 @@
     <string name="fidel">ሀ ለ መ</string>
     <string name="fidelat">አማርኛ \nፊደላት</string>
     <string name="change_language">Change Language</string>
+
+    <string name="cancel">Canccel</string>
+    <string name="go">Go</string>
+    <string name="ex_info">We randomly generate five question, for you do you wanna start?</string>
 </resources>

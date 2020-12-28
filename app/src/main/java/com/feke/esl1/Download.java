@@ -23,7 +23,7 @@ public class Download {
         if (!file.exists()) {
             file.mkdir();
             System.out.println("\n\nThis is file");
-            System.out.println(file.toString()+"\n\n");
+            System.out.println(file.toString() + "\n\n");
         }
         StringBuilder sb4 = new StringBuilder();
         sb4.append(file.getAbsolutePath());
@@ -32,7 +32,7 @@ public class Download {
         if (!file2.exists()) {
             file2.mkdir();
             System.out.println("\n\nThis is file2");
-            System.out.println(file2.toString()+"\n\n");
+            System.out.println(file2.toString() + "\n\n");
         }
         StringBuilder sb5 = new StringBuilder();
         sb5.append(getPureFileName(str));
@@ -45,11 +45,11 @@ public class Download {
             fileOutputStream.flush();
             fileOutputStream.close();
             System.out.println("\n\nThis is file3");
-            System.out.println(file3.getAbsolutePath() +"\n\n");
+            System.out.println(file3.getAbsolutePath() + "\n\n");
             return file3.getAbsolutePath();
         } catch (Exception unused) {
             System.out.println("\n\nThis is exception");
-            System.out.println(unused +"\n\n");
+            System.out.println(unused + "\n\n");
             return str2;
         }
     }

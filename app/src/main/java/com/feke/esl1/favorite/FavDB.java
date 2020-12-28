@@ -351,7 +351,7 @@ public class FavDB extends SQLiteOpenHelper {
 
     }
 
-    public void insertNumberAssets(){
+    public void insertNumberAssets() {
         //Numbers
 
         SQLiteDatabase db = this.getWritableDatabase();
@@ -544,7 +544,8 @@ public class FavDB extends SQLiteOpenHelper {
         cv.put(IMAGE_ORDER, 1000);
         db.insert(TABLE_NAME, null, cv);
     }
-    public void insertFamilyAssets(){
+
+    public void insertFamilyAssets() {
 
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
@@ -630,7 +631,8 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
     }
-    public void insertAlphabetAssets(){
+
+    public void insertAlphabetAssets() {
 
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
@@ -845,7 +847,8 @@ public class FavDB extends SQLiteOpenHelper {
 
 
     }
-    public void insertMathsAssets(){
+
+    public void insertMathsAssets() {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
         //Maths
@@ -907,7 +910,7 @@ public class FavDB extends SQLiteOpenHelper {
 
     }
 
-    public void insertBodyAssets(){
+    public void insertBodyAssets() {
 
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
@@ -993,7 +996,8 @@ public class FavDB extends SQLiteOpenHelper {
         cv.put(IMAGE_ORDER, 9);
         db.insert(TABLE_NAME, null, cv);
     }
-    public void insertAlbasatAssets(){
+
+    public void insertAlbasatAssets() {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
         //Albasat
@@ -1006,7 +1010,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "cap.jpg");
-        cv.put(ITEM_TITLE,"ኮፍያ /Cap");
+        cv.put(ITEM_TITLE, "ኮፍያ /Cap");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "albasat");
         cv.put(FAVORITE_STATUS, 0);
@@ -1117,7 +1121,8 @@ public class FavDB extends SQLiteOpenHelper {
         cv.put(IMAGE_ORDER, 14);
         db.insert(TABLE_NAME, null, cv);
     }
-    public void insertFoodAssets(){
+
+    public void insertFoodAssets() {
 
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
@@ -1316,7 +1321,7 @@ public class FavDB extends SQLiteOpenHelper {
 
     }
 
-    public void insertVegetableAssets(){
+    public void insertVegetableAssets() {
 
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
@@ -1513,7 +1518,8 @@ public class FavDB extends SQLiteOpenHelper {
         cv.put(IMAGE_ORDER, 5);
         db.insert(TABLE_NAME, null, cv);
     }
-    public void insertAnimalAssets(){
+
+    public void insertAnimalAssets() {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
@@ -1614,7 +1620,8 @@ public class FavDB extends SQLiteOpenHelper {
         cv.put(IMAGE_ORDER, 2);
         db.insert(TABLE_NAME, null, cv);
     }
-    public void insertDayAssets(){
+
+    public void insertDayAssets() {
 
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
@@ -1731,7 +1738,8 @@ public class FavDB extends SQLiteOpenHelper {
         cv.put(IMAGE_ORDER, 2);
         db.insert(TABLE_NAME, null, cv);
     }
-    public void insertFruitsAssets(){
+
+    public void insertFruitsAssets() {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
@@ -1872,6 +1880,7 @@ public class FavDB extends SQLiteOpenHelper {
             return null;
         }
     }
+
     //select all list
     public Cursor selectRandom(String folder) {
         SQLiteDatabase db = this.getReadableDatabase();

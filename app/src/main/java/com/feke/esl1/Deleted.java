@@ -149,9 +149,6 @@
 //    }
 
 
-
-
-
 //    private void loadSigns() {
 //
 //        // check network status
@@ -208,7 +205,6 @@
 //        }
 //
 //    }
-
 
 
 // Get all value from database
@@ -284,8 +280,6 @@
 //        });
 //        return view;
 //        }
-
-
 
 
 //package com.feke.esl1;

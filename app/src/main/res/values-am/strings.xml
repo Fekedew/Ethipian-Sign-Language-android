@@ -13,7 +13,7 @@
     <string name="home">ቤት</string>
     <string name="share">አጋራ</string>
     <string name="settings">ማስተካከያ</string>
-    <string name="add_new">አዲስ ጨምር</string>
+    <string name="load_more">ተጨማሪ ያግኙ</string>
     <string name="rate_us">ደረጃ ይስጡን</string>
     <string name="learn_basic">መሰረታዊ </string>
     <string name="learn_intermediate">መካከለኛ </string>
@@ -47,4 +47,8 @@
     <string name="fidel">ሀ ለ መ</string>
     <string name="fidelat">አማርኛ ፊደላት</string>
     <string name="change_language">ቋንቋ </string>
+
+    <string name="cancel">ሰርዝ</string>
+    <string name="go">ጀምር</string>
+    <string name="ex_info">እኛ እንደፍላጎታችን አምስት ጥያቄን እናመነጫለን ፣ እርስዎ ለመጀመር ይፈልጋሉ?</string>
 </resources>
