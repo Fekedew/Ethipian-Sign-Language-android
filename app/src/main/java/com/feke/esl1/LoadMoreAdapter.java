@@ -1,4 +1,4 @@
-package com.feke.esl1.basic;
+package com.feke.esl1;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -23,9 +23,12 @@ import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+import com.cloudinary.android.MediaManager;
 import com.feke.esl1.LearnItem;
 import com.feke.esl1.R;
 import com.feke.esl1.favorite.FavDB;
+import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -33,7 +36,7 @@ import java.util.List;
 
 import pl.droidsonroids.gif.GifDrawable;
 
-public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
+public class LoadMoreAdapter extends RecyclerView.Adapter<LoadMoreAdapter.ViewHolder> {
 
     private List<LearnItem> learnItems;
     private Context context;
@@ -41,7 +44,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     String type;
 
 
-    public Adapter(List<LearnItem> learnItems, Context context) {
+    public LoadMoreAdapter(List<LearnItem> learnItems, Context context) {
         this.learnItems = learnItems;
         this.context = context;
     }
@@ -67,9 +70,30 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
         holder.descName.setText(learnItem.getDescName());
         holder.descTip.setText(learnItem.getDescTip());
         String path = learnItem.getImageResource();
-        Toast.makeText(context, path+" Here is from cloudinary", Toast.LENGTH_LONG).show();
+        String imagNames[] = path.split("/");
+        String imageName = "";
+        for (int i=0; i<imagNames.length; i++){
+            imageName = imagNames[i];
+        }
+        Toast.makeText(context, imageName+" Here is from cloudinary", Toast.LENGTH_LONG).show();
         if (path.contains(".png") || path.contains(".PNG") || path.contains(".JPG") || path.contains(".jpg")) {
-            holder.imageView.setImageBitmap(loadBitmapFromAssets(context, path));
+//            holder.imageView.setImageBitmap(loadBitmapFromAssets(context, path));
+            Glide.with(context)
+                    .load(MediaManager.get().url().generate(imageName))
+                    .error(R.mipmap.ic_launcher)
+                    .placeholder(R.mipmap.ic_launcher)
+                    .into(holder.imageView);
+
+//            Picasso.with(context).load(MediaManager.get().url().generate("sample.jpg")).into(holder.imageView);
+//"kl7rttxco42vclmdqrdo.jpg"
+//            GlideApp.with(imageView)
+//                    .load(new CloudinaryRequest.Builder(“sample”)
+//                            .transformation(new Transformation().effect(“blur”))
+//                            .responsive(AUTO_FILL)
+//                            .build())
+//                    .into(imageView);
+//            GlideApp.with(this).load(MediaManager.get().url().generate("sample.jpg")).into(imageView);
+
             holder.playBtn.setVisibility(View.GONE);
         } else if (path.contains(".GIF") || path.contains(".gif")) {
             holder.playBtn.setVisibility(View.VISIBLE);

@@ -1,6 +1,7 @@
 package com.feke.esl1;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -10,20 +11,22 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
-import com.feke.esl1.basic.Adapter;
+import com.android.volley.toolbox.Volley;
+import com.cloudinary.android.MediaManager;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class LoadMore extends AppCompatActivity {
 
     //this is the JSON Data URL
-    //make sure you are using the correct ip else it will not work
-    private static final String URL_SIGNS = "http://192.168.41.2/esl/my_api.php";
+    private static final String URL_SIGNS = "http://192.168.45.1/esl/my_api.php";
 
     //a list to store all the products
     List<LearnItem> learnItems;
@@ -36,6 +39,11 @@ public class LoadMore extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.learn_or_ex_list_frament);
+
+        Map config = new HashMap();
+        config.put("cloud_name", "ethiopians-coder");
+        MediaManager.init(this, config);
+
 
         //getting the recyclerview from xml
         recyclerView = findViewById(R.id.basicRecyclerView);
@@ -51,14 +59,6 @@ public class LoadMore extends AppCompatActivity {
     }
 
     private void loadProducts() {
-
-        /*
-         * Creating a String Request
-         * The request type is GET defined by first parameter
-         * The URL is defined in the second parameter
-         * Then we have a Response Listener and a Error Listener
-         * In response listener we will get the JSON response as a String
-         * */
         StringRequest stringRequest = new StringRequest(Request.Method.GET, URL_SIGNS,
                 new Response.Listener<String>() {
                     @Override
@@ -73,6 +73,8 @@ public class LoadMore extends AppCompatActivity {
                                 //getting product object from json array
                                 JSONObject signs = array.getJSONObject(i);
 
+
+                                Toast.makeText(LoadMore.this, "You are on load more", Toast.LENGTH_LONG).show();
                                 //adding the product to product list
                                 learnItems.add(new LearnItem(
                                         signs.getString("img") + "",
@@ -85,9 +87,11 @@ public class LoadMore extends AppCompatActivity {
                             }
 
                             //creating adapter object and setting it to recyclerview
-                            Adapter adapter = new Adapter(learnItems, LoadMore.this);
+                            LoadMoreAdapter adapter = new LoadMoreAdapter(learnItems, LoadMore.this);
                             recyclerView.setAdapter(adapter);
                         } catch (JSONException e) {
+
+                            Toast.makeText(LoadMore.this, "You are on load more error "+e.getMessage(), Toast.LENGTH_LONG).show();
                             e.printStackTrace();
                         }
                     }
@@ -96,10 +100,12 @@ public class LoadMore extends AppCompatActivity {
                     @Override
                     public void onErrorResponse(VolleyError error) {
 
+                        System.out.println(error.getMessage());
+                        Toast.makeText(LoadMore.this, "You are on load more error" + error.getMessage(), Toast.LENGTH_LONG).show();
                     }
                 });
 
         //adding our stringrequest to queue
-//        Volley.newRequestQueue(this).add(stringRequest);
+        Volley.newRequestQueue(this).add(stringRequest);
     }
 }
