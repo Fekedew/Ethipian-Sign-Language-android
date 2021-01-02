@@ -62,6 +62,7 @@ public class FavDB extends SQLiteOpenHelper {
         insertDayAssets();
         insertFruitsAssets();
         insertAmharicFidel();
+        insertNatureAssets();
     }
 
     private void insertAmharicFidel() {
@@ -1825,6 +1826,186 @@ public class FavDB extends SQLiteOpenHelper {
 
     }
 
+    public void insertNatureAssets(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+
+        cv.put(KEY_ID, "cloud.jpg");
+        cv.put(ITEM_TITLE, "h/Cloud");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "nature");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "field.jpg");
+        cv.put(ITEM_TITLE, "h/Field");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "nature");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "fire.jpg");
+        cv.put(ITEM_TITLE, "h/Fire");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "nature");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "flower.jpg");
+        cv.put(ITEM_TITLE, "h/Flower");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "nature");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "forest.jpg");
+        cv.put(ITEM_TITLE, "h/Forest");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "nature");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "grass.jpg");
+        cv.put(ITEM_TITLE, "h/Grass");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "nature");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "hail_ice_snow.jpg");
+        cv.put(ITEM_TITLE, "h/Hail ice snow");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "nature");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "land.jpg");
+        cv.put(ITEM_TITLE, "h/Field");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "nature");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "lightening.jpg");
+        cv.put(ITEM_TITLE, "h/Lightening");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "nature");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "moon.jpg");
+        cv.put(ITEM_TITLE, "h/Moon");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "nature");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "mountain.jpg");
+        cv.put(ITEM_TITLE, "h/Mountain");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "nature");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "rain.jpg");
+        cv.put(ITEM_TITLE, "h/Rain");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "nature");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "river.jpg");
+        cv.put(ITEM_TITLE, "h/River");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "nature");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 1);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "sea.jpg");
+        cv.put(ITEM_TITLE, "h/Sea");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "nature");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 1);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "sky.jpg");
+        cv.put(ITEM_TITLE, "h/Sky");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "nature");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "star.jpg");
+        cv.put(ITEM_TITLE, "h/Star");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "nature");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "stone.jpg");
+        cv.put(ITEM_TITLE, "h/Stone");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "nature");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "sun.jpg");
+        cv.put(ITEM_TITLE, "h/Sun");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "nature");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "tree.jpg");
+        cv.put(ITEM_TITLE, "h/Tree");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "nature");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "valley.jpg");
+        cv.put(ITEM_TITLE, "h/Valley");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "nature");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "waterfall.jpg");
+        cv.put(ITEM_TITLE, "h/Waterfall");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "nature");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 1);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "wood.jpg");
+        cv.put(ITEM_TITLE, "h/Wood");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "nature");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+    }
     //Inserting new data to the table
     public void insertData(String id, String title, String image, String status) {
         SQLiteDatabase db = this.getWritableDatabase();
