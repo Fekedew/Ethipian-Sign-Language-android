@@ -85,14 +85,6 @@ public class LoadMoreAdapter extends RecyclerView.Adapter<LoadMoreAdapter.ViewHo
                     .into(holder.imageView);
 
 //            Picasso.with(context).load(MediaManager.get().url().generate("sample.jpg")).into(holder.imageView);
-//"kl7rttxco42vclmdqrdo.jpg"
-//            GlideApp.with(imageView)
-//                    .load(new CloudinaryRequest.Builder(“sample”)
-//                            .transformation(new Transformation().effect(“blur”))
-//                            .responsive(AUTO_FILL)
-//                            .build())
-//                    .into(imageView);
-//            GlideApp.with(this).load(MediaManager.get().url().generate("sample.jpg")).into(imageView);
 
             holder.playBtn.setVisibility(View.GONE);
         } else if (path.contains(".GIF") || path.contains(".gif")) {

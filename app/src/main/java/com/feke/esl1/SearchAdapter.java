@@ -72,8 +72,10 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
         String path = learnItem.getImageResource();
         if (path.contains(".png") || path.contains(".PNG") || path.contains(".JPG") || path.contains(".jpg")) {
             holder.imageView.setImageBitmap(loadBitmapFromAssets(context, path));
+            holder.playBtn.setVisibility(View.GONE);
         } else if (path.contains(".GIF") || path.contains(".gif")) {
             holder.imageView.setImageDrawable(loadGifDrawable(context, path));
+            holder.playBtn.setVisibility(View.VISIBLE);
         }
 
         Drawable drawable = holder.imageView.getDrawable();

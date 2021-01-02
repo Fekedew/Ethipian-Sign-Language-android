@@ -18,14 +18,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:background="@color/colorPrimaryDark"
-
+        android:background="@drawable/submit_bak"
         android:fontFamily="sans-serif"
         android:text="@string/submit"
         android:textColor="@color/colorWhite"
         android:textSize="25sp"
         android:textStyle="bold|italic"
-        android:typeface="monospace" />
+        android:typeface="serif"
+        />
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

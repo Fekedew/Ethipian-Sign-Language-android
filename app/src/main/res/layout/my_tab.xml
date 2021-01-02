@@ -11,7 +11,7 @@
         android:id="@+id/tabs"
         app:tabIndicatorColor="@color/colorWhite"
         app:tabSelectedTextColor="@color/colorWhite"
-        android:background="@color/colorPrimary"
+        android:background="@color/colorPrimary2"
         app:tabTextColor="@color/colorWhite" />
 
     <androidx.viewpager.widget.ViewPager

@@ -27,6 +27,7 @@ public class SettingsActivity extends AppCompatActivity {
         loadLocale();
         setContentView(R.layout.settings_activity);
 
+
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle(getResources().getString(R.string.app_name));
 

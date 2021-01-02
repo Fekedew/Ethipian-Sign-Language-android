@@ -16,6 +16,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.feke.esl1.basic.BasicList;
 import com.feke.esl1.settings.SettingsActivity;
+import com.feke.esl1.translation.ClassifierActivity;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
@@ -83,7 +84,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         new LearnHome()).commit();
                 break;
             case R.id.nav_translation:
-                Toast.makeText(this, "Sign translation is not yet implemented", Toast.LENGTH_SHORT).show();
+                intent = new Intent(this, ClassifierActivity.class);
+                startActivity(intent);
                 break;
             case R.id.nav_share:
                 Toast.makeText(this, "Share is not yet implemented", Toast.LENGTH_SHORT).show();

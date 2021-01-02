@@ -4,8 +4,16 @@
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <uses-sdk />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
 
 
     <application
@@ -35,7 +43,6 @@
         </activity>
         <activity
             android:name=".basic.BasicList"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:parentActivityName=".basic.BasicHome" />
         <activity
             android:name=".basic.BasicHome"
@@ -47,6 +54,14 @@
             android:name=".LoadMore"
             android:label="@string/load_more"
             android:parentActivityName=".MainActivity" />
+
+        <activity android:name=".translation.ClassifierActivity"
+            android:label="@string/sign_translation"
+            android:theme="@style/AppThemeSignTrans"
+            android:screenOrientation="portrait" />
+
+        <activity android:name=".translation.FileSelection"
+            />
     </application>
 
 </manifest>

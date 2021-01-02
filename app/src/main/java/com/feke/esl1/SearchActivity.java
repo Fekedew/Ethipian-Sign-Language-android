@@ -76,12 +76,9 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
         if (cu == null || cu.getCount() == 0) {
             createTableOnFirstStart();
         }
-//        Toast.makeText(this, "Dir not exit h", Toast.LENGTH_LONG).show();
         final AssetManager assetManager = getAssets();
         try {
             // for assets folder add empty string
-
-            Toast.makeText(this, "you pass Dir not exit", Toast.LENGTH_LONG).show();
             String folders[] = {"alphabet", "numbers", "body", "family", "days", "albasat", "animal", "family",
                     "food_drink", "fruits", "maths", "stationary", "vegetable"
             };

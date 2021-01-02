@@ -87,9 +87,17 @@ public class ExAdapter extends RecyclerView.Adapter<ExAdapter.ViewHolder> {
         while (cursor.moveToNext()) {
             String[] whi = cursor.getString(cursor.getColumnIndex(FavDB.ITEM_TITLE)).split("/");
             select_en[i] = whi[l];
+//            if (i==0){
+//                holder.choose1.setText(learnItem.getTitle());
+//            }else if (i==1){
+//                holder.choose2.setText(learnItem.getTitle());
+//            }else if(i==2){
+//                holder.choose3.setText(learnItem.getTitle());
+//            }else{
+//                holder.choose4.setText(learnItem.getTitle());
+//            }
             i++;
         }
-
         Random randomGenerator = new Random();
         int rand = randomGenerator.nextInt(4) + 1;
         if (rand == 1) {
@@ -113,6 +121,7 @@ public class ExAdapter extends RecyclerView.Adapter<ExAdapter.ViewHolder> {
             holder.choose3.setText(select_en[2]);
             holder.choose4.setText(learnItem.getTitle());
         }
+
         holder.radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {

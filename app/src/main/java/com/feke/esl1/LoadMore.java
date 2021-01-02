@@ -33,6 +33,7 @@ public class LoadMore extends AppCompatActivity {
 
     //the recyclerview
     RecyclerView recyclerView;
+    static  boolean  parseIsInit = false;
 
 
     @Override
@@ -40,10 +41,12 @@ public class LoadMore extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.learn_or_ex_list_frament);
 
-        Map config = new HashMap();
-        config.put("cloud_name", "ethiopians-coder");
-        MediaManager.init(this, config);
-
+        if (!parseIsInit){
+            Map config = new HashMap();
+            config.put("cloud_name", "ethiopians-coder");
+            MediaManager.init(this, config);
+            parseIsInit=true;
+        }
 
         //getting the recyclerview from xml
         recyclerView = findViewById(R.id.basicRecyclerView);

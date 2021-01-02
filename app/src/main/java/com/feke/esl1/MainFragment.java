@@ -116,10 +116,10 @@ public class MainFragment extends Fragment implements View.OnClickListener {
                         favorite.setImageResource(R.drawable.ic_favorite_red_24dp);
                         favorite.setEnabled(false);
                         for (int i = 0; i < folders.length; i++) {
-                            addToLearnItems("fav", folders[i]);
+                            addToLearnItems("fav", folders[i], "le");
                         }
                     } else {
-                        addToLearnItems("single", folder);
+                        addToLearnItems("single", folder, "le");
                     }
                 }
             } catch (Exception e) {
@@ -148,9 +148,6 @@ public class MainFragment extends Fragment implements View.OnClickListener {
 //            dialog.show();
 
             View view = inflater.inflate(R.layout.exercise_home, container, false);
-            //remove bottom toolbar
-//            AppBarLayout appBarLayout = view.findViewById(R.id.appBarLayout);
-//            appBarLayout.setVisibility(View.GONE);
 
             recyclerView = view.findViewById(R.id.exRecyclerView);
             recyclerView.setHasFixedSize(false);
@@ -182,10 +179,10 @@ public class MainFragment extends Fragment implements View.OnClickListener {
                         favorite.setImageResource(R.drawable.ic_favorite_red_24dp);
                         favorite.setEnabled(false);
                         for (int i = 0; i < folders.length; i++) {
-                            addToLearnItems("fav", folders[i]);
+                            addToLearnItems("fav", folders[i], "ex");
                         }
                     } else {
-                        addToLearnItems("single", folder);
+                        addToLearnItems("single", folder, "ex");
                     }
                 }
             } catch (Exception e) {
@@ -206,14 +203,16 @@ public class MainFragment extends Fragment implements View.OnClickListener {
     }
 
 
-    //Add to learItems list based on specfic folder
-    public void addToLearnItems(String type, String folder) {
+    //Add to learItems list based on specific folder
+    public void addToLearnItems(String type, String folder, String ex) {
         SQLiteDatabase db = favDB.getReadableDatabase();
         Cursor cursor = null;
         if (type.equals("fav")) {
             cursor = favDB.selectAllFavoriteList(folder);
-        } else if (type.equals("single")) {
+        } else if (type.equals("single") && ex.equals("le")) {
             cursor = favDB.selectAll(folder);
+        }else if (type.equals("single") && ex.equals("ex")){
+            cursor = favDB.selectRandomFive(folder);
         }
         try {
             SharedPreferences pref = getContext().getSharedPreferences("LangSettings", Activity.MODE_PRIVATE);

@@ -1881,6 +1881,18 @@ public class FavDB extends SQLiteOpenHelper {
         }
     }
 
+    //Select five sign language for exercise
+    public Cursor selectRandomFive(String folder){
+        SQLiteDatabase db = this.getReadableDatabase();
+        String sql = "SELECT * FROM " + TABLE_NAME + " WHERE " + IMAGE_FOLDER + " = '" + folder + "' ORDER BY RANDOM() LIMIT 5";
+//        return db.rawQuery(sql, null, null);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+            return db.rawQuery(sql, null, null);
+        } else {
+            return null;
+        }
+    }
+
     //select all list
     public Cursor selectRandom(String folder) {
         SQLiteDatabase db = this.getReadableDatabase();
