@@ -64,11 +64,13 @@
 
     <string name="model">Model:</string>
     <string-array name="models">
-        <item>Quantized</item>
         <item>Float</item>
+        <item>Quantized</item>
     </string-array>
 
     <string name="device">Device:</string>
+    <string name="ex_suggest">What is the meaning of the abouve sign?</string>
+    <string name="about_us">About us</string>
     <string-array name="devices">
         <item>CPU</item>
         <item>GPU</item>

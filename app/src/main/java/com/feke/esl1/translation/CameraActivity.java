@@ -46,6 +46,8 @@ import android.view.View;
 import android.view.ViewTreeObserver;
 import android.view.WindowManager;
 import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
@@ -87,10 +89,13 @@ public abstract class CameraActivity extends AppCompatActivity
     private LinearLayout bottomSheetLayout;
     private LinearLayout gestureLayout;
     private BottomSheetBehavior sheetBehavior;
-    protected TextView recognitionTextView,
+    EditText recognitionTextView;
+    Button recognitionValueTextView;
+
+    protected TextView recognitionTextView_1,
             recognition1TextView,
             recognition2TextView,
-            recognitionValueTextView,
+            recognitionValueTextView_1,
             recognition1ValueTextView,
             recognition2ValueTextView;
     protected TextView frameValueTextView,
@@ -184,6 +189,22 @@ public abstract class CameraActivity extends AppCompatActivity
 
         recognitionTextView = findViewById(R.id.detected_item);
         recognitionValueTextView = findViewById(R.id.detected_item_value);
+        recognitionValueTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                words = words.substring(0, words.length()-1);
+                recognitionTextView.setText(words);
+//                Toast.makeText(CameraActivity.this, "You are deleting", Toast.LENGTH_LONG).show();
+            }
+        });
+        recognitionValueTextView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                words = "";
+                recognitionTextView.setText(words);
+                return true;
+            }
+        });
         recognition1TextView = findViewById(R.id.detected_item1);
         recognition1ValueTextView = findViewById(R.id.detected_item1_value);
         recognition2TextView = findViewById(R.id.detected_item2);
@@ -259,6 +280,7 @@ public abstract class CameraActivity extends AppCompatActivity
                     public void run() {
                         camera.addCallbackBuffer(bytes);
                         isProcessingFrame = false;
+
                     }
                 };
         processImage();
@@ -331,7 +353,9 @@ public abstract class CameraActivity extends AppCompatActivity
     @Override
     public synchronized void onStart() {
         LOGGER.d("onStart " + this);
+        words = "";
         super.onStart();
+
     }
 
     @Override
@@ -347,7 +371,7 @@ public abstract class CameraActivity extends AppCompatActivity
     @Override
     public synchronized void onPause() {
         LOGGER.d("onPause " + this);
-
+        words = "";
         handlerThread.quitSafely();
         try {
             handlerThread.join();
@@ -363,6 +387,7 @@ public abstract class CameraActivity extends AppCompatActivity
     @Override
     public synchronized void onStop() {
         LOGGER.d("onStop " + this);
+        words = "";
         super.onStop();
     }
 
@@ -479,7 +504,6 @@ public abstract class CameraActivity extends AppCompatActivity
                             this,
                             getLayoutId(),
                             getDesiredPreviewFrameSize());
-
             camera2Fragment.setCamera(cameraId);
             fragment = camera2Fragment;
         } else {
@@ -503,6 +527,22 @@ public abstract class CameraActivity extends AppCompatActivity
         }
     }
 
+    class NextImageReadyThread extends Thread{
+
+        @Override
+        public void run()
+        {
+            try {
+                Thread.sleep(1000);
+            }
+            catch (Exception e) {
+                System.out.println(e);
+            }
+            if (postInferenceCallback != null) {
+                postInferenceCallback.run();
+            }
+        }
+    }
     protected void readyForNextImage() {
         if (postInferenceCallback != null) {
             postInferenceCallback.run();
@@ -531,26 +571,26 @@ public abstract class CameraActivity extends AppCompatActivity
                 if (recognition.getTitle() != null) recognitionTextView.setText(words);
                 if (recognition.getConfidence() != null)
                     recognitionValueTextView.setText(
-                            String.format("%.2f", (100 * recognition.getConfidence())) + "%");
+                            "Clear " +String.format(" %.2f", (100 * recognition.getConfidence())) + "%");
             }
-
-      Recognition recognition1 = results.get(1);
-      if (recognition1 != null) {
-        if (recognition1.getTitle() != null) recognition1TextView.setText(recognition1.getTitle().substring(2));
-        if (recognition1.getConfidence() != null)
-          recognition1ValueTextView.setText(
-                  String.format("%.2f", (100 * recognition1.getConfidence())) + "%");
-      }
-      if (results.size() > 2) {
-        Recognition recognition2 = results.get(2);
-        if (recognition2 != null) {
-          if (recognition2.getTitle() != null)
-            recognition2TextView.setText(recognition2.getTitle().substring(2));
-          if (recognition2.getConfidence() != null)
-            recognition2ValueTextView.setText(
-                    String.format("%.2f", (100 * recognition2.getConfidence())) + "%");
-        }
-      }
+//
+//      Recognition recognition1 = results.get(1);
+//      if (recognition1 != null) {
+//        if (recognition1.getTitle() != null) recognition1TextView.setText(recognition1.getTitle().substring(2));
+//        if (recognition1.getConfidence() != null)
+//          recognition1ValueTextView.setText(
+//                  String.format("%.2f", (100 * recognition1.getConfidence())) + "%");
+//      }
+//      if (results.size() > 2) {
+//        Recognition recognition2 = results.get(2);
+//        if (recognition2 != null) {
+//          if (recognition2.getTitle() != null)
+//            recognition2TextView.setText(recognition2.getTitle().substring(2));
+//          if (recognition2.getConfidence() != null)
+//            recognition2ValueTextView.setText(
+//                    String.format("%.2f", (100 * recognition2.getConfidence())) + "%");
+//        }
+//      }
         }
     }
 
@@ -656,4 +696,6 @@ public abstract class CameraActivity extends AppCompatActivity
     public void onNothingSelected(AdapterView<?> parent) {
         // Do nothing.
     }
+
+
 }

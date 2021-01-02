@@ -21,10 +21,6 @@
     <string name="fekedew_hailemariam">ፈቀደው ኀይለማሪያምማኀይለማሪያም</string>
     <string name="title_activity_settings">ማስተካከያ"></string>
 
-    <!-- Preference Titles -->
-
-    <!-- Messages Preferences -->
-
     <!-- Sync Preferences -->
     <string name="number">ቁጥር</string>
     <string name="ethiopian_basic_sign_language">መሰረታዊ ምልክት ቋንቋ</string>
@@ -39,7 +35,7 @@
     <string name="animal">እንሰሳት </string>
     <string name="nature">ተፈጥሮ </string>
     <string name="ethiopian_intermediate_sign_language">መካከለኛ ምልክት ቋንቋ</string>
-    <!-- TODO: Remove or change this placeholder text -->
+
     <string name="vegetable">አትክልት</string>
     <string name="submit">ጨርሻለሁ ውጤት</string>
     <string name="color">ቀለም</string>
@@ -52,10 +48,12 @@
     <string name="go">ጀምር</string>
     <string name="ex_info">እኛ እንደፍላጎታችን አምስት ጥያቄን እናመነጫለን ፣ እርስዎ ለመጀመር ይፈልጋሉ?</string>
 
+    <string name="ex_suggest">ከላይ ያለው ምልክት ምን ?</string>
+    <string name="about_us">ስለኛ</string>
 
-    <string name="description_info">Info</string>
+    <string name="description_info">መረጃ </string>
     <string name="request_permission">This sample needs camera permission.</string>
-    <string name="camera_error">This device doesn\'t support Camera2 API.</string>
+    <string name="camera_error">This device doesn\'t supporያመለክታልt Camera2 API.</string>
     <string name="toggle_turn_on">NN:On</string>
     <string name="toggle_turn_off">NN:Off</string>
     <string name="toggle">Use NNAPI</string>
@@ -65,8 +63,8 @@
 
     <string name="model">Model:</string>
     <string-array name="models">
-        <item>Quantized</item>
         <item>Float</item>
+        <item>Quantized</item>
     </string-array>
 
     <string name="device">Device:</string>

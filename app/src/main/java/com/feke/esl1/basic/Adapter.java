@@ -67,7 +67,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
         holder.descName.setText(learnItem.getDescName());
         holder.descTip.setText(learnItem.getDescTip());
         String path = learnItem.getImageResource();
-        Toast.makeText(context, path+" Here is from cloudinary", Toast.LENGTH_LONG).show();
+//        Toast.makeText(context, path+" Here is from cloudinary", Toast.LENGTH_LONG).show();
         if (path.contains(".png") || path.contains(".PNG") || path.contains(".JPG") || path.contains(".jpg")) {
             holder.imageView.setImageBitmap(loadBitmapFromAssets(context, path));
             holder.playBtn.setVisibility(View.GONE);
@@ -236,7 +236,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
             while (cursor.moveToNext()) {
                 String item_fav_status = cursor.getString(cursor.getColumnIndex(FavDB.FAVORITE_STATUS));
                 learnItem.setFavStatus(item_fav_status);
-
                 //check favorite status
                 if (item_fav_status != null && item_fav_status.equals("1")) {
                     viewHolder.favBtn.setBackgroundResource(R.drawable.ic_favorite_red_24dp);

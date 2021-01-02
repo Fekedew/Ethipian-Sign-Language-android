@@ -149,7 +149,9 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
                                         }
                                     });
                         }
-                        readyForNextImage();
+//                        readyForNextImage();
+                        NextImageReadyThread next = new NextImageReadyThread();
+                        next.start();
                     }
                 });
     }

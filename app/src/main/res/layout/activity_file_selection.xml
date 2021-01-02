@@ -4,84 +4,96 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FileSelection"
+    tools:context=".translation.FileSelection"
     android:orientation="vertical"
     android:layout_gravity="center"
     android:gravity="center"
     android:background="@color/tmcolor2"
     android:id="@+id/root_parent">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
         android:layout_gravity="center"
+        android:background="@color/tmcolor2"
         android:gravity="center"
-        android:background="@color/tmcolor2">
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:layout_marginBottom="100dp"
+            android:gravity="center"
             android:orientation="vertical">
+
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="10dp">
-                <ImageView
-                    android:scaleType="center"
-                    android:layout_width="wrap_content"
+
+                <TextView
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/tm_logo"/>
+                    android:text="@string/sign_translation"
+                    android:textSize="35sp"
+                    android:textStyle="bold|italic"
+                    android:typeface="sans" />
 
             </androidx.cardview.widget.CardView>
         </LinearLayout>
+
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:padding="10dp">
+
             <androidx.cardview.widget.CardView
+                android:id="@+id/tflite"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                app:cardBackgroundColor="@color/tmcolor1"
-                app:cardCornerRadius="8dp"
                 android:layout_marginHorizontal="30sp"
-                android:id="@+id/tflite">
+                app:cardBackgroundColor="@color/tmcolor1"
+                app:cardCornerRadius="8dp">
 
                 <TextView
-                    android:fontFamily="sans-serif"
+                    android:id="@+id/tflite_text"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginStart="20dp"
+                    android:fontFamily="sans-serif"
                     android:text="Select the tflite File"
                     android:textColor="#FFF"
-                    android:textSize="28sp"
-                    android:id="@+id/tflite_text"/>
+                    android:textSize="28sp" />
 
             </androidx.cardview.widget.CardView>
 
         </RelativeLayout>
+
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:padding="8dp">
+
             <androidx.cardview.widget.CardView
+                android:id="@+id/labels"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                app:cardBackgroundColor="@color/tmcolor1"
-                app:cardCornerRadius="8dp"
                 android:layout_marginHorizontal="30sp"
-                android:id="@+id/labels">
+                app:cardBackgroundColor="@color/tmcolor1"
+                app:cardCornerRadius="8dp">
 
                 <TextView
+                    android:id="@+id/label_text"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginStart="20dp"
                     android:text="Select the labels File"
                     android:textColor="#FFF"
-                    android:textSize="28sp"
-                    android:id="@+id/label_text"/>
+                    android:textSize="28sp" />
 
             </androidx.cardview.widget.CardView>
         </RelativeLayout>

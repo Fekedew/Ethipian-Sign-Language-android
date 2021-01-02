@@ -264,7 +264,8 @@ public class MainFragment extends Fragment implements View.OnClickListener {
                 startActivity(intent);
                 break;
             case R.id.toolbarBottomInfo:
-                Toast.makeText(getContext(), "Here is about us", Toast.LENGTH_LONG).show();
+                intent = new Intent(getContext(), AboutUs.class);
+                startActivity(intent);
                 break;
             case R.id.submitEx:
                 Toast.makeText(getContext(), "Here is submitting", Toast.LENGTH_LONG).show();

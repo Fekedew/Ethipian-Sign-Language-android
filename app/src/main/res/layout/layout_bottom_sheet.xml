@@ -32,21 +32,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
-            <TextView
+            <EditText
                 android:id="@+id/detected_item"
-                android:layout_width="wrap_content"
-                android:text="detected"
+                android:layout_width="match_parent"
+                android:text=""
                 android:layout_height="wrap_content"
                 android:textColor="@android:color/black"
                 android:textSize="16sp" />
 
-            <TextView
+            <Button
                 android:id="@+id/detected_item_value"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="right"
                 android:textColor="@android:color/black"
                 android:textSize="16sp" />
 
