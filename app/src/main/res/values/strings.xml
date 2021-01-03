@@ -71,6 +71,8 @@
     <string name="device">Device:</string>
     <string name="ex_suggest">What is the meaning of the abouve sign?</string>
     <string name="about_us">About us</string>
+    <string name="no_result">No result found</string>
+    <string name="en">EN</string>
     <string-array name="devices">
         <item>CPU</item>
         <item>GPU</item>

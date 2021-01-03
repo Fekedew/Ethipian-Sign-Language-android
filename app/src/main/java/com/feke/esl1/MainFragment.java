@@ -1,19 +1,27 @@
 package com.feke.esl1;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.AssetManager;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -22,9 +30,11 @@ import com.feke.esl1.basic.Adapter;
 import com.feke.esl1.basic.BasicList;
 import com.feke.esl1.basic.ExAdapter;
 import com.feke.esl1.favorite.FavDB;
+import com.feke.esl1.settings.SettingsActivity;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class MainFragment extends Fragment implements View.OnClickListener {
     private static final String ARG_PARAM1 = "param1";
@@ -56,6 +66,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
     @Override // androidx.fragment.app.Fragment
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
         if (getArguments() != null) {
             this.mParam1 = getArguments().getString(ARG_PARAM1);
             this.mParam2 = getArguments().getString(ARG_PARAM2);
@@ -253,7 +264,6 @@ public class MainFragment extends Fragment implements View.OnClickListener {
 //                Toast.makeText(this, "Search image view in the bottom tool bar was clicked", Toast.LENGTH_LONG).show();
                 break;
             case R.id.toolbarBottomFav:
-
                 intent = new Intent(getContext(), BasicList.class);
                 intent.putExtra("type", "all");
                 startActivity(intent);
@@ -275,6 +285,13 @@ public class MainFragment extends Fragment implements View.OnClickListener {
                 break;
         }
     }
+
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.language_menu, menu);
+    }
+
 }
 
 

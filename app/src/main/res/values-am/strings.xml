@@ -44,6 +44,9 @@
     <string name="fidelat">አማርኛ ፊደላት</string>
     <string name="change_language">ቋንቋ </string>
 
+    <string name="en">አማ</string>
+
+
     <string name="cancel">ሰርዝ</string>
     <string name="go">ጀምር</string>
     <string name="ex_info">እኛ እንደፍላጎታችን አምስት ጥያቄን እናመነጫለን ፣ እርስዎ ለመጀመር ይፈልጋሉ?</string>
@@ -61,6 +64,7 @@
     <string name="nnapi">NNAPI</string>
     <string name="threads">Threads:</string>
 
+    <string name="no_result">No result found</string>
     <string name="model">Model:</string>
     <string-array name="models">
         <item>Float</item>

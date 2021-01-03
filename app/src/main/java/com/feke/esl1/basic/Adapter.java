@@ -1,12 +1,14 @@
 package com.feke.esl1.basic;
 
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Animatable;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Build;
 import android.transition.AutoTransition;
 import android.transition.TransitionManager;
@@ -61,7 +63,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
         LearnItem learnItem = learnItems.get(position);
         readCursorData(learnItem, holder);
-
         holder.txtName.setText(learnItem.getName());
 //        holder.description.setText(learnItem.getDescName());
         holder.descName.setText(learnItem.getDescName());
@@ -182,6 +183,20 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
                         expandableView.setVisibility(View.GONE);
                         downArrowBtn.setBackgroundResource(R.drawable.ic_keyboard_arrow_down_black_24dp);
                     }
+                }
+            });
+            downArrowBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Uri imageUri = Uri.parse("android.resource://" + context.getPackageName()
+                            + "/drawable/" + "ic_launcher");
+                    Intent shareIntent = new Intent();
+                    shareIntent.setAction(Intent.ACTION_SEND);
+                    shareIntent.putExtra(Intent.EXTRA_TEXT, "Hello");
+                    shareIntent.putExtra(Intent.EXTRA_STREAM, imageUri);
+                    shareIntent.setType("image/jpeg");
+                    shareIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                    context.startActivity(Intent.createChooser(shareIntent, "send"));
                 }
             });
             descTip.setOnClickListener(new View.OnClickListener() {

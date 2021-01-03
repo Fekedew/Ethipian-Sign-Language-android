@@ -475,7 +475,7 @@ public class FavDB extends SQLiteOpenHelper {
 
 
         cv.put(KEY_ID, "አርባ.png");
-        cv.put(ITEM_TITLE, "አርባ/Fourty");
+        cv.put(ITEM_TITLE, "አርባ/Forty");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "numbers");
         cv.put(FAVORITE_STATUS, 0);
@@ -606,7 +606,7 @@ public class FavDB extends SQLiteOpenHelper {
 
 
         cv.put(KEY_ID, "child.gif");
-        cv.put(ITEM_TITLE, "ህፃን/Babby");
+        cv.put(ITEM_TITLE, "ህፃን/Baby");
         cv.put(ITEM_DISK, "በሁለት እጆች ህፃን ልጅ በሀሳብ መያዝን ማሳየት ወይም በ’ዘ’ እጅ በአፍንጫና ከንፈር መካከል ወደ ላይና ታች ማንቀሳቀስ፡፡");
         cv.put(IMAGE_FOLDER, "family");
         cv.put(FAVORITE_STATUS, 0);
@@ -639,7 +639,7 @@ public class FavDB extends SQLiteOpenHelper {
         ContentValues cv = new ContentValues();
         //ALPHABET
         cv.put(KEY_ID, "A.png");
-        cv.put(ITEM_TITLE, "እሱ/A a");
+        cv.put(ITEM_TITLE, "ኤ/A a");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "alphabet");
         cv.put(FAVORITE_STATUS, 0);
@@ -647,7 +647,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 //
         cv.put(KEY_ID, "B.png");
-        cv.put(ITEM_TITLE, " b/B b");
+        cv.put(ITEM_TITLE, " ቢ/B b");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "alphabet");
         cv.put(FAVORITE_STATUS, 0);
@@ -655,7 +655,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "C.png");
-        cv.put(ITEM_TITLE, " b/C c");
+        cv.put(ITEM_TITLE, "ሲ/C c");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "alphabet");
         cv.put(FAVORITE_STATUS, 0);
@@ -663,7 +663,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "D.png");
-        cv.put(ITEM_TITLE, " b/D d");
+        cv.put(ITEM_TITLE, " ዲ/D d");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "alphabet");
         cv.put(FAVORITE_STATUS, 0);
@@ -671,7 +671,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "E.png");
-        cv.put(ITEM_TITLE, " b/E e");
+        cv.put(ITEM_TITLE, " ኢ/E e");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "alphabet");
         cv.put(FAVORITE_STATUS, 0);
@@ -679,7 +679,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "F.png");
-        cv.put(ITEM_TITLE, " b/F f");
+        cv.put(ITEM_TITLE, " ኤፍ/F f");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "alphabet");
         cv.put(FAVORITE_STATUS, 0);
@@ -687,7 +687,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "G.png");
-        cv.put(ITEM_TITLE, " b/G g");
+        cv.put(ITEM_TITLE, " ጅ/G g");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "alphabet");
         cv.put(FAVORITE_STATUS, 0);
@@ -695,7 +695,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "H.png");
-        cv.put(ITEM_TITLE, " b/H h");
+        cv.put(ITEM_TITLE, " ኤች/H h");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "alphabet");
         cv.put(FAVORITE_STATUS, 0);
@@ -703,7 +703,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "I.png");
-        cv.put(ITEM_TITLE, " b/I i");
+        cv.put(ITEM_TITLE, " አይ/I i");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "alphabet");
         cv.put(FAVORITE_STATUS, 0);
@@ -711,7 +711,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "J.png");
-        cv.put(ITEM_TITLE, " b/J j");
+        cv.put(ITEM_TITLE, " ጄ/J j");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "alphabet");
         cv.put(FAVORITE_STATUS, 0);
@@ -719,7 +719,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "K.png");
-        cv.put(ITEM_TITLE, " b/K k");
+        cv.put(ITEM_TITLE, " ኬ/K k");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "alphabet");
         cv.put(FAVORITE_STATUS, 0);
@@ -727,7 +727,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "L.png");
-        cv.put(ITEM_TITLE, " b/L l");
+        cv.put(ITEM_TITLE, " ኤል/L l");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "alphabet");
         cv.put(FAVORITE_STATUS, 0);
@@ -735,7 +735,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "M.png");
-        cv.put(ITEM_TITLE, " b/M m");
+        cv.put(ITEM_TITLE, " ኤም/M m");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "alphabet");
         cv.put(FAVORITE_STATUS, 0);
@@ -743,7 +743,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "N.png");
-        cv.put(ITEM_TITLE, " b/N n");
+        cv.put(ITEM_TITLE, " ኤን/N n");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "alphabet");
         cv.put(FAVORITE_STATUS, 0);
@@ -751,7 +751,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "O.png");
-        cv.put(ITEM_TITLE, " b/O o");
+        cv.put(ITEM_TITLE, " ኦ/O o");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "alphabet");
         cv.put(FAVORITE_STATUS, 0);
@@ -759,7 +759,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "P.png");
-        cv.put(ITEM_TITLE, " b/P p");
+        cv.put(ITEM_TITLE, " ፒ/P p");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "alphabet");
         cv.put(FAVORITE_STATUS, 0);
@@ -767,7 +767,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "Q.png");
-        cv.put(ITEM_TITLE, " b/Q q");
+        cv.put(ITEM_TITLE, " ኪው/Q q");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "alphabet");
         cv.put(FAVORITE_STATUS, 0);
@@ -775,7 +775,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "R.png");
-        cv.put(ITEM_TITLE, " b/R r");
+        cv.put(ITEM_TITLE, " አር/R r");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "alphabet");
         cv.put(FAVORITE_STATUS, 0);
@@ -783,7 +783,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "S.png");
-        cv.put(ITEM_TITLE, " b/S s");
+        cv.put(ITEM_TITLE, " ኤስ/S s");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "alphabet");
         cv.put(FAVORITE_STATUS, 0);
@@ -791,7 +791,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "T.png");
-        cv.put(ITEM_TITLE, " b/T t");
+        cv.put(ITEM_TITLE, " ቲ/T t");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "alphabet");
         cv.put(FAVORITE_STATUS, 0);
@@ -799,7 +799,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "U.png");
-        cv.put(ITEM_TITLE, " b/U u");
+        cv.put(ITEM_TITLE, " ይው/U u");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "alphabet");
         cv.put(FAVORITE_STATUS, 0);
@@ -807,7 +807,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "V.png");
-        cv.put(ITEM_TITLE, " b/V v");
+        cv.put(ITEM_TITLE, " ቪ/V v");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "alphabet");
         cv.put(FAVORITE_STATUS, 0);
@@ -815,7 +815,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "W.png");
-        cv.put(ITEM_TITLE, " b/W w");
+        cv.put(ITEM_TITLE, " ደብሊው/W w");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "alphabet");
         cv.put(FAVORITE_STATUS, 0);
@@ -823,7 +823,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "X.png");
-        cv.put(ITEM_TITLE, " b/X x");
+        cv.put(ITEM_TITLE, " ኤክስ/X x");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "alphabet");
         cv.put(FAVORITE_STATUS, 0);
@@ -831,7 +831,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "Y.png");
-        cv.put(ITEM_TITLE, " b/Y y");
+        cv.put(ITEM_TITLE, " ዋይ/Y y");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "alphabet");
         cv.put(FAVORITE_STATUS, 0);
@@ -839,7 +839,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "Z.png");
-        cv.put(ITEM_TITLE, " b/Z z");
+        cv.put(ITEM_TITLE, " ዜድ/Z z");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "alphabet");
         cv.put(FAVORITE_STATUS, 0);
@@ -853,32 +853,24 @@ public class FavDB extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
         //Maths
-        cv.put(KEY_ID, "plus.png");
-        cv.put(ITEM_TITLE, "ሰው/Plus");
+        cv.put(KEY_ID, "plus2.png");
+        cv.put(ITEM_TITLE, "መደመር/Plus");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "maths");
         cv.put(FAVORITE_STATUS, 0);
         cv.put(IMAGE_ORDER, 0);
         db.insert(TABLE_NAME, null, cv);
 
-        cv.put(KEY_ID, "minus.png");
-        cv.put(ITEM_TITLE, "ሰው/Minus");
+        cv.put(KEY_ID, "minus2.png");
+        cv.put(ITEM_TITLE, "መቀነስ/Minus");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "maths");
         cv.put(FAVORITE_STATUS, 0);
         cv.put(IMAGE_ORDER, 1);
         db.insert(TABLE_NAME, null, cv);
 
-        cv.put(KEY_ID, "minus2.png");
-        cv.put(ITEM_TITLE, "ሰው/Minus2");
-        cv.put(ITEM_DISK, "No description");
-        cv.put(IMAGE_FOLDER, "maths");
-        cv.put(FAVORITE_STATUS, 0);
-        cv.put(IMAGE_ORDER, 2);
-        db.insert(TABLE_NAME, null, cv);
-
         cv.put(KEY_ID, "division.png");
-        cv.put(ITEM_TITLE, "ሰው/Division");
+        cv.put(ITEM_TITLE, "ማካፈል/Division");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "maths");
         cv.put(FAVORITE_STATUS, 0);
@@ -893,16 +885,24 @@ public class FavDB extends SQLiteOpenHelper {
         cv.put(IMAGE_ORDER, 4);
         db.insert(TABLE_NAME, null, cv);
 
-        cv.put(KEY_ID, "equals.png");
-        cv.put(ITEM_TITLE, "ሰው/Equals");
+        cv.put(KEY_ID, "equals2.png");
+        cv.put(ITEM_TITLE, "ይሆናል/Equals");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "maths");
         cv.put(FAVORITE_STATUS, 0);
-        cv.put(IMAGE_ORDER, 5);
+        cv.put(IMAGE_ORDER, 6);
         db.insert(TABLE_NAME, null, cv);
 
-        cv.put(KEY_ID, "equals2.png");
-        cv.put(ITEM_TITLE, "ሰው/Equals");
+        cv.put(KEY_ID, "greater_than2.png");
+        cv.put(ITEM_TITLE, "ይበልጣል/Greater than");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "maths");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 6);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "less_than.png");
+        cv.put(ITEM_TITLE, "ያንሳል/Less than");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "maths");
         cv.put(FAVORITE_STATUS, 0);
@@ -1328,7 +1328,7 @@ public class FavDB extends SQLiteOpenHelper {
         ContentValues cv = new ContentValues();
         //Vegetable
         cv.put(KEY_ID, "avocado.jpg");
-        cv.put(ITEM_TITLE, "ሆድ/Avocado");
+        cv.put(ITEM_TITLE, "አቫካዶ/Avocado");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "vegetable");
         cv.put(FAVORITE_STATUS, 0);
@@ -1336,7 +1336,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "banana.jpg");
-        cv.put(ITEM_TITLE, "ሆድ/Banana");
+        cv.put(ITEM_TITLE, "ሙዝ/Banana");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "vegetable");
         cv.put(FAVORITE_STATUS, 0);
@@ -1344,23 +1344,16 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "beet_root.jpg");
-        cv.put(ITEM_TITLE, "ሆድ/Beet root");
+        cv.put(ITEM_TITLE, "ቀይ ስር/Beet root");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "vegetable");
         cv.put(FAVORITE_STATUS, 0);
         cv.put(IMAGE_ORDER, 2);
         db.insert(TABLE_NAME, null, cv);
 
-        cv.put(KEY_ID, "breakfast.jpg");
-        cv.put(ITEM_TITLE, "ሆድ/Breakfast");
-        cv.put(ITEM_DISK, "No description");
-        cv.put(IMAGE_FOLDER, "vegetable");
-        cv.put(FAVORITE_STATUS, 0);
-        cv.put(IMAGE_ORDER, 3);
-        db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "cabbage.jpg");
-        cv.put(ITEM_TITLE, "ሆድ/Cabbage");
+        cv.put(ITEM_TITLE, "ጎመን/Cabbage");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "vegetable");
         cv.put(FAVORITE_STATUS, 0);
@@ -1368,7 +1361,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "carrot.jpg");
-        cv.put(ITEM_TITLE, "ሆድ/Carrot");
+        cv.put(ITEM_TITLE, "ካሮት/Cot");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "vegetable");
         cv.put(FAVORITE_STATUS, 0);
@@ -1376,7 +1369,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "chili.jpg");
-        cv.put(ITEM_TITLE, "ሆድ/Chili");
+        cv.put(ITEM_TITLE, "ሚጥሚጣ/Chili");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "vegetable");
         cv.put(FAVORITE_STATUS, 0);
@@ -1384,7 +1377,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "food.jpg");
-        cv.put(ITEM_TITLE, "ሆድ/Food");
+        cv.put(ITEM_TITLE, "ምግብ/Food");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "vegetable");
         cv.put(FAVORITE_STATUS, 0);
@@ -1392,7 +1385,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "fruit.jpg");
-        cv.put(ITEM_TITLE, "ሆድ/Fruit");
+        cv.put(ITEM_TITLE, "ፋራፍሬ/Fruit");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "vegetable");
         cv.put(FAVORITE_STATUS, 0);
@@ -1400,7 +1393,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "invitation.jpg");
-        cv.put(ITEM_TITLE, "ሆድ/Invitation");
+        cv.put(ITEM_TITLE, "ግብዣ/Invitation");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "vegetable");
         cv.put(FAVORITE_STATUS, 0);
@@ -1408,7 +1401,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "lemon.jpg");
-        cv.put(ITEM_TITLE, "ሆድ/Lemon");
+        cv.put(ITEM_TITLE, "ሎሚ/Lemon");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "vegetable");
         cv.put(FAVORITE_STATUS, 0);
@@ -1416,7 +1409,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "lunch.jpg");
-        cv.put(ITEM_TITLE, "ሆድ/Lunch");
+        cv.put(ITEM_TITLE, "ምሳ/Lunch");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "vegetable");
         cv.put(FAVORITE_STATUS, 0);
@@ -1424,7 +1417,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "mango.jpg");
-        cv.put(ITEM_TITLE, "ሆድ/mango");
+        cv.put(ITEM_TITLE, "ማንጎ/mango");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "vegetable");
         cv.put(FAVORITE_STATUS, 0);
@@ -1432,7 +1425,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "onion.jpg");
-        cv.put(ITEM_TITLE, "ሆድ/Onion");
+        cv.put(ITEM_TITLE, "ሽንኩርት/Onion");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "vegetable");
         cv.put(FAVORITE_STATUS, 0);
@@ -1440,7 +1433,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "orange.jpg");
-        cv.put(ITEM_TITLE, "ሆድ/Orange");
+        cv.put(ITEM_TITLE, "ብርቱካን/Orange");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "vegetable");
         cv.put(FAVORITE_STATUS, 0);
@@ -1448,7 +1441,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "papaya.jpg");
-        cv.put(ITEM_TITLE, "ሆድ/Papaya");
+        cv.put(ITEM_TITLE, "ፓፓያ/Papaya");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "vegetable");
         cv.put(FAVORITE_STATUS, 0);
@@ -1456,7 +1449,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "pepper.jpg");
-        cv.put(ITEM_TITLE, "ሆድ/Papper");
+        cv.put(ITEM_TITLE, "ቃሪያ/Papper");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "vegetable");
         cv.put(FAVORITE_STATUS, 0);
@@ -1464,7 +1457,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "pine_apple.jpg");
-        cv.put(ITEM_TITLE, "ሆድ/Pine apple");
+        cv.put(ITEM_TITLE, "አናናስ/Pine apple");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "vegetable");
         cv.put(FAVORITE_STATUS, 0);
@@ -1472,7 +1465,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "pumpkin.jpg");
-        cv.put(ITEM_TITLE, "ሆድ/Pumpkin");
+        cv.put(ITEM_TITLE, "ዱባ/Pumpkia");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "vegetable");
         cv.put(FAVORITE_STATUS, 0);
@@ -1480,7 +1473,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "salad.jpg");
-        cv.put(ITEM_TITLE, "ሆድ/Salad");
+        cv.put(ITEM_TITLE, "ሰላጣ/Salad");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "vegetable");
         cv.put(FAVORITE_STATUS, 0);
@@ -1488,7 +1481,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "sugarcane.jpg");
-        cv.put(ITEM_TITLE, "ሆድ/Sugarcane");
+        cv.put(ITEM_TITLE, "ሸንኮራ/Sugarcane");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "vegetable");
         cv.put(FAVORITE_STATUS, 0);
@@ -1496,7 +1489,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "supper.jpg");
-        cv.put(ITEM_TITLE, "ሆድ/Supper");
+        cv.put(ITEM_TITLE, "እራት/Supper");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "vegetable");
         cv.put(FAVORITE_STATUS, 0);
@@ -1504,7 +1497,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "tomato.jpg");
-        cv.put(ITEM_TITLE, "ሆድ/Tomato");
+        cv.put(ITEM_TITLE, "ቲማቲም/Tomato");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "vegetable");
         cv.put(FAVORITE_STATUS, 0);
@@ -1512,7 +1505,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "vine.jpg");
-        cv.put(ITEM_TITLE, "ሆድ/Vine");
+        cv.put(ITEM_TITLE, "ወይን/Vine");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "vegetable");
         cv.put(FAVORITE_STATUS, 0);
@@ -1526,7 +1519,7 @@ public class FavDB extends SQLiteOpenHelper {
 
         //Animal
         cv.put(KEY_ID, "camel.jpg");
-        cv.put(ITEM_TITLE, "ሆድ/Camel");
+        cv.put(ITEM_TITLE, "ግመል/Camel");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "animal");
         cv.put(FAVORITE_STATUS, 0);
@@ -1534,7 +1527,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "cat.jpg");
-        cv.put(ITEM_TITLE, "ሆድ/Cat");
+        cv.put(ITEM_TITLE, "ድመት/Cat");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "animal");
         cv.put(FAVORITE_STATUS, 0);
@@ -1542,7 +1535,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "dog.jpg");
-        cv.put(ITEM_TITLE, "ሆድ/dog");
+        cv.put(ITEM_TITLE, "ውሻ/dog");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "animal");
         cv.put(FAVORITE_STATUS, 0);
@@ -1550,7 +1543,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "cow.jpg");
-        cv.put(ITEM_TITLE, "ሆድ/Cow");
+        cv.put(ITEM_TITLE, "ላም/Cow");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "animal");
         cv.put(FAVORITE_STATUS, 0);
@@ -1558,7 +1551,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "donkey.jpg");
-        cv.put(ITEM_TITLE, "ሆድ/Donkey");
+        cv.put(ITEM_TITLE, "አህያ/Donkey");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "animal");
         cv.put(FAVORITE_STATUS, 0);
@@ -1566,7 +1559,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "goat.jpg");
-        cv.put(ITEM_TITLE, "ሆድ/Goat");
+        cv.put(ITEM_TITLE, "ፍየል/Goat");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "animal");
         cv.put(FAVORITE_STATUS, 0);
@@ -1574,7 +1567,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "hen.jpg");
-        cv.put(ITEM_TITLE, "ሆድ/Hen");
+        cv.put(ITEM_TITLE, "ዶሮ/Hen");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "animal");
         cv.put(FAVORITE_STATUS, 0);
@@ -1582,7 +1575,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "horse.jpg");
-        cv.put(ITEM_TITLE, "ሆድ/Horse");
+        cv.put(ITEM_TITLE, "ፈረስ/Horse");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "animal");
         cv.put(FAVORITE_STATUS, 0);
@@ -1590,7 +1583,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "mule.jpg");
-        cv.put(ITEM_TITLE, "ሆድ/Mule");
+        cv.put(ITEM_TITLE, "በቅሎ/Mule");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "animal");
         cv.put(FAVORITE_STATUS, 0);
@@ -1598,7 +1591,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "ox.jpg");
-        cv.put(ITEM_TITLE, "ሆድ/Ox");
+        cv.put(ITEM_TITLE, "በሬ/Ox");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "animal");
         cv.put(FAVORITE_STATUS, 0);
@@ -1606,7 +1599,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "pig.jpg");
-        cv.put(ITEM_TITLE, "ሆድ/Pig");
+        cv.put(ITEM_TITLE, "አሳማ/Pig");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "animal");
         cv.put(FAVORITE_STATUS, 0);
@@ -1614,7 +1607,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "sheep.jpg");
-        cv.put(ITEM_TITLE, "ሆድ/Sheep");
+        cv.put(ITEM_TITLE, "በግ/Sheep");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "animal");
         cv.put(FAVORITE_STATUS, 0);
@@ -1628,7 +1621,7 @@ public class FavDB extends SQLiteOpenHelper {
         ContentValues cv = new ContentValues();
 
         cv.put(KEY_ID, "now.png");
-        cv.put(ITEM_TITLE, "h/Now");
+        cv.put(ITEM_TITLE, "አሁን/Now");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "days");
         cv.put(FAVORITE_STATUS, 0);
@@ -1636,7 +1629,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "past.png");
-        cv.put(ITEM_TITLE, "h/Past");
+        cv.put(ITEM_TITLE, "ያለፈ/Past");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "days");
         cv.put(FAVORITE_STATUS, 0);
@@ -1644,7 +1637,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "afternoon.png");
-        cv.put(ITEM_TITLE, "h/Afternoon");
+        cv.put(ITEM_TITLE, "ከሰአት/Afternoon");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "days");
         cv.put(FAVORITE_STATUS, 0);
@@ -1652,7 +1645,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "always.png");
-        cv.put(ITEM_TITLE, "h/Always");
+        cv.put(ITEM_TITLE, "ሁሌም/Always");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "days");
         cv.put(FAVORITE_STATUS, 0);
@@ -1660,7 +1653,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "day_after_tomorrow.png");
-        cv.put(ITEM_TITLE, "h/Day after tomorrow");
+        cv.put(ITEM_TITLE, "ከነገ ወዲያ/Day after tomorrow");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "days");
         cv.put(FAVORITE_STATUS, 0);
@@ -1668,7 +1661,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "day_before_yesterday.png");
-        cv.put(ITEM_TITLE, "h/Day before yesterday");
+        cv.put(ITEM_TITLE, "ከትላንት ወዲያ/Day before yesterday");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "days");
         cv.put(FAVORITE_STATUS, 0);
@@ -1676,7 +1669,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "future.png");
-        cv.put(ITEM_TITLE, "h/Future");
+        cv.put(ITEM_TITLE, "ወደፊት/Future");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "days");
         cv.put(FAVORITE_STATUS, 0);
@@ -1684,7 +1677,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "morning.png");
-        cv.put(ITEM_TITLE, "h/Morning");
+        cv.put(ITEM_TITLE, "ጠዋት/Morning");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "days");
         cv.put(FAVORITE_STATUS, 0);
@@ -1692,7 +1685,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "night.png");
-        cv.put(ITEM_TITLE, "h/Night");
+        cv.put(ITEM_TITLE, "ምሽት/Night");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "days");
         cv.put(FAVORITE_STATUS, 0);
@@ -1700,7 +1693,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "today.png");
-        cv.put(ITEM_TITLE, "h/Today");
+        cv.put(ITEM_TITLE, "ዛሬ/Today");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "days");
         cv.put(FAVORITE_STATUS, 0);
@@ -1708,7 +1701,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "tomorrow.png");
-        cv.put(ITEM_TITLE, "h/Tomorrow");
+        cv.put(ITEM_TITLE, "ነገ/Tomorrow");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "days");
         cv.put(FAVORITE_STATUS, 0);
@@ -1716,7 +1709,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "summer.png");
-        cv.put(ITEM_TITLE, "h/Summer");
+        cv.put(ITEM_TITLE, "ክረምት/Summer");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "days");
         cv.put(FAVORITE_STATUS, 0);
@@ -1724,7 +1717,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "winter.png");
-        cv.put(ITEM_TITLE, "h/Winter");
+        cv.put(ITEM_TITLE, "በጋ/Winter");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "days");
         cv.put(FAVORITE_STATUS, 0);
@@ -1732,7 +1725,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "yesterday.png");
-        cv.put(ITEM_TITLE, "h/Yesterday");
+        cv.put(ITEM_TITLE, "ትላንት/Yesterday");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "days");
         cv.put(FAVORITE_STATUS, 0);
@@ -1745,7 +1738,7 @@ public class FavDB extends SQLiteOpenHelper {
         ContentValues cv = new ContentValues();
 
         cv.put(KEY_ID, "barley.jpg");
-        cv.put(ITEM_TITLE, "h/Barley");
+        cv.put(ITEM_TITLE, "ገብስ/Barley");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "fruits");
         cv.put(FAVORITE_STATUS, 0);
@@ -1753,7 +1746,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "bean.jpg");
-        cv.put(ITEM_TITLE, "h/Bean");
+        cv.put(ITEM_TITLE, "ባቄላ/Bean");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "fruits");
         cv.put(FAVORITE_STATUS, 0);
@@ -1761,7 +1754,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "chick_pean.jpg");
-        cv.put(ITEM_TITLE, "h/Chick pean");
+        cv.put(ITEM_TITLE, "ሽንብራ/Chick pean");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "fruits");
         cv.put(FAVORITE_STATUS, 0);
@@ -1769,15 +1762,15 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "false_banana.jpg");
-        cv.put(ITEM_TITLE, "h/False banana");
+        cv.put(ITEM_TITLE, "እንሰት/False banana");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "fruits");
         cv.put(FAVORITE_STATUS, 0);
         cv.put(IMAGE_ORDER, 0);
         db.insert(TABLE_NAME, null, cv);
 
-        cv.put(KEY_ID, "lentil.jpg");
-        cv.put(ITEM_TITLE, "h/Lentil");
+     cv.put(KEY_ID, "lentil.jpg");
+        cv.put(ITEM_TITLE, "ምስር/Lentil");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "fruits");
         cv.put(FAVORITE_STATUS, 0);
@@ -1785,7 +1778,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "maize.jpg");
-        cv.put(ITEM_TITLE, "h/Maize");
+        cv.put(ITEM_TITLE, "በቆሎ/Maize");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "fruits");
         cv.put(FAVORITE_STATUS, 0);
@@ -1793,7 +1786,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "pea.jpg");
-        cv.put(ITEM_TITLE, "h/Pea");
+        cv.put(ITEM_TITLE, "ዓተር/Pea");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "fruits");
         cv.put(FAVORITE_STATUS, 0);
@@ -1801,7 +1794,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "sorghum.jpg");
-        cv.put(ITEM_TITLE, "h/Sorghum");
+        cv.put(ITEM_TITLE, "ማሽላ/Sorghum");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "fruits");
         cv.put(FAVORITE_STATUS, 0);
@@ -1809,7 +1802,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "teff.jpg");
-        cv.put(ITEM_TITLE, "h/Teff");
+        cv.put(ITEM_TITLE, "ጤፍ/Teff");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "fruits");
         cv.put(FAVORITE_STATUS, 0);
@@ -1817,7 +1810,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "wheat.jpg");
-        cv.put(ITEM_TITLE, "h/Wheat");
+        cv.put(ITEM_TITLE, "ስንዴ/Wheat");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "fruits");
         cv.put(FAVORITE_STATUS, 0);
@@ -1831,7 +1824,7 @@ public class FavDB extends SQLiteOpenHelper {
         ContentValues cv = new ContentValues();
 
         cv.put(KEY_ID, "cloud.jpg");
-        cv.put(ITEM_TITLE, "h/Cloud");
+        cv.put(ITEM_TITLE, "ዳመና/Cloud");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "nature");
         cv.put(FAVORITE_STATUS, 0);
@@ -1839,7 +1832,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "field.jpg");
-        cv.put(ITEM_TITLE, "h/Field");
+        cv.put(ITEM_TITLE, "ሜዳ/Field");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "nature");
         cv.put(FAVORITE_STATUS, 0);
@@ -1847,7 +1840,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "fire.jpg");
-        cv.put(ITEM_TITLE, "h/Fire");
+        cv.put(ITEM_TITLE, "እሳት/Fire");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "nature");
         cv.put(FAVORITE_STATUS, 0);
@@ -1855,7 +1848,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "flower.jpg");
-        cv.put(ITEM_TITLE, "h/Flower");
+        cv.put(ITEM_TITLE, "አበባ/Flower");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "nature");
         cv.put(FAVORITE_STATUS, 0);
@@ -1863,7 +1856,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "forest.jpg");
-        cv.put(ITEM_TITLE, "h/Forest");
+        cv.put(ITEM_TITLE, "ጫካ/Forest");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "nature");
         cv.put(FAVORITE_STATUS, 0);
@@ -1871,7 +1864,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "grass.jpg");
-        cv.put(ITEM_TITLE, "h/Grass");
+        cv.put(ITEM_TITLE, "ሳር/Grass");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "nature");
         cv.put(FAVORITE_STATUS, 0);
@@ -1879,7 +1872,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "hail_ice_snow.jpg");
-        cv.put(ITEM_TITLE, "h/Hail ice snow");
+        cv.put(ITEM_TITLE, "በረዶ/Hail ice snow");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "nature");
         cv.put(FAVORITE_STATUS, 0);
@@ -1887,7 +1880,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "land.jpg");
-        cv.put(ITEM_TITLE, "h/Field");
+        cv.put(ITEM_TITLE, "መሬት/Land");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "nature");
         cv.put(FAVORITE_STATUS, 0);
@@ -1895,7 +1888,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "lightening.jpg");
-        cv.put(ITEM_TITLE, "h/Lightening");
+        cv.put(ITEM_TITLE, "መብረቅ/Lightening");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "nature");
         cv.put(FAVORITE_STATUS, 0);
@@ -1903,7 +1896,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "moon.jpg");
-        cv.put(ITEM_TITLE, "h/Moon");
+        cv.put(ITEM_TITLE, "ጨረቃ/Moon");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "nature");
         cv.put(FAVORITE_STATUS, 0);
@@ -1911,7 +1904,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "mountain.jpg");
-        cv.put(ITEM_TITLE, "h/Mountain");
+        cv.put(ITEM_TITLE, "ተራራ/Mountain");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "nature");
         cv.put(FAVORITE_STATUS, 0);
@@ -1919,7 +1912,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "rain.jpg");
-        cv.put(ITEM_TITLE, "h/Rain");
+        cv.put(ITEM_TITLE, "ዝናብ/Rain");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "nature");
         cv.put(FAVORITE_STATUS, 0);
@@ -1927,7 +1920,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "river.jpg");
-        cv.put(ITEM_TITLE, "h/River");
+        cv.put(ITEM_TITLE, "ወንዝ/River");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "nature");
         cv.put(FAVORITE_STATUS, 0);
@@ -1935,7 +1928,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "sea.jpg");
-        cv.put(ITEM_TITLE, "h/Sea");
+        cv.put(ITEM_TITLE, "ባህር/Sea");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "nature");
         cv.put(FAVORITE_STATUS, 0);
@@ -1943,7 +1936,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "sky.jpg");
-        cv.put(ITEM_TITLE, "h/Sky");
+        cv.put(ITEM_TITLE, "ሰማይ/Sky");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "nature");
         cv.put(FAVORITE_STATUS, 0);
@@ -1951,7 +1944,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "star.jpg");
-        cv.put(ITEM_TITLE, "h/Star");
+        cv.put(ITEM_TITLE, "ኮኮብ/Star");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "nature");
         cv.put(FAVORITE_STATUS, 0);
@@ -1959,7 +1952,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "stone.jpg");
-        cv.put(ITEM_TITLE, "h/Stone");
+        cv.put(ITEM_TITLE, "ድንጋይ/Stone");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "nature");
         cv.put(FAVORITE_STATUS, 0);
@@ -1967,7 +1960,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "sun.jpg");
-        cv.put(ITEM_TITLE, "h/Sun");
+        cv.put(ITEM_TITLE, "ጸሀይ/Sun");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "nature");
         cv.put(FAVORITE_STATUS, 0);
@@ -1975,7 +1968,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "tree.jpg");
-        cv.put(ITEM_TITLE, "h/Tree");
+        cv.put(ITEM_TITLE, "ዛፍ/Tree");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "nature");
         cv.put(FAVORITE_STATUS, 0);
@@ -1983,7 +1976,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "valley.jpg");
-        cv.put(ITEM_TITLE, "h/Valley");
+        cv.put(ITEM_TITLE, "ሸለቆ/Valley");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "nature");
         cv.put(FAVORITE_STATUS, 0);
@@ -1991,7 +1984,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "waterfall.jpg");
-        cv.put(ITEM_TITLE, "h/Waterfall");
+        cv.put(ITEM_TITLE, "ፏፏቴ/Waterfall");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "nature");
         cv.put(FAVORITE_STATUS, 0);
@@ -1999,7 +1992,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "wood.jpg");
-        cv.put(ITEM_TITLE, "h/Wood");
+        cv.put(ITEM_TITLE, "እንጨት/Wood");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "nature");
         cv.put(FAVORITE_STATUS, 0);

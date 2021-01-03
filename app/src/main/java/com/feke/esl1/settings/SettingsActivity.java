@@ -21,6 +21,10 @@ public class SettingsActivity extends AppCompatActivity {
 
     Button changeLanguage;
 
+
+    public SettingsActivity() {
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,7 +70,7 @@ public class SettingsActivity extends AppCompatActivity {
         mDialog.show();
     }
 
-    private void setLocale(String lang) {
+    public void setLocale(String lang) {
         Locale locale = new Locale(lang);
         Locale.setDefault(locale);
 
@@ -85,4 +89,6 @@ public class SettingsActivity extends AppCompatActivity {
         String lan = pref.getString("selected_language", "");
         setLocale(lan);
     }
+
+
 }

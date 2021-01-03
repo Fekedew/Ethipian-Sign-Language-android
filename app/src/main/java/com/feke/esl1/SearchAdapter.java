@@ -142,10 +142,15 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
                         filteredList.add(learnItem);
                     }
                 }
+
             }
 
             FilterResults filterResults = new FilterResults();
             filterResults.values = filteredList;
+
+            if (filterResults.count<=0){
+                Toast.makeText(context, "No result found", Toast.LENGTH_LONG).show();
+            }
 
             return filterResults;
         }
@@ -161,7 +166,6 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView txtName;
-        TextView description;
         TextView descName;
         TextView descTip;
         Button playBtn;
@@ -170,13 +174,14 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
         ConstraintLayout expandableView;
         CardView cardView;
         ImageView imageView;
+        TextView emptyView;
 
         public ViewHolder(@NonNull final View itemView) {
             super(itemView);
 
+            emptyView = itemView.findViewById(R.id.emptyView);
             imageView = itemView.findViewById(R.id.imageView);
             txtName = itemView.findViewById(R.id.name);
-//            description = itemView.findViewById(R.id.description);
             descName = itemView.findViewById(R.id.descName);
             descTip = itemView.findViewById(R.id.descTip);
             favBtn = itemView.findViewById(R.id.favBtn);
