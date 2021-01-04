@@ -14,7 +14,7 @@ import com.feke.esl1.basic.BasicList;
 
 public class AdvancedHome extends AppCompatActivity implements View.OnClickListener {
 
-    CardView albasat, animal, nature, food, vegetable, fruit, color;
+    CardView spiritual, animal, nature, food, vegetable, fruit, color;
     Activity activity;
     Intent in;
 
@@ -23,7 +23,7 @@ public class AdvancedHome extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.advanced_home);
 
-        albasat = findViewById(R.id.albasat);
+        spiritual = findViewById(R.id.spiritual);
         animal = findViewById(R.id.wild_animal);
         nature = findViewById(R.id.nature);
         food = findViewById(R.id.food_and_drink);
@@ -33,7 +33,7 @@ public class AdvancedHome extends AppCompatActivity implements View.OnClickListe
 //        fruit = findViewById(R.id.);
 
         //Set on click listner
-        albasat.setOnClickListener(this);
+        spiritual.setOnClickListener(this);
         food.setOnClickListener(this);
         animal.setOnClickListener(this);
         vegetable.setOnClickListener(this);
@@ -47,9 +47,9 @@ public class AdvancedHome extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.albasat:
+            case R.id.spiritual:
                 in = new Intent(activity, BasicList.class);
-                in.putExtra("type", "albasat");
+                in.putExtra("type", "spiritual");
                 startActivity(in);
                 break;
             case R.id.wild_animal:

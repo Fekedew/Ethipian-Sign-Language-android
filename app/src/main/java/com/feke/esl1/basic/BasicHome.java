@@ -13,7 +13,7 @@ import com.feke.esl1.R;
 
 public class BasicHome extends AppCompatActivity {
 
-    CardView learnNumber, learnAlphabet, learnAmharicFidel, learnMonth, learnBodyPart, learnFamily, learnMaths;
+    CardView learnNumber, learnAlphabet, learnAmharicFidel, learnMonth, learnBodyPart, learnFamily, learnMaths, weeks;
     Activity activity;
     Intent in;
 
@@ -29,9 +29,18 @@ public class BasicHome extends AppCompatActivity {
         learnFamily = findViewById(R.id.lf);
         learnMaths = findViewById(R.id.maths);
         learnAmharicFidel = findViewById(R.id.amharicFidel);
+        weeks = findViewById(R.id.weeks);
 
         activity = this;
 
+        weeks.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                in = new Intent(activity, BasicList.class);
+                in.putExtra("type", "weeks");
+                startActivity(in);
+            }
+        });
         learnAmharicFidel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

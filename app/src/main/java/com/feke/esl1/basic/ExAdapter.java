@@ -133,7 +133,7 @@ public class ExAdapter extends RecyclerView.Adapter<ExAdapter.ViewHolder> {
                     if (correctAns.contains(learnItem.getTitle())) {
 
                     } else {
-                        Toast.makeText(context, "Correct choose", Toast.LENGTH_LONG).show();
+//                        Toast.makeText(context, "Correct choose", Toast.LENGTH_LONG).show();
                         correctAns.add(learnItem.getTitle());
                     }
                 } else {

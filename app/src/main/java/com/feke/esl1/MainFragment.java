@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -74,7 +75,6 @@ public class MainFragment extends Fragment implements View.OnClickListener {
             recyclerView.setHasFixedSize(false);
             recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-
             //Getting the bottom toolbar image
             search = view.findViewById(R.id.toolbarBottomSearch);
             search.setOnClickListener(this);
@@ -125,25 +125,8 @@ public class MainFragment extends Fragment implements View.OnClickListener {
             }
             Adapter adapter = new Adapter(learnItems, getContext());
             recyclerView.setAdapter(adapter);
-
             return view;
         } else {
-//            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-//            builder.setMessage(R.string.ex_info)
-//                    .setPositiveButton(R.string.go, new DialogInterface.OnClickListener() {
-//                        @Override
-//                        public void onClick(DialogInterface dialog, int which) {
-//
-//                        }
-//                    })
-//                    .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
-//                        @Override
-//                        public void onClick(DialogInterface dialog, int which) {
-//
-//                        }
-//                    });
-//            AlertDialog dialog = builder.create();
-//            dialog.show();
 
             View view = inflater.inflate(R.layout.exercise_home, container, false);
 
@@ -232,7 +215,6 @@ public class MainFragment extends Fragment implements View.OnClickListener {
                         "" + cursor.getString(cursor.getColumnIndex(FavDB.KEY_ID)),
                         "" + cursor.getString(cursor.getColumnIndex(FavDB.FAVORITE_STATUS))
                 ));
-
             }
         } finally {
             if (cursor != null && cursor.isClosed())
@@ -264,11 +246,11 @@ public class MainFragment extends Fragment implements View.OnClickListener {
                 startActivity(intent);
                 break;
             case R.id.submitEx:
-                int correct = ExAdapter.correctAns.size();
+                List<String> correctAns = ExAdapter.correctAns;
+                int correct = correctAns.size();
                 favDB.updateProgress(folder, correct);
                 Toast.makeText(getContext(), "Correct answers: " + correct + " Out of: "
-                        + ExAdapter.allQuestions, Toast.LENGTH_LONG).show();
-
+                        + ExAdapter.allQuestions + "\n\n "+correctAns.toString(), Toast.LENGTH_LONG).show();
                 break;
         }
     }
@@ -279,6 +261,16 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         inflater.inflate(R.menu.language_menu, menu);
     }
 
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId()){
+            case R.menu.language_menu:
+                Toast.makeText(getContext(), item.getTitle(), Toast.LENGTH_LONG).show();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }
 
 

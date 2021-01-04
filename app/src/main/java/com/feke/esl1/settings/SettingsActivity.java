@@ -19,9 +19,9 @@ import com.feke.esl1.favorite.FavDB;
 import java.util.Locale;
 
 
-public class SettingsActivity extends AppCompatActivity {
+public class SettingsActivity extends AppCompatActivity implements View.OnClickListener{
 
-    Button changeLanguage, clearFav;
+    Button changeLanguage, clearFav, clearProgress;
 
     private FavDB favDB;
 
@@ -43,6 +43,8 @@ public class SettingsActivity extends AppCompatActivity {
         actionBar.setTitle(getResources().getString(R.string.app_name));
 
         changeLanguage = findViewById(R.id.changeLanguage);
+        clearProgress = findViewById(R.id.clearProgress);
+        clearProgress.setOnClickListener(this);
         clearFav = findViewById(R.id.clearAllFav);
         clearFav.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,7 +81,7 @@ public class SettingsActivity extends AppCompatActivity {
     private void showLanguageSelectionDialog() {
 
         //List of language
-        String[] langs = {"English", "አማሪኛ"};
+        String[] langs = {"English", "አማርኛ"};
 
         AlertDialog.Builder mBuilder = new AlertDialog.Builder(SettingsActivity.this);
         mBuilder.setTitle("Choose language");
@@ -122,4 +124,29 @@ public class SettingsActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.clearProgress:
+                AlertDialog.Builder mBuilder = new AlertDialog.Builder(SettingsActivity.this);
+                mBuilder.setTitle("Are you sure to erase all progress data?");
+                mBuilder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+                mBuilder.setPositiveButton(R.string.go, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        favDB.removeAllProgress();
+                        Toast.makeText(getBaseContext(), "Done", Toast.LENGTH_LONG).show();
+                    }
+                });
+                //Show the alert dialog
+                AlertDialog mDialog = mBuilder.create();
+                mDialog.show();
+                break;
+        }
+    }
 }

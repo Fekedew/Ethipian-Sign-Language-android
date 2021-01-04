@@ -18,7 +18,7 @@
     <string name="learn_basic">መሰረታዊ </string>
     <string name="learn_intermediate">መካከለኛ </string>
     <string name="learn_advance">የላቀ </string>
-    <string name="fekedew_hailemariam">ፈቀደው ኀይለማሪያምማኀይለማሪያም</string>
+    <string name="fekedew_hailemariam">ፈቀደው ኀይለማሪያም</string>
     <string name="title_activity_settings">ማስተካከያ"></string>
 
     <string name="some_settings">ማስተካከያዎች</string>
@@ -26,6 +26,7 @@
     <string name="clear_fav">ሁሉንም የተወደዱ ይሰርዙ</string>
     <string name="file_picker">"ፋይል ይምረጡ "</string>
     <string name="esl">የኢትዮጵያ ምልክት ቋንቋ</string>
+    <string name="clear_pro">የፈተና ውጤት ሰርዝ</string>
     <!-- Sync Preferences -->
     <string name="number">ቁጥር</string>
     <string name="ethiopian_basic_sign_language">መሰረታዊ ምልክት ቋንቋ</string>
@@ -41,6 +42,9 @@
     <string name="nature">ተፈጥሮ </string>
     <string name="ethiopian_intermediate_sign_language">መካከለኛ ምልክት ቋንቋ</string>
 
+
+    <string name="names">ስሞች</string>
+    <string name="weeks">ዕለታት</string>
     <string name="vegetable">አትክልት</string>
     <string name="submit">ጨርሻለሁ ውጤት</string>
     <string name="color">ቀለም</string>
@@ -52,11 +56,11 @@
     <string name="en">አማ</string>
 
 
-    <string name="cancel">ሰርዝ</string>
+    <string name="cancel">ተው</string>
     <string name="go">ጀምር</string>
     <string name="ex_info">እኛ እንደፍላጎታችን አምስት ጥያቄን እናመነጫለን ፣ እርስዎ ለመጀመር ይፈልጋሉ?</string>
 
-    <string name="ex_suggest">ከላይ ያለው ምልክት ምን ?</string>
+    <string name="ex_suggest">ከላይ ያለው ምልክት ምንድን ነው?</string>
     <string name="about_us">ስለኛ</string>
 
     <string name="description_info">መረጃ </string>

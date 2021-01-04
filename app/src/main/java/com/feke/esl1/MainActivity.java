@@ -1,6 +1,7 @@
 package com.feke.esl1;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -92,7 +93,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(intent);
                 break;
             case R.id.nav_share:
-                Toast.makeText(this, "Share is not yet implemented", Toast.LENGTH_SHORT).show();
+                Intent shareIntent = new Intent();
+                shareIntent.setAction(Intent.ACTION_SEND);
+                shareIntent.putExtra(Intent.EXTRA_TEXT, "Hello! Thank for using this application. search for ethiopian sing language in play store");
+                shareIntent.setType("text/plain");
+
+                Intent send = Intent.createChooser(shareIntent, null);
+                startActivity(send);
                 break;
             case R.id.nav_video_call:
                 Toast.makeText(this, "Video call is not yet implemented", Toast.LENGTH_SHORT).show();

@@ -1,17 +1,16 @@
 package com.feke.esl1.basic;
 
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
-
 import com.feke.esl1.MainFragment;
 import com.feke.esl1.R;
 import com.google.android.material.tabs.TabLayout;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,8 +31,11 @@ public class BasicList extends AppCompatActivity {
         ArrayList<String> arrayList = new ArrayList<>();
 
         arrayList.add("Learn");
+        arrayList.add("Exercise");
         if (!getIntent().getStringExtra("type").equals("all")) {
-            arrayList.add("Exercise");
+            tabLayout.setVisibility(View.VISIBLE);
+        }else{
+            tabLayout.setVisibility(View.GONE);
         }
         this.tabLayout.setupWithViewPager(this.viewPager);
         setUpViewPager(viewPager, arrayList);

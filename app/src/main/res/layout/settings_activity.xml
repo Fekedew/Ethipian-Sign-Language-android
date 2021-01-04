@@ -45,4 +45,18 @@
         android:textStyle="bold|italic"
         android:typeface="serif" />
 
+    <Button
+        android:id="@+id/clearProgress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:background="@drawable/submit_bak"
+        android:fontFamily="sans-serif"
+        android:text="@string/clear_pro"
+        android:textColor="@color/colorWhite"
+        android:textSize="25sp"
+        android:textStyle="bold|italic"
+        android:typeface="serif" />
+
 </LinearLayout>

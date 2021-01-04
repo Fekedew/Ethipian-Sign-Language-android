@@ -74,6 +74,334 @@ public class FavDB extends SQLiteOpenHelper {
         insertWildAnimal();
         insertColor();
 
+        insertNames();
+        insertWeeks();
+        insertSpiritual();
+
+    }
+
+    private void insertSpiritual() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+
+        cv.put(KEY_ID, "angle.png");
+        cv.put(ITEM_TITLE, "/Angele");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "spiritual");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "angle.png");
+        cv.put(ITEM_TITLE, "መላእክ/Angele");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "spiritual");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "bell.png");
+        cv.put(ITEM_TITLE, "ደወል/Bell");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "spiritual");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "drum.png");
+        cv.put(ITEM_TITLE, "ከበሮ/Drum");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "spiritual");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "God.png");
+        cv.put(ITEM_TITLE, "እግዚአብሔር/God");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "spiritual");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "Islam.png");
+        cv.put(ITEM_TITLE, "እስላም/Islam");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "spiritual");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "Jesus.png");
+        cv.put(ITEM_TITLE, "እየሱስ/Jesus");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "spiritual");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "kirar.png");
+        cv.put(ITEM_TITLE, "ክራር/kirar");
+        cv.put(IMAGE_FOLDER, "spiritual");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "orthodox.png");
+        cv.put(ITEM_TITLE, "ኦርቶዶክስ/orthodox");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "spiritual");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "prayer.png");
+        cv.put(ITEM_TITLE, "ጸሎት/prayer");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "spiritual");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "sistrum.png");
+        cv.put(ITEM_TITLE, "ጸንስጽል/sistrum");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "spiritual");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "song.png");
+        cv.put(ITEM_TITLE, "መዝሙር/song");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "spiritual");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+
+    }
+
+    private void insertWeeks() {
+
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+
+        cv.put(KEY_ID, "monday.png");
+        cv.put(ITEM_TITLE, "ሰኞ/Monday");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "weeks");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "tuesday.png");
+        cv.put(ITEM_TITLE, "ማክሰኞ/Tuesday");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "weeks");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 1);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "wdnesday.png");
+        cv.put(ITEM_TITLE, "ሮብዕ/Wednesday");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "weeks");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 2);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "thursday.png");
+        cv.put(ITEM_TITLE, "ሐሙስ/Thursday");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "weeks");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 3);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "friday.png");
+        cv.put(ITEM_TITLE, "አርብ/Friday");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "weeks");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 4);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "saturday.png");
+        cv.put(ITEM_TITLE, "ቅዳሜ/Saturday");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "weeks");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 5);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "sunday.png");
+        cv.put(ITEM_TITLE, "እሁድ/Sunday");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "weeks");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+    }
+
+    private void insertNames() {
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+
+        cv.put(KEY_ID, "bank.png");
+        cv.put(ITEM_TITLE, "ባንክ/Bank");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "names");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "church.png");
+        cv.put(ITEM_TITLE, "ቤተክርስቲያን/Church");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "names");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "driver.png");
+        cv.put(ITEM_TITLE, "ሹፌር/Driver");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "names");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "farmer.png");
+        cv.put(ITEM_TITLE, "ገበሬ/Farmer");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "names");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "guard.png");
+        cv.put(ITEM_TITLE, "ዘበኛ/Guard");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "names");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "hospital.png");
+        cv.put(ITEM_TITLE, "ሆስፒታል/Hospital");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "names");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "hotel.png");
+        cv.put(ITEM_TITLE, "ሆቴል/Hotel");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "names");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "manager.png");
+        cv.put(ITEM_TITLE, "ኃላፊ/Manager");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "names");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "market.png");
+        cv.put(ITEM_TITLE, "ገበያ/Market");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "names");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "merchant.png");
+        cv.put(ITEM_TITLE, "ነጋዴ/Merchant");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "names");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "mill.png");
+        cv.put(ITEM_TITLE, "ወፍጮ ቤት/Mill");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "names");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "mosques.png");
+        cv.put(ITEM_TITLE, "መስጊድ/Mosques");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "names");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "physician.png");
+        cv.put(ITEM_TITLE, "ሐኪም/Physician");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "names");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "police.png");
+        cv.put(ITEM_TITLE, "ፖሊስ/Police");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "names");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "post_office.png");
+        cv.put(ITEM_TITLE, "ፖስታ ቤት/Post office");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "names");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "school.png");
+        cv.put(ITEM_TITLE, "ትምህርት ቤት/School");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "names");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "shop.png");
+        cv.put(ITEM_TITLE, "ሱቅ/Shop");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "names");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "solider.png");
+        cv.put(ITEM_TITLE, "ወታደር/Solider");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "names");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "student.png");
+        cv.put(ITEM_TITLE, "ተማሪ/Student");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "names");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
     }
 
     private void insertExercise() {
@@ -169,7 +497,7 @@ public class FavDB extends SQLiteOpenHelper {
         ContentValues cv = new ContentValues();
 
         cv.put(KEY_ID, "black.jpg");
-        cv.put(ITEM_TITLE, "f/Black");
+        cv.put(ITEM_TITLE, "ጥቁር/Black");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "color");
         cv.put(FAVORITE_STATUS, 0);
@@ -177,7 +505,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "blue.jpg");
-        cv.put(ITEM_TITLE, "f/Blue");
+        cv.put(ITEM_TITLE, "ሰማያዊ/Blue");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "color");
         cv.put(FAVORITE_STATUS, 0);
@@ -185,7 +513,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "brown.jpg");
-        cv.put(ITEM_TITLE, "ጥቁር/Brown");
+        cv.put(ITEM_TITLE, "ቡናማ/Brown");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "color");
         cv.put(FAVORITE_STATUS, 0);
@@ -193,7 +521,7 @@ public class FavDB extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
         cv.put(KEY_ID, "gray.jpg");
-        cv.put(ITEM_TITLE, "ግሬይ/Grey");
+        cv.put(ITEM_TITLE, "ግራጫ/Grey");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "color");
         cv.put(FAVORITE_STATUS, 0);
@@ -2514,4 +2842,9 @@ public class FavDB extends SQLiteOpenHelper {
         return db.rawQuery(sql, null, null);
     }
 
+    public void removeAllProgress(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String sql = "UPDATE " + EX_TABLE_NAME + " SET " + EX_PROGRESS + "=0 WHERE 1";
+        db.execSQL(sql);
+    }
 }

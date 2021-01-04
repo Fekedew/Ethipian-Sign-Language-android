@@ -14,7 +14,7 @@ import com.feke.esl1.basic.BasicList;
 
 public class IntermediateHome extends AppCompatActivity implements View.OnClickListener {
 
-    CardView albasat, animal, nature, food, vegetable, fruit, color;
+    CardView albasat, animal, nature, food, vegetable, fruit, color, names;
     Activity activity;
     Intent in;
 
@@ -30,6 +30,7 @@ public class IntermediateHome extends AppCompatActivity implements View.OnClickL
         vegetable = findViewById(R.id.vegetable);
         fruit = findViewById(R.id.fruit);
         color = findViewById(R.id.colorCard);
+        names = findViewById(R.id.names);
 
 //        fruit = findViewById(R.id.);
 
@@ -41,6 +42,7 @@ public class IntermediateHome extends AppCompatActivity implements View.OnClickL
         nature.setOnClickListener(this);
         fruit.setOnClickListener(this);
         color.setOnClickListener(this);
+        names.setOnClickListener(this);
 
         activity = this;
 
@@ -83,6 +85,11 @@ public class IntermediateHome extends AppCompatActivity implements View.OnClickL
             case R.id.nature:
                 in = new Intent(activity, BasicList.class);
                 in.putExtra("type", "nature");
+                startActivity(in);
+                break;
+            case R.id.names:
+                in = new Intent(activity, BasicList.class);
+                in.putExtra("type", "names");
                 startActivity(in);
                 break;
 

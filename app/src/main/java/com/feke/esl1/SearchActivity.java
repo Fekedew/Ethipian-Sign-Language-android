@@ -172,7 +172,8 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
                 startActivity(intent);
                 break;
             case R.id.toolbarBottomInfo:
-                Toast.makeText(this, "Here is about us", Toast.LENGTH_LONG).show();
+                intent = new Intent(this, AboutUs.class);
+                startActivity(intent);
                 break;
         }
     }

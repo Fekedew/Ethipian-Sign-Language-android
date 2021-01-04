@@ -213,20 +213,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
                     }
                 }
             });
-            downArrowBtn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Uri imageUri = Uri.parse("android.resource://" + context.getPackageName()
-                            + "/drawable/" + "ic_launcher");
-                    Intent shareIntent = new Intent();
-                    shareIntent.setAction(Intent.ACTION_SEND);
-                    shareIntent.putExtra(Intent.EXTRA_TEXT, "Hello");
-                    shareIntent.putExtra(Intent.EXTRA_STREAM, imageUri);
-                    shareIntent.setType("image/jpeg");
-                    shareIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-                    context.startActivity(Intent.createChooser(shareIntent, "send"));
-                }
-            });
             descTip.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
