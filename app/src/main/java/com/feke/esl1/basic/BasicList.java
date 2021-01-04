@@ -63,13 +63,13 @@ public class BasicList extends AppCompatActivity {
         ArrayList<String> arrayList = new ArrayList<>();
         List<Fragment> fragmentList = new ArrayList();
 
+        public MainAdapter(FragmentManager fm) {
+            super(fm);
+        }
+
         public void addFragment(Fragment fragment, String title) {
             this.arrayList.add(title);
             this.fragmentList.add(fragment);
-        }
-
-        public MainAdapter(FragmentManager fm) {
-            super(fm);
         }
 
         @Override // androidx.fragment.app.FragmentPagerAdapter

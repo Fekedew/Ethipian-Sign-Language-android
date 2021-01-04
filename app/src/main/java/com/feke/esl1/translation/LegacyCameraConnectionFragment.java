@@ -32,18 +32,22 @@ import android.view.Surface;
 import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
-import java.io.IOException;
-import java.util.List;
 
 import com.feke.esl1.R;
-import org.tensorflow.lite.examples.classification.customview.AutoFitTextureView;
 import com.feke.esl1.translation.env.ImageUtils;
 import com.feke.esl1.translation.env.Logger;
+
+import org.tensorflow.lite.examples.classification.customview.AutoFitTextureView;
+
+import java.io.IOException;
+import java.util.List;
 
 @SuppressLint("ValidFragment")
 public class LegacyCameraConnectionFragment extends Fragment {
     private static final Logger LOGGER = new Logger();
-    /** Conversion from screen rotation to JPEG orientation. */
+    /**
+     * Conversion from screen rotation to JPEG orientation.
+     */
     private static final SparseIntArray ORIENTATIONS = new SparseIntArray();
 
     static {
@@ -56,9 +60,13 @@ public class LegacyCameraConnectionFragment extends Fragment {
     private Camera camera;
     private Camera.PreviewCallback imageListener;
     private Size desiredSize;
-    /** The layout identifier to inflate for this Fragment. */
+    /**
+     * The layout identifier to inflate for this Fragment.
+     */
     private int layout;
-    /** An {@link AutoFitTextureView} for camera preview. */
+    /**
+     * An {@link AutoFitTextureView} for camera preview.
+     */
     private AutoFitTextureView textureView;
     /**
      * {@link TextureView.SurfaceTextureListener} handles several lifecycle events on a {@link
@@ -108,7 +116,8 @@ public class LegacyCameraConnectionFragment extends Fragment {
 
                 @Override
                 public void onSurfaceTextureSizeChanged(
-                        final SurfaceTexture texture, final int width, final int height) {}
+                        final SurfaceTexture texture, final int width, final int height) {
+                }
 
                 @Override
                 public boolean onSurfaceTextureDestroyed(final SurfaceTexture texture) {
@@ -116,9 +125,12 @@ public class LegacyCameraConnectionFragment extends Fragment {
                 }
 
                 @Override
-                public void onSurfaceTextureUpdated(final SurfaceTexture texture) {}
+                public void onSurfaceTextureUpdated(final SurfaceTexture texture) {
+                }
             };
-    /** An additional thread for running tasks that shouldn't block the UI. */
+    /**
+     * An additional thread for running tasks that shouldn't block the UI.
+     */
     private HandlerThread backgroundThread;
 
     @SuppressLint("ValidFragment")
@@ -168,13 +180,17 @@ public class LegacyCameraConnectionFragment extends Fragment {
         super.onPause();
     }
 
-    /** Starts a background thread and its {@link Handler}. */
+    /**
+     * Starts a background thread and its {@link Handler}.
+     */
     private void startBackgroundThread() {
         backgroundThread = new HandlerThread("CameraBackground");
         backgroundThread.start();
     }
 
-    /** Stops the background thread and its {@link Handler}. */
+    /**
+     * Stops the background thread and its {@link Handler}.
+     */
     private void stopBackgroundThread() {
         backgroundThread.quitSafely();
         try {

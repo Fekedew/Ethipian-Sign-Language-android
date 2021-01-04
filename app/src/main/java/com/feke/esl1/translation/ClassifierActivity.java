@@ -33,15 +33,15 @@ import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 
-import java.io.IOException;
-import java.util.List;
-
 import com.feke.esl1.R;
 import com.feke.esl1.translation.env.BorderedText;
 import com.feke.esl1.translation.env.Logger;
 import com.feke.esl1.translation.tflite.Classifier;
 import com.feke.esl1.translation.tflite.Classifier.Device;
 import com.feke.esl1.translation.tflite.Classifier.Model;
+
+import java.io.IOException;
+import java.util.List;
 
 @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
 public class ClassifierActivity extends CameraActivity implements OnImageAvailableListener {
@@ -57,30 +57,28 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
     private String tflitePath;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if(Build.VERSION.SDK_INT>Build.VERSION_CODES.M && checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                != PackageManager.PERMISSION_GRANTED){
-            requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},1);
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M && checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                != PackageManager.PERMISSION_GRANTED) {
+            requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
         }
-        if(Build.VERSION.SDK_INT>Build.VERSION_CODES.M && checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
-                != PackageManager.PERMISSION_GRANTED){
-            requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},2);
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M && checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
+                != PackageManager.PERMISSION_GRANTED) {
+            requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 2);
         }
         if (savedInstanceState == null) {
             Bundle extras = getIntent().getExtras();
-            if(extras == null) {
+            if (extras == null) {
                 startActivity(new Intent(ClassifierActivity.this, FileSelection.class));
-            }else {
+            } else {
                 tflitePath = extras.getString("TflitePath");
-                labelPath=extras.getString("LabelPath");
+                labelPath = extras.getString("LabelPath");
             }
-        }
-        else {
-            tflitePath= (String) savedInstanceState.getSerializable("TflitePath");
-            labelPath= (String) savedInstanceState.getSerializable("LabelPath");
+        } else {
+            tflitePath = (String) savedInstanceState.getSerializable("TflitePath");
+            labelPath = (String) savedInstanceState.getSerializable("LabelPath");
         }
     }
 
@@ -195,7 +193,7 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
             LOGGER.d(
                     "Creating classifier (model=%s, device=%s, numThreads=%d)", model, device, numThreads);
 
-            classifier = Classifier.create(this, model, device, numThreads,tflitePath,labelPath);
+            classifier = Classifier.create(this, model, device, numThreads, tflitePath, labelPath);
         } catch (IOException e) {
             LOGGER.e(e, "Failed to create classifier.");
         }

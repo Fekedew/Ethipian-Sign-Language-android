@@ -22,9 +22,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".AboutUs"
-            android:parentActivityName=".MainActivity"
-            android:label="@string/about_us"/>
+        <activity
+            android:name=".AboutUs"
+            android:label="@string/about_us"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".SearchActivity"
             android:label="@string/search"
@@ -66,9 +67,10 @@
             android:label="@string/sign_translation"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeSignTrans" />
-        <activity android:name=".translation.FileSelection"
-            android:parentActivityName=".MainActivity"
-            android:label="@string/file_picker"/>
+        <activity
+            android:name=".translation.FileSelection"
+            android:label="@string/file_picker"
+            android:parentActivityName=".MainActivity" />
     </application>
 
 </manifest>

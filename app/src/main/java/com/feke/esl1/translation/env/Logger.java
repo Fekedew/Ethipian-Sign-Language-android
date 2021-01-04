@@ -17,10 +17,13 @@ limitations under the License.
 
 
 import android.util.Log;
+
 import java.util.HashSet;
 import java.util.Set;
 
-/** Wrapper for the platform log function, allows convenient message prefixing and log disabling. */
+/**
+ * Wrapper for the platform log function, allows convenient message prefixing and log disabling.
+ */
 public final class Logger {
     private static final String DEFAULT_TAG = "tensorflow";
     private static final int DEFAULT_MIN_LOG_LEVEL = Log.DEBUG;
@@ -61,12 +64,12 @@ public final class Logger {
      * Creates a Logger with a custom tag and a custom message prefix. If the message prefix is set to
      *
      * <pre>null</pre>
-     *
+     * <p>
      * , the caller's class name is used as the prefix.
      *
-     * @param tag identifies the source of a log message.
+     * @param tag           identifies the source of a log message.
      * @param messagePrefix prepended to every message if non-null. If null, the name of the caller is
-     *     being used
+     *                      being used
      */
     public Logger(final String tag, final String messagePrefix) {
         this.tag = tag;
@@ -74,12 +77,16 @@ public final class Logger {
         this.messagePrefix = (prefix.length() > 0) ? prefix + ": " : prefix;
     }
 
-    /** Creates a Logger using the caller's class name as the message prefix. */
+    /**
+     * Creates a Logger using the caller's class name as the message prefix.
+     */
     public Logger() {
         this(DEFAULT_TAG, null);
     }
 
-    /** Creates a Logger using the caller's class name as the message prefix. */
+    /**
+     * Creates a Logger using the caller's class name as the message prefix.
+     */
     public Logger(final int minLogLevel) {
         this(DEFAULT_TAG, null);
         this.minLogLevel = minLogLevel;

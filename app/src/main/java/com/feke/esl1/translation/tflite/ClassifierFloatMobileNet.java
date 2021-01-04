@@ -17,15 +17,20 @@ limitations under the License.
 
 
 import android.app.Activity;
-import java.io.IOException;
-import com.feke.esl1.translation.tflite.Classifier.Device;
+
 import org.tensorflow.lite.support.common.TensorOperator;
 import org.tensorflow.lite.support.common.ops.NormalizeOp;
 
-/** This TensorFlowLite classifier works with the float MobileNet model. */
+import java.io.IOException;
+
+/**
+ * This TensorFlowLite classifier works with the float MobileNet model.
+ */
 public class ClassifierFloatMobileNet extends Classifier {
 
-    /** Float MobileNet requires additional normalization of the used input. */
+    /**
+     * Float MobileNet requires additional normalization of the used input.
+     */
     private static final float IMAGE_MEAN = 127.5f;
 
     private static final float IMAGE_STD = 127.5f;
@@ -43,9 +48,9 @@ public class ClassifierFloatMobileNet extends Classifier {
      *
      * @param activity
      */
-    public ClassifierFloatMobileNet(Activity activity, Device device, int numThreads,String tflite_Path,String label_Path)
+    public ClassifierFloatMobileNet(Activity activity, Device device, int numThreads, String tflite_Path, String label_Path)
             throws IOException {
-        super(activity, device, numThreads,tflite_Path,label_Path);
+        super(activity, device, numThreads, tflite_Path, label_Path);
     }
 
     @Override

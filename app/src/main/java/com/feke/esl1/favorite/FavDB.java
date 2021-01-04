@@ -11,26 +11,28 @@ import androidx.annotation.RequiresApi;
 
 public class FavDB extends SQLiteOpenHelper {
 
-    private static int DB_VERSION = 1;
-    private static String DB_NAME = "favoriteDB";
-    private static String TABLE_NAME = "favoriteListTable";
-
     public static String FIRST_START = "id";
     public static String FIRST_START_NAME = "firstStart";
-
-
     public static String KEY_ID = "id";
     public static String ITEM_TITLE = "itemTitle";
     public static String ITEM_DISK = "itemDisk";
     public static String IMAGE_FOLDER = "imageFolder";
     public static String IMAGE_ORDER = "imageOrder";
     public static String FAVORITE_STATUS = "fStatus";
-
-
+    public static String EX_TABLE_NAME = "ex";
+    public static String EX_FOLDER_NAME = "folder";
+    public static String EX_PROGRESS = "progress";
+    public static String EX_KEY_ID = "KEY_ID";
+    private static int DB_VERSION = 1;
+    private static String DB_NAME = "favoriteDB";
+    private static String TABLE_NAME = "favoriteListTable";
     private static String CREATE_FIRST_START = "CREATE TABLE " + FIRST_START_NAME + "(" + FIRST_START + " INT)";
     private static String CREATE_TABLE = "CREATE TABLE " + TABLE_NAME + "("
             + KEY_ID + " TEXT," + ITEM_TITLE + " TEXT," + ITEM_DISK + " TEXT," + IMAGE_FOLDER + " " +
             "TEXT," + IMAGE_ORDER + " int," + FAVORITE_STATUS + " TEXT)";
+
+    private static String CREATE_TABLE_EX = "CREATE TABLE " + EX_TABLE_NAME + " (" + EX_KEY_ID + " TEXT, " + EX_FOLDER_NAME +
+            " TEXT, " + EX_PROGRESS + " int )";
 
 
     public FavDB(Context context) {
@@ -41,6 +43,7 @@ public class FavDB extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_TABLE);
         db.execSQL(CREATE_FIRST_START);
+        db.execSQL(CREATE_TABLE_EX);
     }
 
     @Override
@@ -48,8 +51,13 @@ public class FavDB extends SQLiteOpenHelper {
 
     }
 
+
     //Inserting asset values to the table
     public void insertAssets() {
+        //Insert exercise
+        insertExercise();
+
+
         insertNumberAssets();
         insertAnimalAssets();
         insertFamilyAssets();
@@ -65,6 +73,94 @@ public class FavDB extends SQLiteOpenHelper {
         insertNatureAssets();
         insertWildAnimal();
         insertColor();
+
+    }
+
+    private void insertExercise() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+
+        cv.put(EX_KEY_ID, "alphabet");
+        cv.put(EX_FOLDER_NAME, "basic");
+        cv.put(EX_PROGRESS, 0);
+        db.insert(EX_TABLE_NAME, null, cv);
+
+        cv.put(EX_KEY_ID, "amharicFidel");
+        cv.put(EX_FOLDER_NAME, "basic");
+        cv.put(EX_PROGRESS, 0);
+        db.insert(EX_TABLE_NAME, null, cv);
+
+        cv.put(EX_KEY_ID, "body");
+        cv.put(EX_FOLDER_NAME, "basic");
+        cv.put(EX_PROGRESS, 0);
+        db.insert(EX_TABLE_NAME, null, cv);
+
+        cv.put(EX_KEY_ID, "number");
+        cv.put(EX_FOLDER_NAME, "basic");
+        cv.put(EX_PROGRESS, 0);
+        db.insert(EX_TABLE_NAME, null, cv);
+
+        cv.put(EX_KEY_ID, "family");
+        cv.put(EX_FOLDER_NAME, "basic");
+        cv.put(EX_PROGRESS, 0);
+        db.insert(EX_TABLE_NAME, null, cv);
+
+        cv.put(EX_KEY_ID, "days");
+        cv.put(EX_FOLDER_NAME, "basic");
+        cv.put(EX_PROGRESS, 0);
+        db.insert(EX_TABLE_NAME, null, cv);
+
+        cv.put(EX_KEY_ID, "numbers");
+        cv.put(EX_FOLDER_NAME, "basic");
+        cv.put(EX_PROGRESS, 0);
+        db.insert(EX_TABLE_NAME, null, cv);
+
+        cv.put(EX_KEY_ID, "maths");
+        cv.put(EX_FOLDER_NAME, "basic");
+        cv.put(EX_PROGRESS, 0);
+        db.insert(EX_TABLE_NAME, null, cv);
+
+        //Intermediate
+        cv.put(EX_KEY_ID, "albasat");
+        cv.put(EX_FOLDER_NAME, "intermediate");
+        cv.put(EX_PROGRESS, 0);
+        db.insert(EX_TABLE_NAME, null, cv);
+
+        cv.put(EX_KEY_ID, "animal");
+        cv.put(EX_FOLDER_NAME, "intermediate");
+        cv.put(EX_PROGRESS, 0);
+        db.insert(EX_TABLE_NAME, null, cv);
+
+        cv.put(EX_KEY_ID, "color");
+        cv.put(EX_FOLDER_NAME, "intermediate");
+        cv.put(EX_PROGRESS, 0);
+        db.insert(EX_TABLE_NAME, null, cv);
+
+        cv.put(EX_KEY_ID, "food_drink");
+        cv.put(EX_FOLDER_NAME, "intermediate");
+        cv.put(EX_PROGRESS, 0);
+        db.insert(EX_TABLE_NAME, null, cv);
+
+        cv.put(EX_KEY_ID, "fruits");
+        cv.put(EX_FOLDER_NAME, "intermediate");
+        cv.put(EX_PROGRESS, 0);
+        db.insert(EX_TABLE_NAME, null, cv);
+
+        cv.put(EX_KEY_ID, "nature");
+        cv.put(EX_FOLDER_NAME, "intermediate");
+        cv.put(EX_PROGRESS, 0);
+        db.insert(EX_TABLE_NAME, null, cv);
+
+        cv.put(EX_KEY_ID, "vegetable");
+        cv.put(EX_FOLDER_NAME, "intermediate");
+        cv.put(EX_PROGRESS, 0);
+        db.insert(EX_TABLE_NAME, null, cv);
+
+        //Advance
+        cv.put(EX_KEY_ID, "wild_animal");
+        cv.put(EX_FOLDER_NAME, "advance");
+        cv.put(EX_PROGRESS, 0);
+        db.insert(EX_TABLE_NAME, null, cv);
     }
 
     private void insertColor() {
@@ -2063,7 +2159,7 @@ public class FavDB extends SQLiteOpenHelper {
         cv.put(IMAGE_ORDER, 0);
         db.insert(TABLE_NAME, null, cv);
 
-     cv.put(KEY_ID, "lentil.jpg");
+        cv.put(KEY_ID, "lentil.jpg");
         cv.put(ITEM_TITLE, "ምስር/Lentil");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "fruits");
@@ -2113,7 +2209,7 @@ public class FavDB extends SQLiteOpenHelper {
 
     }
 
-    public void insertNatureAssets(){
+    public void insertNatureAssets() {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
@@ -2293,6 +2389,7 @@ public class FavDB extends SQLiteOpenHelper {
         cv.put(IMAGE_ORDER, 0);
         db.insert(TABLE_NAME, null, cv);
     }
+
     //Inserting new data to the table
     public void insertData(String id, String title, String image, String status) {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -2350,7 +2447,7 @@ public class FavDB extends SQLiteOpenHelper {
     }
 
     //Select five sign language for exercise
-    public Cursor selectRandomFive(String folder){
+    public Cursor selectRandomFive(String folder) {
         SQLiteDatabase db = this.getReadableDatabase();
         String sql = "SELECT * FROM " + TABLE_NAME + " WHERE " + IMAGE_FOLDER + " = '" + folder + "' ORDER BY RANDOM() LIMIT 5";
 //        return db.rawQuery(sql, null, null);
@@ -2378,11 +2475,6 @@ public class FavDB extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         String sql = "SELECT * FROM " + FIRST_START_NAME + " WHERE 1";
         return db.rawQuery(sql, null, null);
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-////            return db.rawQuery(sql, null, null);
-//        } else {
-//            return null;
-//        }
     }
 
     public void insertFirstStart() {
@@ -2397,4 +2489,29 @@ public class FavDB extends SQLiteOpenHelper {
         String sql = "UPDATE " + TABLE_NAME + " SET " + FAVORITE_STATUS + "='0' WHERE 1";
         db.execSQL(sql);
     }
+
+    //Inserting exercise progress
+    public void insertProgress(String folder, String type, String progress) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+
+        cv.put(EX_KEY_ID, folder);
+        cv.put(EX_FOLDER_NAME, type);
+        cv.put(EX_PROGRESS, progress);
+        db.insert(TABLE_NAME, null, cv);
+    }
+
+    //Update progress
+    public void updateProgress(String folder, int progress) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String sql = "UPDATE " + EX_TABLE_NAME + " SET " + EX_PROGRESS + "='" + progress + "' WHERE " + EX_KEY_ID + "='" + folder + "'";
+        db.execSQL(sql);
+    }
+
+    public Cursor getProgress(String type) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String sql = "SELECT SUM (" + EX_PROGRESS + ") FROM " + EX_TABLE_NAME + " WHERE " + EX_FOLDER_NAME + " ='" + type + "'";
+        return db.rawQuery(sql, null, null);
+    }
+
 }

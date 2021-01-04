@@ -16,8 +16,9 @@ limitations under the License.
 ==============================================================================*/
 
 
-import java.util.List;
 import com.feke.esl1.translation.tflite.Classifier.Recognition;
+
+import java.util.List;
 
 public interface ResultsView {
     public void setResults(final List<Recognition> results);

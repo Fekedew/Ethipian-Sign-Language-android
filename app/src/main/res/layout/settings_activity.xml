@@ -1,8 +1,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:orientation="vertical"
+    android:layout_height="match_parent"
     android:background="@drawable/background"
-    android:layout_height="match_parent">
+    android:orientation="vertical">
 
 
     <TextView
@@ -22,26 +22,27 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_margin="10dp"
         android:background="@drawable/submit_bak"
         android:fontFamily="sans-serif"
+        android:text="@string/change_language"
         android:textColor="@color/colorWhite"
         android:textSize="25sp"
-        android:layout_margin="10dp"
         android:textStyle="bold|italic"
-        android:typeface="serif"
-        android:text="@string/change_language" />
+        android:typeface="serif" />
+
     <Button
         android:id="@+id/clearAllFav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_margin="10dp"
         android:background="@drawable/submit_bak"
         android:fontFamily="sans-serif"
+        android:text="@string/clear_fav"
         android:textColor="@color/colorWhite"
         android:textSize="25sp"
-        android:layout_margin="10dp"
         android:textStyle="bold|italic"
-        android:typeface="serif"
-        android:text="@string/clear_fav" />
+        android:typeface="serif" />
 
 </LinearLayout>

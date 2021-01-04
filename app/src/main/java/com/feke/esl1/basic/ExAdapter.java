@@ -26,30 +26,30 @@ import com.feke.esl1.favorite.FavDB;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.HashSet;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.Set;
 
 import pl.droidsonroids.gif.GifDrawable;
 
 public class ExAdapter extends RecyclerView.Adapter<ExAdapter.ViewHolder> {
 
-    private String folder;
+    public static String folder;
+    //    public static Set<String> correctAnswers;
+    public static List<String> correctAns = new ArrayList<>();
+    public static int allQuestions;
     private String[] select_ah = new String[4];
     private String[] select_en = new String[4];
     private List<LearnItem> learnItems;
     private Context context;
     private FavDB favDB;
 
-    public static Set<String> correctAnswers;
-    public static int allQuestions;
-
 
     public ExAdapter(List<LearnItem> learnItems, Context context, String folder) {
         this.learnItems = learnItems;
         this.context = context;
         this.folder = folder;
+        this.correctAns.clear();
         allQuestions = learnItems.size();
     }
 
@@ -59,7 +59,8 @@ public class ExAdapter extends RecyclerView.Adapter<ExAdapter.ViewHolder> {
         favDB = new FavDB(context);
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.custome_ex_list,
                 parent, false);
-        correctAnswers = new HashSet<>();
+//        correctAnswers = new HashSet<>();
+//        correctAns = new ArrayList<>();
 
         return new ViewHolder(view);
     }
@@ -129,10 +130,14 @@ public class ExAdapter extends RecyclerView.Adapter<ExAdapter.ViewHolder> {
                 RadioButton selectedRadio = holder.itemView.findViewById(selectedId);
                 String selectedValue = selectedRadio.getText().toString();
                 if (selectedValue.equals(learnItem.getTitle())) {
-                    Toast.makeText(context, "Correct choose", Toast.LENGTH_LONG).show();
-                    correctAnswers.add(learnItem.getTitle());
+                    if (correctAns.contains(learnItem.getTitle())) {
+
+                    } else {
+                        Toast.makeText(context, "Correct choose", Toast.LENGTH_LONG).show();
+                        correctAns.add(learnItem.getTitle());
+                    }
                 } else {
-                    Toast.makeText(context, "Wrong choose", Toast.LENGTH_LONG).show();
+//                    Toast.makeText(context, "Wrong choose", Toast.LENGTH_LONG).show();
                 }
             }
         });

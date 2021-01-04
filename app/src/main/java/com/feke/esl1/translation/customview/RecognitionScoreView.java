@@ -22,8 +22,10 @@ import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
-import java.util.List;
+
 import com.feke.esl1.translation.tflite.Classifier.Recognition;
+
+import java.util.List;
 
 public class RecognitionScoreView extends View implements ResultsView {
     private static final float TEXT_SIZE_DIP = 16;

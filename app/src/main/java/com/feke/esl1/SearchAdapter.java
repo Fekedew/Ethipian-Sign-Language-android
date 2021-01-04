@@ -40,8 +40,44 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
     private List<LearnItem> learnItems;
     private List<LearnItem> learnItemsAll;
     private Context context;
-    private FavDB favDB;
+    Filter filter = new Filter() {
 
+        //Runs in background
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint) {
+
+            List<LearnItem> filteredList = new ArrayList<>();
+            if (constraint.toString().isEmpty()) {
+                filteredList.addAll(learnItemsAll);
+            } else {
+                for (LearnItem learnItem : learnItemsAll) {
+                    if (learnItem.getTitle().toLowerCase().contains(constraint.toString().toLowerCase())
+                            || learnItem.getDescName().toLowerCase().contains(constraint.toString().toLowerCase())) {
+                        filteredList.add(learnItem);
+                    }
+                }
+
+            }
+
+            FilterResults filterResults = new FilterResults();
+            filterResults.values = filteredList;
+
+            if (filterResults.count <= 0) {
+                Toast.makeText(context, "No result found", Toast.LENGTH_LONG).show();
+            }
+
+            return filterResults;
+        }
+
+        //runs in ui elements
+        @Override
+        protected void publishResults(CharSequence constraint, FilterResults results) {
+            learnItems.clear();
+            learnItems.addAll((Collection<? extends LearnItem>) results.values);
+            notifyDataSetChanged();
+        }
+    };
+    private FavDB favDB;
 
     public SearchAdapter(List<LearnItem> learnItems, Context context) {
         this.learnItems = learnItems;
@@ -57,7 +93,6 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
                 parent, false);
         return new ViewHolder(view);
     }
-
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
@@ -87,7 +122,6 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
 
     }
 
-
     public GifDrawable loadGifDrawable(Context context, String path) {
         GifDrawable gifFromAssets = null;
         try {
@@ -115,7 +149,6 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
         return null;
     }
 
-
     @Override
     public int getItemCount() {
         return learnItems.size();
@@ -126,43 +159,34 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
         return filter;
     }
 
-    Filter filter = new Filter() {
+    private void readCursorData(LearnItem learnItem, ViewHolder viewHolder) {
+        Cursor cursor = null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN) {
+            cursor = favDB.readDataById(learnItem.getkey_id());
+        } else {
+            Toast.makeText(context, "Your android version does not match", Toast.LENGTH_SHORT).show();
+        }
+//        Cursor cursor = favDB.readDataById(key_id[0]);
+        SQLiteDatabase db = favDB.getReadableDatabase();
 
-        //Runs in background
-        @Override
-        protected FilterResults performFiltering(CharSequence constraint) {
+        try {
+            while (cursor.moveToNext()) {
+                String item_fav_status = cursor.getString(cursor.getColumnIndex(FavDB.FAVORITE_STATUS));
+                learnItem.setFavStatus(item_fav_status);
 
-            List<LearnItem> filteredList = new ArrayList<>();
-            if (constraint.toString().isEmpty()) {
-                filteredList.addAll(learnItemsAll);
-            } else {
-                for (LearnItem learnItem : learnItemsAll) {
-                    if (learnItem.getTitle().toLowerCase().contains(constraint.toString().toLowerCase())
-                            || learnItem.getDescName().toLowerCase().contains(constraint.toString().toLowerCase())) {
-                        filteredList.add(learnItem);
-                    }
+                //check favorite status
+                if (item_fav_status != null && item_fav_status.equals("1")) {
+                    viewHolder.favBtn.setBackgroundResource(R.drawable.ic_favorite_red_24dp);
+                } else if (item_fav_status != null && item_fav_status.equals("0")) {
+                    viewHolder.favBtn.setBackgroundResource(R.drawable.ic_favorite_border_black_24dp);
                 }
-
             }
-
-            FilterResults filterResults = new FilterResults();
-            filterResults.values = filteredList;
-
-            if (filterResults.count<=0){
-                Toast.makeText(context, "No result found", Toast.LENGTH_LONG).show();
-            }
-
-            return filterResults;
+        } finally {
+            if (cursor != null && cursor.isClosed())
+                cursor.close();
+            db.close();
         }
-
-        //runs in ui elements
-        @Override
-        protected void publishResults(CharSequence constraint, FilterResults results) {
-            learnItems.clear();
-            learnItems.addAll((Collection<? extends LearnItem>) results.values);
-            notifyDataSetChanged();
-        }
-    };
+    }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView txtName;
@@ -242,36 +266,6 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
                     }
                 }
             });
-        }
-    }
-
-
-    private void readCursorData(LearnItem learnItem, ViewHolder viewHolder) {
-        Cursor cursor = null;
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN) {
-            cursor = favDB.readDataById(learnItem.getkey_id());
-        } else {
-            Toast.makeText(context, "Your android version does not match", Toast.LENGTH_SHORT).show();
-        }
-//        Cursor cursor = favDB.readDataById(key_id[0]);
-        SQLiteDatabase db = favDB.getReadableDatabase();
-
-        try {
-            while (cursor.moveToNext()) {
-                String item_fav_status = cursor.getString(cursor.getColumnIndex(FavDB.FAVORITE_STATUS));
-                learnItem.setFavStatus(item_fav_status);
-
-                //check favorite status
-                if (item_fav_status != null && item_fav_status.equals("1")) {
-                    viewHolder.favBtn.setBackgroundResource(R.drawable.ic_favorite_red_24dp);
-                } else if (item_fav_status != null && item_fav_status.equals("0")) {
-                    viewHolder.favBtn.setBackgroundResource(R.drawable.ic_favorite_border_black_24dp);
-                }
-            }
-        } finally {
-            if (cursor != null && cursor.isClosed())
-                cursor.close();
-            db.close();
         }
     }
 }

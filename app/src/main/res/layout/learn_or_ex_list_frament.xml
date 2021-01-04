@@ -13,24 +13,24 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="15dp"
-            android:paddingBottom="?attr/actionBarSize"
-            android:clipToPadding="false" />
+            android:clipToPadding="false"
+            android:paddingBottom="?attr/actionBarSize" />
 
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/appBarLayout"
             android:layout_width="match_parent"
-            android:layout_gravity="bottom"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom">
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbarBottom"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
+                android:layout_below="@id/basicRecyclerView"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentBottom="true"
                 android:layout_gravity="bottom|center"
-                android:layout_below="@id/basicRecyclerView"
                 android:background="@drawable/white_gray_border_top">
 
                 <LinearLayout
@@ -40,32 +40,32 @@
                     android:weightSum="100">
 
                     <ImageView
+                        android:id="@+id/toolbarBottomHome"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="25"
-                        android:id="@+id/toolbarBottomHome"
                         android:src="@drawable/ic_home_black_24dp" />
 
                     <ImageView
+                        android:id="@+id/toolbarBottomSearch"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="25"
-                        android:id="@+id/toolbarBottomSearch"
                         android:src="@drawable/ic_search_black_24dp" />
 
                     <ImageView
+                        android:id="@+id/toolbarBottomFav"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="25"
-                        android:id="@+id/toolbarBottomFav"
                         android:src="@drawable/ic_favorite_border_black_24dp" />
 
 
                     <ImageView
+                        android:id="@+id/toolbarBottomInfo"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="25"
-                        android:id="@+id/toolbarBottomInfo"
                         android:src="@drawable/ic_info_black_24dp" />
                 </LinearLayout>
             </androidx.appcompat.widget.Toolbar>

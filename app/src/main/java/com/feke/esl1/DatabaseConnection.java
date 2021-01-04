@@ -20,8 +20,8 @@ import java.util.List;
 
 public class DatabaseConnection extends AsyncTask<String, Integer, String> {
 
-    private Context context;
     ProgressDialog mProgressDialog;
+    private Context context;
     private List<LearnItem> learnItems;
 
     public DatabaseConnection(Context context) {

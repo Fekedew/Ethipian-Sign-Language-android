@@ -1,15 +1,11 @@
 package com.feke.esl1;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.AssetManager;
-import android.content.res.Configuration;
-import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -29,29 +25,22 @@ import com.feke.esl1.basic.Adapter;
 import com.feke.esl1.basic.BasicList;
 import com.feke.esl1.basic.ExAdapter;
 import com.feke.esl1.favorite.FavDB;
-import com.feke.esl1.settings.SettingsActivity;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 public class MainFragment extends Fragment implements View.OnClickListener {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    Button submitEx;
+    ImageView search, favorite, trash, info;
+    String folder, select_en, select_ah;
     private String mParam1;
     private String mParam2;
-
-
     //Create learn item variable form Lear item clas
     private List<LearnItem> learnItems;
     private RecyclerView recyclerView;
-    Button submitEx;
-
     private FavDB favDB;
-
-    ImageView search, favorite, trash, info;
-    String folder, select_en, select_ah;
-
 
     public static MainFragment newInstance(String param1, String param2) {
         MainFragment fragment = new MainFragment();
@@ -85,7 +74,6 @@ public class MainFragment extends Fragment implements View.OnClickListener {
             recyclerView.setHasFixedSize(false);
             recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-//            Toast.makeText(getContext(), "Hey you are in learn page", Toast.LENGTH_LONG).show();
 
             //Getting the bottom toolbar image
             search = view.findViewById(R.id.toolbarBottomSearch);
@@ -119,7 +107,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
                     // dir does not exist or is not a directory
                 } else {
                     String folders[] = {"alphabet", "numbers", "body", "family", "days", "albasat", "animal", "family",
-                            "food_drink", "fruits", "maths", "stationary", "vegetable"
+                            "food_drink", "fruits", "maths", "stationary", "vegetable", "wild_animal", "amharicFidel"
                     };
 
                     if (folder.equals("all")) {
@@ -221,7 +209,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
             cursor = favDB.selectAllFavoriteList(folder);
         } else if (type.equals("single") && ex.equals("le")) {
             cursor = favDB.selectAll(folder);
-        }else if (type.equals("single") && ex.equals("ex")){
+        } else if (type.equals("single") && ex.equals("ex")) {
             cursor = favDB.selectRandomFive(folder);
         }
         try {
@@ -260,7 +248,6 @@ public class MainFragment extends Fragment implements View.OnClickListener {
             case R.id.toolbarBottomSearch:
                 intent = new Intent(getContext(), SearchActivity.class);
                 startActivity(intent);
-//                Toast.makeText(this, "Search image view in the bottom tool bar was clicked", Toast.LENGTH_LONG).show();
                 break;
             case R.id.toolbarBottomFav:
                 intent = new Intent(getContext(), BasicList.class);
@@ -277,9 +264,10 @@ public class MainFragment extends Fragment implements View.OnClickListener {
                 startActivity(intent);
                 break;
             case R.id.submitEx:
-                Toast.makeText(getContext(), "Here is submitting", Toast.LENGTH_LONG).show();
-                int correct = ExAdapter.correctAnswers.size();
-                Toast.makeText(getContext(), "Correct answers: " + correct + " Out of: " + ExAdapter.allQuestions, Toast.LENGTH_LONG).show();
+                int correct = ExAdapter.correctAns.size();
+                favDB.updateProgress(folder, correct);
+                Toast.makeText(getContext(), "Correct answers: " + correct + " Out of: "
+                        + ExAdapter.allQuestions, Toast.LENGTH_LONG).show();
 
                 break;
         }

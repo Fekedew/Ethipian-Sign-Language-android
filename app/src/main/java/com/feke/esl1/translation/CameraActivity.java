@@ -35,11 +35,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Trace;
-import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
-import androidx.annotation.UiThread;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import android.util.Size;
 import android.view.Surface;
 import android.view.View;
@@ -54,15 +49,22 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
+import androidx.annotation.UiThread;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import com.feke.esl1.R;
-import com.google.android.material.bottomsheet.BottomSheetBehavior;
-import java.nio.ByteBuffer;
-import java.util.List;
 import com.feke.esl1.translation.env.ImageUtils;
 import com.feke.esl1.translation.env.Logger;
 import com.feke.esl1.translation.tflite.Classifier.Device;
 import com.feke.esl1.translation.tflite.Classifier.Model;
 import com.feke.esl1.translation.tflite.Classifier.Recognition;
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
+
+import java.nio.ByteBuffer;
+import java.util.List;
 
 public abstract class CameraActivity extends AppCompatActivity
         implements OnImageAvailableListener,
@@ -70,28 +72,11 @@ public abstract class CameraActivity extends AppCompatActivity
         View.OnClickListener,
         AdapterView.OnItemSelectedListener {
     private static final Logger LOGGER = new Logger();
-    private static String words = "";
-
     private static final int PERMISSIONS_REQUEST = 1;
-
     private static final String PERMISSION_CAMERA = Manifest.permission.CAMERA;
+    private static String words = "";
     protected int previewWidth = 0;
     protected int previewHeight = 0;
-    private Handler handler;
-    private HandlerThread handlerThread;
-    private boolean useCamera2API;
-    private boolean isProcessingFrame = false;
-    private byte[][] yuvBytes = new byte[3][];
-    private int[] rgbBytes = null;
-    private int yRowStride;
-    private Runnable postInferenceCallback;
-    private Runnable imageConverter;
-    private LinearLayout bottomSheetLayout;
-    private LinearLayout gestureLayout;
-    private BottomSheetBehavior sheetBehavior;
-    EditText recognitionTextView;
-    Button recognitionValueTextView;
-
     protected TextView recognitionTextView_1,
             recognition1TextView,
             recognition2TextView,
@@ -104,6 +89,20 @@ public abstract class CameraActivity extends AppCompatActivity
             rotationTextView,
             inferenceTimeTextView;
     protected ImageView bottomSheetArrowImageView;
+    EditText recognitionTextView;
+    Button recognitionValueTextView;
+    private Handler handler;
+    private HandlerThread handlerThread;
+    private boolean useCamera2API;
+    private boolean isProcessingFrame = false;
+    private byte[][] yuvBytes = new byte[3][];
+    private int[] rgbBytes = null;
+    private int yRowStride;
+    private Runnable postInferenceCallback;
+    private Runnable imageConverter;
+    private LinearLayout bottomSheetLayout;
+    private LinearLayout gestureLayout;
+    private BottomSheetBehavior sheetBehavior;
     private ImageView plusImageView, minusImageView;
     private Spinner modelSpinner;
     private Spinner deviceSpinner;
@@ -165,13 +164,11 @@ public abstract class CameraActivity extends AppCompatActivity
                         switch (newState) {
                             case BottomSheetBehavior.STATE_HIDDEN:
                                 break;
-                            case BottomSheetBehavior.STATE_EXPANDED:
-                            {
+                            case BottomSheetBehavior.STATE_EXPANDED: {
                                 bottomSheetArrowImageView.setImageResource(R.drawable.icn_chevron_down);
                             }
                             break;
-                            case BottomSheetBehavior.STATE_COLLAPSED:
-                            {
+                            case BottomSheetBehavior.STATE_COLLAPSED: {
                                 bottomSheetArrowImageView.setImageResource(R.drawable.icn_chevron_up);
                             }
                             break;
@@ -184,7 +181,8 @@ public abstract class CameraActivity extends AppCompatActivity
                     }
 
                     @Override
-                    public void onSlide(@NonNull View bottomSheet, float slideOffset) {}
+                    public void onSlide(@NonNull View bottomSheet, float slideOffset) {
+                    }
                 });
 
         recognitionTextView = findViewById(R.id.detected_item);
@@ -192,7 +190,7 @@ public abstract class CameraActivity extends AppCompatActivity
         recognitionValueTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                words = words.substring(0, words.length()-1);
+                words = words.substring(0, words.length() - 1);
                 recognitionTextView.setText(words);
 //                Toast.makeText(CameraActivity.this, "You are deleting", Toast.LENGTH_LONG).show();
             }
@@ -240,7 +238,9 @@ public abstract class CameraActivity extends AppCompatActivity
         return yuvBytes[0];
     }
 
-    /** Callback for android.hardware.Camera API */
+    /**
+     * Callback for android.hardware.Camera API
+     */
     @Override
     public void onPreviewFrame(final byte[] bytes, final Camera camera) {
         if (isProcessingFrame) {
@@ -286,7 +286,9 @@ public abstract class CameraActivity extends AppCompatActivity
         processImage();
     }
 
-    /** Callback for Camera2 API */
+    /**
+     * Callback for Camera2 API
+     */
     @Override
     public void onImageAvailable(final ImageReader reader) {
         // We need wait until we have some size from onPreviewSizeChosen
@@ -434,7 +436,7 @@ public abstract class CameraActivity extends AppCompatActivity
                         Toast.LENGTH_LONG)
                         .show();
             }
-            requestPermissions(new String[] {PERMISSION_CAMERA}, PERMISSIONS_REQUEST);
+            requestPermissions(new String[]{PERMISSION_CAMERA}, PERMISSIONS_REQUEST);
         }
     }
 
@@ -527,22 +529,6 @@ public abstract class CameraActivity extends AppCompatActivity
         }
     }
 
-    class NextImageReadyThread extends Thread{
-
-        @Override
-        public void run()
-        {
-            try {
-                Thread.sleep(1000);
-            }
-            catch (Exception e) {
-                System.out.println(e);
-            }
-            if (postInferenceCallback != null) {
-                postInferenceCallback.run();
-            }
-        }
-    }
     protected void readyForNextImage() {
         if (postInferenceCallback != null) {
             postInferenceCallback.run();
@@ -571,7 +557,7 @@ public abstract class CameraActivity extends AppCompatActivity
                 if (recognition.getTitle() != null) recognitionTextView.setText(words);
                 if (recognition.getConfidence() != null)
                     recognitionValueTextView.setText(
-                            "Clear " +String.format(" %.2f", (100 * recognition.getConfidence())) + "%");
+                            "Clear " + String.format(" %.2f", (100 * recognition.getConfidence())) + "%");
             }
 //
 //      Recognition recognition1 = results.get(1);
@@ -695,6 +681,21 @@ public abstract class CameraActivity extends AppCompatActivity
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
         // Do nothing.
+    }
+
+    class NextImageReadyThread extends Thread {
+
+        @Override
+        public void run() {
+            try {
+                Thread.sleep(1000);
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+            if (postInferenceCallback != null) {
+                postInferenceCallback.run();
+            }
+        }
     }
 
 

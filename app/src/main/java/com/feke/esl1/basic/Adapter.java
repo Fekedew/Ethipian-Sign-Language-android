@@ -37,10 +37,10 @@ import pl.droidsonroids.gif.GifDrawable;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
+    String type;
     private List<LearnItem> learnItems;
     private Context context;
     private FavDB favDB;
-    String type;
 
 
     public Adapter(List<LearnItem> learnItems, Context context) {
@@ -75,7 +75,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
         } else if (path.contains(".GIF") || path.contains(".gif")) {
             holder.playBtn.setVisibility(View.VISIBLE);
             holder.imageView.setImageDrawable(loadGifDrawable(context, path));
-        }else{
+        } else {
 //            picasso.load("https://res.cloudinary.com/yourCloudName/image/upload/f_auto/v1525420575/yourImageName.jpg")
 //                    .into(holder.imageView);
         }
@@ -121,6 +121,34 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     @Override
     public int getItemCount() {
         return learnItems.size();
+    }
+
+    private void readCursorData(LearnItem learnItem, ViewHolder viewHolder) {
+        Cursor cursor = null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN) {
+            cursor = favDB.readDataById(learnItem.getkey_id());
+        } else {
+            Toast.makeText(context, "Your android version does not match", Toast.LENGTH_SHORT).show();
+        }
+//        Cursor cursor = favDB.readDataById(key_id[0]);
+        SQLiteDatabase db = favDB.getReadableDatabase();
+
+        try {
+            while (cursor.moveToNext()) {
+                String item_fav_status = cursor.getString(cursor.getColumnIndex(FavDB.FAVORITE_STATUS));
+                learnItem.setFavStatus(item_fav_status);
+                //check favorite status
+                if (item_fav_status != null && item_fav_status.equals("1")) {
+                    viewHolder.favBtn.setBackgroundResource(R.drawable.ic_favorite_red_24dp);
+                } else if (item_fav_status != null && item_fav_status.equals("0")) {
+                    viewHolder.favBtn.setBackgroundResource(R.drawable.ic_favorite_border_black_24dp);
+                }
+            }
+        } finally {
+            if (cursor != null && cursor.isClosed())
+                cursor.close();
+            db.close();
+        }
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -233,35 +261,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
                     }
                 }
             });
-        }
-    }
-
-
-    private void readCursorData(LearnItem learnItem, ViewHolder viewHolder) {
-        Cursor cursor = null;
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN) {
-            cursor = favDB.readDataById(learnItem.getkey_id());
-        } else {
-            Toast.makeText(context, "Your android version does not match", Toast.LENGTH_SHORT).show();
-        }
-//        Cursor cursor = favDB.readDataById(key_id[0]);
-        SQLiteDatabase db = favDB.getReadableDatabase();
-
-        try {
-            while (cursor.moveToNext()) {
-                String item_fav_status = cursor.getString(cursor.getColumnIndex(FavDB.FAVORITE_STATUS));
-                learnItem.setFavStatus(item_fav_status);
-                //check favorite status
-                if (item_fav_status != null && item_fav_status.equals("1")) {
-                    viewHolder.favBtn.setBackgroundResource(R.drawable.ic_favorite_red_24dp);
-                } else if (item_fav_status != null && item_fav_status.equals("0")) {
-                    viewHolder.favBtn.setBackgroundResource(R.drawable.ic_favorite_border_black_24dp);
-                }
-            }
-        } finally {
-            if (cursor != null && cursor.isClosed())
-                cursor.close();
-            db.close();
         }
     }
 }

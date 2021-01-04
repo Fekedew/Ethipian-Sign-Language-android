@@ -20,7 +20,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.feke.esl1.basic.BasicList;
-import com.feke.esl1.basic.ExAdapter;
 import com.feke.esl1.favorite.FavDB;
 
 import java.util.ArrayList;
@@ -29,18 +28,13 @@ import java.util.List;
 public class SearchActivity extends AppCompatActivity implements View.OnClickListener {
 
 
+    ImageView search, favorite, trash, info;
+    String folder, select_en, select_ah;
+    String type = "all";
     private List<LearnItem> learnItems;
     private RecyclerView recyclerView;
     private SearchAdapter adapter;
-
     private FavDB favDB;
-
-    ImageView search, favorite, trash, info;
-    String folder, select_en, select_ah;
-
-
-    String type = "all";
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -179,12 +173,6 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
                 break;
             case R.id.toolbarBottomInfo:
                 Toast.makeText(this, "Here is about us", Toast.LENGTH_LONG).show();
-                break;
-            case R.id.submitEx:
-                Toast.makeText(this, "Here is submitting", Toast.LENGTH_LONG).show();
-                int correct = ExAdapter.correctAnswers.size();
-                Toast.makeText(this, "Correct answers: " + correct + " Out of: " + ExAdapter.allQuestions, Toast.LENGTH_LONG).show();
-
                 break;
         }
     }

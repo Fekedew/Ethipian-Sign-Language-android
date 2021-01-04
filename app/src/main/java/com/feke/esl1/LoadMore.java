@@ -28,14 +28,11 @@ public class LoadMore extends AppCompatActivity {
 
     //this is the JSON Data URL
     private static final String URL_SIGNS = "http://192.168.45.1/esl/my_api.php";
-
+    static boolean parseIsInit = false;
     //a list to store all the products
     List<LearnItem> learnItems;
-
     //the recyclerview
     RecyclerView recyclerView;
-    static  boolean  parseIsInit = false;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,11 +42,11 @@ public class LoadMore extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle(getResources().getString(R.string.load_more));
 
-        if (!parseIsInit){
+        if (!parseIsInit) {
             Map config = new HashMap();
             config.put("cloud_name", "ethiopians-coder");
             MediaManager.init(this, config);
-            parseIsInit=true;
+            parseIsInit = true;
         }
 
         //getting the recyclerview from xml
@@ -97,7 +94,7 @@ public class LoadMore extends AppCompatActivity {
                             recyclerView.setAdapter(adapter);
                         } catch (JSONException e) {
 
-                            Toast.makeText(LoadMore.this, "You are on load more error "+e.getMessage(), Toast.LENGTH_LONG).show();
+                            Toast.makeText(LoadMore.this, "You are on load more error " + e.getMessage(), Toast.LENGTH_LONG).show();
                             e.printStackTrace();
                         }
                     }

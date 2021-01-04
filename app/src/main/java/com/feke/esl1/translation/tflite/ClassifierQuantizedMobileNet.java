@@ -17,12 +17,15 @@ limitations under the License.
 
 
 import android.app.Activity;
-import java.io.IOException;
-import com.feke.esl1.translation.tflite.Classifier.Device;
+
 import org.tensorflow.lite.support.common.TensorOperator;
 import org.tensorflow.lite.support.common.ops.NormalizeOp;
 
-/** This TensorFlow Lite classifier works with the quantized MobileNet model. */
+import java.io.IOException;
+
+/**
+ * This TensorFlow Lite classifier works with the quantized MobileNet model.
+ */
 public class ClassifierQuantizedMobileNet extends Classifier {
 
     /**
@@ -33,7 +36,9 @@ public class ClassifierQuantizedMobileNet extends Classifier {
 
     private static final float IMAGE_STD = 1.0f;
 
-    /** Quantized MobileNet requires additional dequantization to the output probability. */
+    /**
+     * Quantized MobileNet requires additional dequantization to the output probability.
+     */
     private static final float PROBABILITY_MEAN = 0.0f;
 
     private static final float PROBABILITY_STD = 255.0f;
@@ -43,9 +48,9 @@ public class ClassifierQuantizedMobileNet extends Classifier {
      *
      * @param activity
      */
-    public ClassifierQuantizedMobileNet(Activity activity, Device device, int numThreads,String tflite_Path,String label_Path)
+    public ClassifierQuantizedMobileNet(Activity activity, Device device, int numThreads, String tflite_Path, String label_Path)
             throws IOException {
-        super(activity, device, numThreads,tflite_Path,label_Path);
+        super(activity, device, numThreads, tflite_Path, label_Path);
     }
 
     @Override

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:background="@drawable/background"
-    android:layout_height="wrap_content">
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/title_view"
@@ -21,10 +21,10 @@
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:columnCount="1"
-        android:layout_marginTop="50dp"
         android:layout_marginLeft="10dp"
+        android:layout_marginTop="50dp"
         android:layout_marginRight="10dp"
+        android:columnCount="1"
         android:rowCount="4">
 
         <androidx.cardview.widget.CardView
@@ -32,14 +32,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_row="0"
-            android:layout_column="0"
-            android:layout_marginBottom="-16dp"
             android:layout_rowWeight="1"
+            android:layout_column="0"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
+            android:layout_marginBottom="-16dp"
+            app:cardBackgroundColor="#08458E"
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp"
-            app:cardBackgroundColor="#08458E"
             app:cardUseCompatPadding="true">
 
             <TextView
@@ -48,10 +48,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:textSize="45sp"
                 android:layout_marginTop="18dp"
                 android:text="@string/learn_basic"
-                android:textColor="#fff" />
+                android:textColor="#fff"
+                android:textSize="45sp" />
 
             <TextView
                 android:id="@+id/basicProgressBarPercent"
@@ -85,13 +85,13 @@
             android:layout_height="wrap_content"
             android:layout_row="1"
             android:layout_rowWeight="1"
-            android:layout_marginBottom="-16dp"
             android:layout_column="0"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
+            android:layout_marginBottom="-16dp"
+            app:cardBackgroundColor="#44085E"
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp"
-            app:cardBackgroundColor="#44085E"
             app:cardUseCompatPadding="true">
 
 
@@ -101,10 +101,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:textSize="45sp"
                 android:layout_marginTop="18dp"
                 android:text="@string/learn_intermediate"
-                android:textColor="#fff" />
+                android:textColor="#fff"
+                android:textSize="45sp" />
 
             <TextView
                 android:id="@+id/intermediateProgressBarPercent"
@@ -140,9 +140,9 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
+            app:cardBackgroundColor="#B31358"
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp"
-            app:cardBackgroundColor="#B31358"
             app:cardUseCompatPadding="true">
 
 
@@ -152,10 +152,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:textSize="45sp"
                 android:layout_marginTop="18dp"
                 android:text="@string/learn_advance"
-                android:textColor="#fff" />
+                android:textColor="#fff"
+                android:textSize="45sp" />
 
             <TextView
                 android:id="@+id/advanceProgressBarPercent"
