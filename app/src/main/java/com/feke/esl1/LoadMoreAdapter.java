@@ -75,8 +75,8 @@ public class LoadMoreAdapter extends RecyclerView.Adapter<LoadMoreAdapter.ViewHo
         for (int i=0; i<imagNames.length; i++){
             imageName = imagNames[i];
         }
-        Toast.makeText(context, imageName+" Here is from cloudinary", Toast.LENGTH_LONG).show();
-        if (path.contains(".png") || path.contains(".PNG") || path.contains(".JPG") || path.contains(".jpg")) {
+//        Toast.makeText(context, imageName+" Here is from cloudinary", Toast.LENGTH_LONG).show();
+        if (path.contains(".png") || path.contains(".PNG") || path.contains(".JPG") || path.contains(".jpg") || path.contains(".GIF")|| path.contains(".gif")) {
 //            holder.imageView.setImageBitmap(loadBitmapFromAssets(context, path));
             Glide.with(context)
                     .load(MediaManager.get().url().generate(imageName))
@@ -87,12 +87,10 @@ public class LoadMoreAdapter extends RecyclerView.Adapter<LoadMoreAdapter.ViewHo
 //            Picasso.with(context).load(MediaManager.get().url().generate("sample.jpg")).into(holder.imageView);
 
             holder.playBtn.setVisibility(View.GONE);
-        } else if (path.contains(".GIF") || path.contains(".gif")) {
+        }
+        if (path.contains(".gif") || path.contains("GIF")){
             holder.playBtn.setVisibility(View.VISIBLE);
-            holder.imageView.setImageDrawable(loadGifDrawable(context, path));
-        }else{
-//            picasso.load("https://res.cloudinary.com/yourCloudName/image/upload/f_auto/v1525420575/yourImageName.jpg")
-//                    .into(holder.imageView);
+
         }
 
         Drawable drawable = holder.imageView.getDrawable();

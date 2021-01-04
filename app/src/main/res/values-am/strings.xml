@@ -21,6 +21,11 @@
     <string name="fekedew_hailemariam">ፈቀደው ኀይለማሪያምማኀይለማሪያም</string>
     <string name="title_activity_settings">ማስተካከያ"></string>
 
+    <string name="some_settings">ማስተካከያዎች</string>
+    <string name="search">መፈለጊያ </string>
+    <string name="clear_fav">ሁሉንም የተወደዱ ይሰርዙ</string>
+    <string name="file_picker">"ፋይል ይምረጡ "</string>
+    <string name="esl">የኢትዮጵያ ምልክት ቋንቋ</string>
     <!-- Sync Preferences -->
     <string name="number">ቁጥር</string>
     <string name="ethiopian_basic_sign_language">መሰረታዊ ምልክት ቋንቋ</string>
@@ -56,7 +61,7 @@
 
     <string name="description_info">መረጃ </string>
     <string name="request_permission">This sample needs camera permission.</string>
-    <string name="camera_error">This device doesn\'t supporያመለክታልt Camera2 API.</string>
+    <string name="camera_error">ይህ ሞባይል ካሜራ2 የለዉም.</string>
     <string name="toggle_turn_on">NN:On</string>
     <string name="toggle_turn_off">NN:Off</string>
     <string name="toggle">Use NNAPI</string>
@@ -64,7 +69,7 @@
     <string name="nnapi">NNAPI</string>
     <string name="threads">Threads:</string>
 
-    <string name="no_result">No result found</string>
+    <string name="no_result">አልተገኘም </string>
     <string name="model">Model:</string>
     <string-array name="models">
         <item>Float</item>

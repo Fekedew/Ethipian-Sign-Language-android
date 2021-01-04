@@ -12,10 +12,12 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import com.feke.esl1.basic.BasicHome;
+import com.feke.esl1.intermediate.AdvancedHome;
 import com.feke.esl1.intermediate.IntermediateHome;
 
 public class LearnHome extends Fragment implements View.OnClickListener {
@@ -35,6 +37,8 @@ public class LearnHome extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.learn_home, container, false);
+
+
         basicImageView = view.findViewById(R.id.card_basic);
         basicImageView.setOnClickListener(this);
         CardView intermediateImageView = view.findViewById(R.id.card_intermediate);
@@ -69,7 +73,8 @@ public class LearnHome extends Fragment implements View.OnClickListener {
                 startActivity(intent);
                 break;
             case R.id.card_advance:
-                Toast.makeText(getActivity(), "Advance sign language is not implemented!", Toast.LENGTH_SHORT).show();
+                intent = new Intent(getContext(), AdvancedHome.class);
+                startActivity(intent);
                 break;
         }
     }

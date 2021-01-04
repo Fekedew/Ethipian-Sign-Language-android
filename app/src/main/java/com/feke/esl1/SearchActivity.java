@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -46,6 +47,9 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.learn_or_ex_list_frament);
 
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle(getResources().getString(R.string.search));
 
         recyclerView = findViewById(R.id.basicRecyclerView);
         recyclerView.setHasFixedSize(false);

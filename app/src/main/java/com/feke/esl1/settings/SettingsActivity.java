@@ -4,38 +4,70 @@ import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.feke.esl1.R;
+import com.feke.esl1.favorite.FavDB;
 
 import java.util.Locale;
 
 
 public class SettingsActivity extends AppCompatActivity {
 
-    Button changeLanguage;
+    Button changeLanguage, clearFav;
 
-
+    private FavDB favDB;
     public SettingsActivity() {
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         loadLocale();
         setContentView(R.layout.settings_activity);
+
+        favDB = new FavDB(this);
 
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle(getResources().getString(R.string.app_name));
 
         changeLanguage = findViewById(R.id.changeLanguage);
+        clearFav = findViewById(R.id.clearAllFav);
+        clearFav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder mBuilder = new AlertDialog.Builder(SettingsActivity.this);
+                mBuilder.setTitle("Are you sure to erase all favorite data?");
+                mBuilder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+                mBuilder.setPositiveButton(R.string.go, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        favDB.removeFavoriteBy();
+                        Toast.makeText(getBaseContext(), "Done", Toast.LENGTH_LONG).show();
+                    }
+                });
+                //Show the alert dialog
+                AlertDialog mDialog = mBuilder.create();
+                mDialog.show();
+            }
+        });
         changeLanguage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

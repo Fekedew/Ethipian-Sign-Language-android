@@ -63,6 +63,300 @@ public class FavDB extends SQLiteOpenHelper {
         insertFruitsAssets();
         insertAmharicFidel();
         insertNatureAssets();
+        insertWildAnimal();
+        insertColor();
+    }
+
+    private void insertColor() {
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+
+        cv.put(KEY_ID, "black.jpg");
+        cv.put(ITEM_TITLE, "f/Black");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "color");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "blue.jpg");
+        cv.put(ITEM_TITLE, "f/Blue");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "color");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "brown.jpg");
+        cv.put(ITEM_TITLE, "ጥቁር/Brown");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "color");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "gray.jpg");
+        cv.put(ITEM_TITLE, "ግሬይ/Grey");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "color");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "red.jpg");
+        cv.put(ITEM_TITLE, "ቀይ/Red");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "color");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "white.jpg");
+        cv.put(ITEM_TITLE, "ነጭ/White");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "color");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "yellow.jpg");
+        cv.put(ITEM_TITLE, "ቢጫ/Yellow");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "color");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+    }
+
+    private void insertWildAnimal() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+
+        cv.put(KEY_ID, "ant.jpg");
+        cv.put(ITEM_TITLE, "ጉንዳን/Ant");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "wild_animal");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "antelope.jpg");
+        cv.put(ITEM_TITLE, "ድኩላ/Antelope");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "wild_animal");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "bee.jpg");
+        cv.put(ITEM_TITLE, "ንብ/Bee");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "wild_animal");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "bird.jpg");
+        cv.put(ITEM_TITLE, "ወፍ/Bird");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "wild_animal");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "butter_fly.jpg");
+        cv.put(ITEM_TITLE, "ቢራቢሮ/Butter fly");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "wild_animal");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "crocodile.jpg");
+        cv.put(ITEM_TITLE, "አዞ/Crocodile");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "wild_animal");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "duck.jpg");
+        cv.put(ITEM_TITLE, "ዳኪዬ/Duck");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "wild_animal");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "elephant.jpg");
+        cv.put(ITEM_TITLE, "ዝሆን/Elephant");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "wild_animal");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "elk.jpg");
+        cv.put(ITEM_TITLE, "አጋዘን/Elk");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "wild_animal");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "fish.jpg");
+        cv.put(ITEM_TITLE, "አሳ/Fish");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "wild_animal");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "fox.jpg");
+        cv.put(ITEM_TITLE, "ቀበሮ/Fox");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "wild_animal");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "frog.jpg");
+        cv.put(ITEM_TITLE, "እንቁራሪት/Frog");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "wild_animal");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "giraffe.jpg");
+        cv.put(ITEM_TITLE, "ቀጭኔ/Giraffe");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "wild_animal");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "grasshopper_locust.jpg");
+        cv.put(ITEM_TITLE, "ፌንጣ፣ አንበጣ/Grasshopper locust");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "wild_animal");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "hippopotamus.jpg");
+        cv.put(ITEM_TITLE, "ጉማሬ/Hippopotamus");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "wild_animal");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "house_fly.jpg");
+        cv.put(ITEM_TITLE, "ዝንብ/House fly");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "wild_animal");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "hyena.jpg");
+        cv.put(ITEM_TITLE, "ጅብ/Hyena");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "wild_animal");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "lion.jpg");
+        cv.put(ITEM_TITLE, "አንበሳ/Lion");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "wild_animal");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "lizard.jpg");
+        cv.put(ITEM_TITLE, "እንሽላሊት/Lizard");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "wild_animal");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "monkey.jpg");
+        cv.put(ITEM_TITLE, "ዝንጀሮ/Monkey");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "wild_animal");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "rabbit.jpg");
+        cv.put(ITEM_TITLE, "ጥንቸል/Rabbit");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "wild_animal");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "rat.jpg");
+        cv.put(ITEM_TITLE, "አይጥ/Rat");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "wild_animal");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "rhino.jpg");
+        cv.put(ITEM_TITLE, "አውራሪስ/Rhino");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "wild_animal");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "snake.jpg");
+        cv.put(ITEM_TITLE, "እባብ/Snake");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "wild_animal");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "spider.jpg");
+        cv.put(ITEM_TITLE, "ሸረሪት/Ant");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "wild_animal");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "tiger.jpg");
+        cv.put(ITEM_TITLE, "ነብር/Tiger");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "wild_animal");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "tortoise.jpg");
+        cv.put(ITEM_TITLE, "ዔሊ/Tortoise");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "wild_animal");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "zebra.jpg");
+        cv.put(ITEM_TITLE, "የሜዳ አህያ/Zebra");
+        cv.put(ITEM_DISK, "No description");
+        cv.put(IMAGE_FOLDER, "wild_animal");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
     }
 
     private void insertAmharicFidel() {
@@ -2083,12 +2377,12 @@ public class FavDB extends SQLiteOpenHelper {
     public Cursor isFirstStart() {
         SQLiteDatabase db = this.getReadableDatabase();
         String sql = "SELECT * FROM " + FIRST_START_NAME + " WHERE 1";
-//        return db.rawQuery(sql, null, null);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-            return db.rawQuery(sql, null, null);
-        } else {
-            return null;
-        }
+        return db.rawQuery(sql, null, null);
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+////            return db.rawQuery(sql, null, null);
+//        } else {
+//            return null;
+//        }
     }
 
     public void insertFirstStart() {
@@ -2096,5 +2390,11 @@ public class FavDB extends SQLiteOpenHelper {
         ContentValues cv = new ContentValues();
         cv.put(FIRST_START, 1);
         db.insert(FIRST_START_NAME, null, cv);
+    }
+
+    public void removeFavoriteBy() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String sql = "UPDATE " + TABLE_NAME + " SET " + FAVORITE_STATUS + "='0' WHERE 1";
+        db.execSQL(sql);
     }
 }

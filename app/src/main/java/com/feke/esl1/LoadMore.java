@@ -3,6 +3,7 @@ package com.feke.esl1;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -41,6 +42,9 @@ public class LoadMore extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.learn_or_ex_list_frament);
 
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle(getResources().getString(R.string.load_more));
+
         if (!parseIsInit){
             Map config = new HashMap();
             config.put("cloud_name", "ethiopians-coder");
@@ -75,7 +79,6 @@ public class LoadMore extends AppCompatActivity {
 
                                 //getting product object from json array
                                 JSONObject signs = array.getJSONObject(i);
-
 
                                 Toast.makeText(LoadMore.this, "You are on load more", Toast.LENGTH_LONG).show();
                                 //adding the product to product list

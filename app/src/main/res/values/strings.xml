@@ -38,7 +38,7 @@
     <string name="animal">Animal</string>
     <string name="nature">Natures </string>
     <string name="ethiopian_intermediate_sign_language">Intermediate sign language</string>
-    <!-- TODO: Remove or change this placeholder text -->
+
     <string name="vegetable">Vegetable</string>
     <string name="submit">Submit</string>
     <string name="color">Color</string>
@@ -73,6 +73,11 @@
     <string name="about_us">About us</string>
     <string name="no_result">No result found</string>
     <string name="en">EN</string>
+    <string name="some_settings">Some settings</string>
+    <string name="search">Search</string>
+    <string name="clear_fav">Clear all favorite</string>
+    <string name="file_picker">"File picker "</string>
+    <string name="esl">Ethiopina sign language</string>
     <string-array name="devices">
         <item>CPU</item>
         <item>GPU</item>
