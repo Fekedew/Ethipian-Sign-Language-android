@@ -1,6 +1,7 @@
 package com.feke.esl1;
 
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.AssetManager;
@@ -18,11 +19,13 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.feke.esl1.basic.Adapter;
+import com.feke.esl1.basic.BasicHome;
 import com.feke.esl1.basic.BasicList;
 import com.feke.esl1.basic.ExAdapter;
 import com.feke.esl1.favorite.FavDB;
@@ -106,8 +109,9 @@ public class MainFragment extends Fragment implements View.OnClickListener {
                 if (fileList == null) {
                     // dir does not exist or is not a directory
                 } else {
-                    String folders[] = {"alphabet", "numbers", "body", "family", "days", "albasat", "animal", "family",
-                            "food_drink", "fruits", "maths", "stationary", "vegetable", "wild_animal", "amharicFidel"
+                    String folders[] = {"alphabet", "numbers", "body", "days", "albasat", "animal", "family",
+                            "food_drink", "fruits", "maths", "vegetable", "amharicFidel", "nature", "spiritual",
+                            "weeks", "wild_animal", "names", "color"
                     };
 
                     if (folder.equals("all")) {
@@ -127,9 +131,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
             recyclerView.setAdapter(adapter);
             return view;
         } else {
-
             View view = inflater.inflate(R.layout.exercise_home, container, false);
-
             recyclerView = view.findViewById(R.id.exRecyclerView);
             recyclerView.setHasFixedSize(false);
             recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -152,8 +154,9 @@ public class MainFragment extends Fragment implements View.OnClickListener {
                 if (fileList == null) {
                     // dir does not exist or is not a directory
                 } else {
-                    String folders[] = {"alphabet", "numbers", "body", "family", "days", "albasat", "animal", "family",
-                            "food_drink", "fruits", "maths", "stationary", "vegetable"
+                    String folders[] = {"alphabet", "numbers", "body", "days", "albasat", "animal", "family",
+                            "food_drink", "fruits", "maths", "vegetable", "amharicFidel", "nature", "spiritual",
+                            "weeks", "wild_animal", "names", "color"
                     };
 
                     if (folder.equals("all")) {
@@ -249,8 +252,29 @@ public class MainFragment extends Fragment implements View.OnClickListener {
                 List<String> correctAns = ExAdapter.correctAns;
                 int correct = correctAns.size();
                 favDB.updateProgress(folder, correct);
-                Toast.makeText(getContext(), "Correct answers: " + correct + " Out of: "
-                        + ExAdapter.allQuestions + "\n\n "+correctAns.toString(), Toast.LENGTH_LONG).show();
+
+                AlertDialog.Builder mBuilder = new AlertDialog.Builder(getContext());
+                mBuilder.setTitle(R.string.start_again);
+                mBuilder.setMessage("Results\n\n" + "Correct answers: " + correct + " Out of: "
+                        + ExAdapter.allQuestions + "\n\n List of correct answers :" + correctAns.toString());
+                mBuilder.setNegativeButton(R.string.enough, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent intent = new Intent(getContext(), BasicHome.class);
+                        startActivity(intent);
+                        dialog.dismiss();
+                    }
+                });
+                mBuilder.setPositiveButton(R.string.try_again, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+                //Show the alert dialog
+                AlertDialog mDialog = mBuilder.create();
+                mDialog.show();
+
                 break;
         }
     }
@@ -258,13 +282,12 @@ public class MainFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
-        inflater.inflate(R.menu.language_menu, menu);
+//        inflater.inflate(R.menu.language_menu, menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.menu.language_menu:
                 Toast.makeText(getContext(), item.getTitle(), Toast.LENGTH_LONG).show();
                 break;

@@ -1,9 +1,14 @@
 package com.feke.esl1;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,6 +19,9 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.cloudinary.android.MediaManager;
+import com.feke.esl1.basic.BasicHome;
+import com.feke.esl1.basic.BasicList;
+import com.feke.esl1.basic.ExAdapter;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -24,15 +32,17 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class LoadMore extends AppCompatActivity {
+public class LoadMore extends AppCompatActivity implements View.OnClickListener{
 
     //this is the JSON Data URL
-    private static final String URL_SIGNS = "http://192.168.45.1/esl/my_api.php";
+    private static final String URL_SIGNS = "http://192.168.43.193/esl/my_api.php";
     static boolean parseIsInit = false;
     //a list to store all the products
     List<LearnItem> learnItems;
     //the recyclerview
     RecyclerView recyclerView;
+
+    ImageView search, favorite, trash, info;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +51,19 @@ public class LoadMore extends AppCompatActivity {
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle(getResources().getString(R.string.load_more));
+
+        //Getting the bottom toolbar image
+                search = findViewById(R.id.toolbarBottomSearch);
+        search.setOnClickListener(this);
+
+        favorite = findViewById(R.id.toolbarBottomFav);
+        favorite.setOnClickListener(this);
+
+        trash = findViewById(R.id.toolbarBottomHome);
+        trash.setOnClickListener(this);
+
+        info = findViewById(R.id.toolbarBottomInfo);
+        info.setOnClickListener(this);
 
         if (!parseIsInit) {
             Map config = new HashMap();
@@ -110,5 +133,31 @@ public class LoadMore extends AppCompatActivity {
 
         //adding our stringrequest to queue
         Volley.newRequestQueue(this).add(stringRequest);
+    }
+
+
+    @Override
+    public void onClick(View v) {
+        Intent intent;
+        switch (v.getId()) {
+            case R.id.toolbarBottomSearch:
+                intent = new Intent(this, SearchActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.toolbarBottomFav:
+                intent = new Intent(this, BasicList.class);
+                intent.putExtra("type", "all");
+                startActivity(intent);
+                break;
+            case R.id.toolbarBottomHome:
+                intent = new Intent(this, MainActivity.class);
+                intent.putExtra("type", "all");
+                startActivity(intent);
+                break;
+            case R.id.toolbarBottomInfo:
+                intent = new Intent(this, AboutUs.class);
+                startActivity(intent);
+                break;
+        }
     }
 }

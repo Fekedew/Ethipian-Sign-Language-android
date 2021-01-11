@@ -58,6 +58,8 @@ public class FavDB extends SQLiteOpenHelper {
         insertExercise();
 
 
+
+        insertQ();
         insertNumberAssets();
         insertAnimalAssets();
         insertFamilyAssets();
@@ -78,6 +80,77 @@ public class FavDB extends SQLiteOpenHelper {
         insertWeeks();
         insertSpiritual();
 
+    }
+
+    private void insertQ() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+
+        cv.put(KEY_ID, "what.gif");
+        cv.put(ITEM_TITLE, "ምን/What");
+        cv.put(ITEM_DISK, "በቀኙ አመልካች ጣት በደረት ፊት ለፊት መዳፍ ወደ ውጪ \n" +
+                "ሆኖ ወደ ግራና ቀኝ ማንቀሳቀስ፡፡");
+        cv.put(IMAGE_FOLDER, "q");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "how.gif");
+        cv.put(ITEM_TITLE, "እንዴት/How");
+        cv.put(ITEM_DISK, "በሁለቱም እጆች ጎርበብ ባለ " +
+                "“ሸ” የእጅ ቅርጽ በአይበሉባ በኩል በማነካከት " +
+                "ጣቶች ወደ ሰውነት ሆነው በአንድ ላይ ወደ ውጪ በማዞር ማለያየትና የት በሚለው ምልክት መጨረስ፡፡");
+        cv.put(IMAGE_FOLDER, "q");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "howm.gif");
+        cv.put(ITEM_TITLE, "ስንት፣ምንያህል /How much");
+        cv.put(ITEM_DISK, "\n" +
+                "የቀኙን እጅ በደረት ትይዩ በጉርሻ መልክ በማዘጋጀት " +
+                "በመቀጠል ጣቶችን መበተን፡፡\n");
+        cv.put(IMAGE_FOLDER, "q");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "when.gif");
+        cv.put(ITEM_TITLE, "መቼ/When");
+        cv.put(ITEM_DISK, "\n" +
+                "በሁለቱም እጆች አመልካች ጣት መዳፍ ወደ ላይ ሆኖ ሳይነካኩ ፊት ለፊት ማድረግና " +
+                "በተከታታይ በመገልበጥ መዳፍን ወደ ታች ማድረግ፡፡\n");
+        cv.put(IMAGE_FOLDER, "q");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "where.gif");
+        cv.put(ITEM_TITLE, "የት/Where");
+        cv.put(ITEM_DISK, "\n" +
+                "በሁለቱም እጆች “ሸ” የእጅ ቅርጽ መዳፍ ወደ ላይ ሆኖ በደረት ትይዩ በትንሿ ጣት በኩል ማነካካትና በመለየት ቀኙን ወደ ቀኝ ግራውን ወደ ግራ መውሰድ፡፡");
+        cv.put(IMAGE_FOLDER, "q");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "wrong.gif");
+        cv.put(ITEM_TITLE, "አይደለም፣/Wrong");
+        cv.put(ITEM_DISK, "\n" +
+                "በቀኝ እጅ አመልካች ጣት መዳፍ ወደ ግራ አቅጣጫሆኖበግራትከሻአካባቢማድረግና ወደ ቀኝአቅጣጫበመውሰድየመዳፍአቅጣጫውን ወደ ውጪመለወጥ፡፡");
+        cv.put(IMAGE_FOLDER, "q");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv.put(KEY_ID, "and.gif");
+        cv.put(ITEM_TITLE, "እና/And");
+        cv.put(ITEM_DISK, "\n" +
+                "በግራ አቅጣጫ ጎርበብ ብለው ተዘርግተው የሚገኙ የቀኝ እጅ ጣቶች ወደ ቀኝ እየወሰዱ በጉርሻ መልክ መጨረስ");
+        cv.put(IMAGE_FOLDER, "q");
+        cv.put(FAVORITE_STATUS, 0);
+        cv.put(IMAGE_ORDER, 0);
+        db.insert(TABLE_NAME, null, cv);
     }
 
     private void insertSpiritual() {
@@ -339,7 +412,7 @@ public class FavDB extends SQLiteOpenHelper {
         cv.put(IMAGE_ORDER, 0);
         db.insert(TABLE_NAME, null, cv);
 
-        cv.put(KEY_ID, "mosques.png");
+        cv.put(KEY_ID, "mosque.png");
         cv.put(ITEM_TITLE, "መስጊድ/Mosques");
         cv.put(ITEM_DISK, "No description");
         cv.put(IMAGE_FOLDER, "names");
@@ -2842,7 +2915,7 @@ public class FavDB extends SQLiteOpenHelper {
         return db.rawQuery(sql, null, null);
     }
 
-    public void removeAllProgress(){
+    public void removeAllProgress() {
         SQLiteDatabase db = this.getWritableDatabase();
         String sql = "UPDATE " + EX_TABLE_NAME + " SET " + EX_PROGRESS + "=0 WHERE 1";
         db.execSQL(sql);

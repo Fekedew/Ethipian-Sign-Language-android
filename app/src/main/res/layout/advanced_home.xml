@@ -65,7 +65,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
-                        android:text="@string/albasat"
+                        android:text="S[iritual"
                         android:textAlignment="center"
                         android:textColor="#fff"
                         android:textStyle="bold" />
@@ -73,7 +73,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/food_and_drink"
+                android:id="@+id/q"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_row="0"
@@ -94,20 +94,24 @@
                     android:orientation="vertical">
 
 
-                    <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="90dp"
-                        android:gravity="center_horizontal"
-                        android:src="@drawable/food_drink" />
-
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
-                        android:text="@string/food_and_drink"
+                        android:text="Question"
                         android:textAlignment="center"
                         android:textColor="#fff"
+                        android:textSize="35sp"
                         android:textStyle="bold" />
+
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:gravity="center_horizontal"-->
+<!--                        android:text="@string/food_and_drink"-->
+<!--                        android:textAlignment="center"-->
+<!--                        android:textColor="#fff"-->
+<!--                        android:textStyle="bold" />-->
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 

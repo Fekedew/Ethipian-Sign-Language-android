@@ -81,7 +81,6 @@ public class DatabaseConnection extends AsyncTask<String, Integer, String> {
         return null;
     }
 
-
     @Override
     protected void onPreExecute() {
         super.onPreExecute();

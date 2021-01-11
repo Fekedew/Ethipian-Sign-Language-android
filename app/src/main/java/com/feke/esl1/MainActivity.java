@@ -1,7 +1,6 @@
 package com.feke.esl1;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -32,7 +31,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+//        SettingsActivity s = new SettingsActivity();
+//        s.loadLocale();
         setContentView(R.layout.activity_main);
+
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -135,7 +138,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(intent);
                 break;
             case R.id.toolbarBottomInfo:
-                Toast.makeText(this, "Here is about us", Toast.LENGTH_LONG).show();
+                intent = new Intent(this, AboutUs.class);
+                startActivity(intent);
                 break;
         }
     }

@@ -11,7 +11,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -63,7 +62,6 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
         info = findViewById(R.id.toolbarBottomInfo);
         info.setOnClickListener(this);
 
-
         learnItems = new ArrayList<>();
 
 
@@ -77,8 +75,10 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
         final AssetManager assetManager = getAssets();
         try {
             // for assets folder add empty string
-            String folders[] = {"alphabet", "numbers", "body", "family", "days", "albasat", "animal", "family",
-                    "food_drink", "fruits", "maths", "stationary", "vegetable"
+
+            String folders[] = {"alphabet", "numbers", "body", "days", "albasat", "animal", "family",
+                    "food_drink", "fruits", "maths", "vegetable", "amharicFidel", "nature", "spiritual",
+                    "weeks", "wild_animal", "names", "color"
             };
 
             for (int i = 0; i < folders.length; i++) {

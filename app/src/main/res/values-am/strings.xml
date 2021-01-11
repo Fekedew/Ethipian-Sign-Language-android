@@ -53,8 +53,16 @@
     <string name="fidelat">አማርኛ ፊደላት</string>
     <string name="change_language">ቋንቋ </string>
 
+    <string name="programmer">ፕርግራመር</string>
+    <string name="start_again">እንደገና መስራት ይፈልጋሉ?</string>
+    <string name="enough">ይበቃል</string>
+    <string name="try_again">አዎ ልሞክር</string>
     <string name="en">አማ</string>
 
+    <string name="android_apps_developer">የሞባይል አፕ አበልጻጊ</string>
+    <string name="love_pro">ፕሮግራሚንግ በጣም እወዳለሁ፣ ችግር ፈች ነኝ። የኮምፕዩተር እና የስልክ አፕ ማበልጸግ እችላለሁ</string>
+    <string name="where_feke">ወልቂጤ ዩኒቨርሲቲይ,ኢትዮጲያ</string>
+    <string name="getaneh_aychew">Getaneh Aychew</string>
 
     <string name="cancel">ተው</string>
     <string name="go">ጀምር</string>

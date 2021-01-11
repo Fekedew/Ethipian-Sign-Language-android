@@ -19,7 +19,7 @@ import com.feke.esl1.favorite.FavDB;
 import java.util.Locale;
 
 
-public class SettingsActivity extends AppCompatActivity implements View.OnClickListener{
+public class SettingsActivity extends AppCompatActivity implements View.OnClickListener {
 
     Button changeLanguage, clearFav, clearProgress;
 
@@ -126,7 +126,7 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.clearProgress:
                 AlertDialog.Builder mBuilder = new AlertDialog.Builder(SettingsActivity.this);
                 mBuilder.setTitle("Are you sure to erase all progress data?");
