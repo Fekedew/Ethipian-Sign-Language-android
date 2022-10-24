@@ -4,18 +4,20 @@ package com.feke.esl1.translation;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import com.feke.esl1.R;
-import com.nbsp.materialfilepicker.MaterialFilePicker;
-import com.nbsp.materialfilepicker.ui.FilePickerActivity;
+//import com.nbsp.materialfilepicker.MaterialFilePicker;
+//import com.nbsp.materialfilepicker.ui.FilePickerActivity;
 
 import java.util.regex.Pattern;
 
@@ -52,11 +54,12 @@ public class FileSelection extends AppCompatActivity {
         modelpath.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new MaterialFilePicker()
-                        .withActivity(FileSelection.this)
-                        .withRequestCode(1)
-                        .withFilter(Pattern.compile(".*\\.tflite$")) // Filtering files and directories by file name using regexp
-                        .start();
+                Toast.makeText(getApplicationContext(), "Functionality removed, please wait.", Toast.LENGTH_SHORT);
+//                new MaterialFilePicker()
+//                        .withActivity(FileSelection.this)
+//                        .withRequestCode(1)
+//                        .withFilter(Pattern.compile(".*\\.tflite$")) // Filtering files and directories by file name using regexp
+//                        .start();
             }
 
         });
@@ -64,15 +67,18 @@ public class FileSelection extends AppCompatActivity {
         labelpath.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new MaterialFilePicker()
-                        .withActivity(FileSelection.this)
-                        .withRequestCode(2)
-                        .withFilter(Pattern.compile(".*\\.txt$")) // Filtering files and directories by file name using regexp
-                        .start();
+                Toast.makeText(getApplicationContext(), "Functionality removed, please wait.", Toast.LENGTH_SHORT);
+
+//                new MaterialFilePicker()
+//                        .withActivity(FileSelection.this)
+//                        .withRequestCode(2)
+//                        .withFilter(Pattern.compile(".*\\.txt$")) // Filtering files and directories by file name using regexp
+//                        .start();
             }
         });
 
         next_button.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onClick(View v) {
                 if (labelPath.equals("")) {
@@ -98,7 +104,7 @@ public class FileSelection extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == 1 && resultCode == RESULT_OK) {
-            tflitePath = data.getStringExtra(FilePickerActivity.RESULT_FILE_PATH);
+//            tflitePath = data.getStringExtra(FilePickerActivity.RESULT_FILE_PATH);
             Toast.makeText(FileSelection.this, tflitePath, Toast.LENGTH_SHORT).show();
             // Do anything with file
             if (!tflitePath.equals("")) {
@@ -107,7 +113,7 @@ public class FileSelection extends AppCompatActivity {
         }
 
         if (requestCode == 2 && resultCode == RESULT_OK) {
-            labelPath = data.getStringExtra(FilePickerActivity.RESULT_FILE_PATH);
+//            labelPath = data.getStringExtra(FilePickerActivity.RESULT_FILE_PATH);
             Toast.makeText(FileSelection.this, labelPath, Toast.LENGTH_SHORT).show();
             // Do anything with file
             if (!labelpath.equals("")) {
